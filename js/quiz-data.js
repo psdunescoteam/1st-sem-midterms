@@ -1,8 +1,9 @@
 // Work Immersion Quiz Data - 54 Questions
 const workImmersionQuestions = [
+
   {
     "id": 1,
-    "question": "Which specific DepEd Order series dictates the Work Immersion Guidelines?",
+    "question": "Which specific DepEd Order Series dictates the Work Immersion Guidelines?",
     "options": [
       "DepEd Order No. 20, Series of 2017",
       "DepEd Order No. 30, Series of 2017",
@@ -52,12 +53,12 @@ const workImmersionQuestions = [
     "id": 5,
     "question": "Which aligns with the definition of a Partner Institution?",
     "options": [
+      "A non-profit organization offering public services.",
       "An institution that can provide resources and expertise.",
-      "An institution designed for private school admissions.",
       "A government office that handles job recruitments.",
-      "A non-profit organization offering public services."
+      "An institution designed for private school admissions."
     ],
-    "correct": 0,
+    "correct": 1,
     "explanation": "The reviewer defines Partner Institutions as 'Public or private institutions that are able and willing to lend expertise and resources'."
   },
   {
@@ -98,7 +99,151 @@ const workImmersionQuestions = [
   },
   {
     "id": 9,
-    "question": "What is a main objective of writing a Motivation Letter?",
+    "question": "Work immersion is categorized into what three distinct phases?",
+    "options": [
+      "Orientation, Training, and Evaluation.",
+      "Pre-Immersion, During Immersion, and Post-Immersion.",
+      "Planning, Implementation, and Finalization.",
+      "Recruitment, Immersion, and Employment."
+    ],
+    "correct": 1,
+    "explanation": "The Work Immersion activities are broken down into three phases: 'Pre-Immersion', 'During Immersion', and 'Post-Immersion'."
+  },
+  {
+    "id": 10,
+    "question": "What is the minimum number of hours required for Work Immersion?",
+    "options": [
+      "40 hours.",
+      "60 hours.",
+      "80 hours.",
+      "100 hours."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer specifies '80 hours' as the Work Immersion time allotment."
+  },
+  {
+    "id": 11,
+    "question": "What is the maximum number of hours a student can be immersed in a day?",
+    "options": [
+      "6 hours.",
+      "8 hours.",
+      "10 hours.",
+      "12 hours."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states that students shall not be exposed for 'more than 10 hours a day'."
+  },
+  {
+    "id": 12,
+    "question": "What document must be secured from a parent or legal guardian for a student to participate in Work Immersion?",
+    "options": [
+      "A parental permission slip.",
+      "A medical certificate.",
+      "A formal consent letter.",
+      "A legal waiver."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states that a 'Parent’s consent' is a 'pre-immersion' requirement."
+  },
+  {
+    "id": 13,
+    "question": "Who is responsible for providing the venue and qualified personnel for the Work Immersion program?",
+    "options": [
+      "The School Head.",
+      "The School Partnership Focal Person.",
+      "The Work Immersion Teacher.",
+      "The Partner Institution."
+    ],
+    "correct": 3,
+    "explanation": "The Partner Institution is responsible for providing 'the Work Immersion venue and qualified personnel'."
+  },
+  {
+    "id": 14,
+    "question": "What is the primary role of the Work Immersion Teacher?",
+    "options": [
+      "To secure partnerships with institutions.",
+      "To supervise learners during the immersion.",
+      "To orient students about the program.",
+      "To sign the Memorandum of Agreement."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states that a responsibility of the Work Immersion Teacher is to 'Orient learners on the Work Immersion program'."
+  },
+  {
+    "id": 15,
+    "question": "According to the reviewer, what is one of the 'Learner's Responsibilities'?",
+    "options": [
+      "To secure insurance coverage for themselves.",
+      "To report to the Work Immersion venue daily.",
+      "To provide the Work Immersion venue.",
+      "To sign the official MOA."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that a learner's responsibility is to 'Report to the Work Immersion venue'."
+  },
+  {
+    "id": 16,
+    "question": "What is a 'Student Portfolio' defined as?",
+    "options": [
+      "A compilation of a student’s academic grades.",
+      "A collection of a student's artwork.",
+      "A document listing student's responsibilities.",
+      "A collection of a student's outputs and insights from immersion."
+    ],
+    "correct": 3,
+    "explanation": "A 'Student Portfolio' is 'A collection of a student’s outputs and insights from the Work Immersion program'."
+  },
+  {
+    "id": 17,
+    "question": "Who is responsible for ensuring the student's safety during the Work Immersion?",
+    "options": [
+      "The parents or guardians.",
+      "The school head.",
+      "The Work Immersion Teacher.",
+      "All of the above."
+    ],
+    "correct": 3,
+    "explanation": "The reviewer details safety measures for the 'School', 'Student', and 'Parents'."
+  },
+  {
+    "id": 18,
+    "question": "What is the primary objective of a 'C' rating in the Work Immersion program?",
+    "options": [
+      "To give students a failing grade.",
+      "To require students to repeat the program.",
+      "To mark a student's excellent performance.",
+      "To signify a need for improvement."
+    ],
+    "correct": 3,
+    "explanation": "The 'C' rating is listed as 'Needs improvement'."
+  },
+  {
+    "id": 19,
+    "question": "In what circumstances may a student's immersion be suspended or terminated?",
+    "options": [
+      "When the student is sick.",
+      "When the student has to attend a family event.",
+      "When the student violates the code of conduct.",
+      "When the student is called to a meeting with the Work Immersion Teacher."
+    ],
+    "correct": 2,
+    "explanation": "A student's immersion may be suspended or terminated due to 'Violation of the school’s code of conduct or the Partner Institution’s rules'."
+  },
+  {
+    "id": 20,
+    "question": "The Memorandum of Agreement is a partnership between which two parties?",
+    "options": [
+      "The student and the school.",
+      "The parents and the school.",
+      "The school and the partner institution.",
+      "The student and the partner institution."
+    ],
+    "correct": 2,
+    "explanation": "The MOA is a 'legally binding document' between 'partners entering into a partnership' which is the 'Relationship between the partner institution and the school'."
+  },
+  {
+    "id": 21,
+    "question": "What is a main purpose of writing a Motivation Letter?",
     "options": [
       "To serve as a general employment application.",
       "To highlight academic and career aspirations.",
@@ -109,7 +254,7 @@ const workImmersionQuestions = [
     "explanation": "The reviewer lists a purpose of a Motivation Letter as to 'Show academic goals and career aspirations'."
   },
   {
-    "id": 10,
+    "id": 22,
     "question": "Which of the following is NOT a defined part of a Motivation Letter?",
     "options": [
       "Header",
@@ -121,7 +266,7 @@ const workImmersionQuestions = [
     "explanation": "The reviewer lists 'Header', 'Introduction', and 'Conclusion' as parts, but not a 'Personal Statement'."
   },
   {
-    "id": 11,
+    "id": 23,
     "question": "What is the key purpose of the 'Header' section in a Motivation Letter?",
     "options": [
       "To include a formal greeting to the reader.",
@@ -133,7 +278,7 @@ const workImmersionQuestions = [
     "explanation": "The Header is the 'Section at the top of the page that includes personal contact information and the recipient's details'."
   },
   {
-    "id": 12,
+    "id": 24,
     "question": "What key detail should be mentioned briefly within the 'Introduction'?",
     "options": [
       "Your high school achievements.",
@@ -145,7 +290,7 @@ const workImmersionQuestions = [
     "explanation": "The reviewer states that the introduction should 'Briefly mention what motivated you to choose that field of study'."
   },
   {
-    "id": 13,
+    "id": 25,
     "question": "What is the primary function of the 'Salutation' in a Motivation Letter?",
     "options": [
       "A greeting that addresses the reader.",
@@ -157,7 +302,7 @@ const workImmersionQuestions = [
     "explanation": "The Salutation is a 'Greeting at the beginning of the letter that addresses the reader'."
   },
   {
-    "id": 14,
+    "id": 26,
     "question": "Which of the following should be emphasized in the 'Academic Background' section?",
     "options": [
       "Your hobbies and general interests.",
@@ -169,7 +314,7 @@ const workImmersionQuestions = [
     "explanation": "The Academic Background section should include 'Your high school achievements (especially relevant subjects)'."
   },
   {
-    "id": 15,
+    "id": 27,
     "question": "The 'Interest in the Program' section should explain what main points?",
     "options": [
       "Why you selected the course and how it aligns with your goals.",
@@ -181,7 +326,7 @@ const workImmersionQuestions = [
     "explanation": "This section explains 'Why you did choose this course or university' and 'How the program aligns with your goals'."
   },
   {
-    "id": 16,
+    "id": 28,
     "question": "What should the 'Career Goals' section of a Motivation Letter explicitly address?",
     "options": [
       "How the program will help you achieve future goals.",
@@ -193,7 +338,7 @@ const workImmersionQuestions = [
     "explanation": "This section should explain 'What do you hope to achieve after graduation' and 'How this program will help you reach those goals'."
   },
   {
-    "id": 17,
+    "id": 29,
     "question": "What is the primary function of the 'Conclusion' in a Motivation Letter?",
     "options": [
       "To express appreciation and reaffirm your commitment.",
@@ -205,7 +350,7 @@ const workImmersionQuestions = [
     "explanation": "The Conclusion should 'Express appreciation for the opportunity' and 'Reaffirm your commitment and enthusiasm'."
   },
   {
-    "id": 18,
+    "id": 30,
     "question": "According to the reviewer, what is the 'Signature' in a Motivation Letter?",
     "options": [
       "A formal sign-off with your name.",
@@ -217,7 +362,7 @@ const workImmersionQuestions = [
     "explanation": "The reviewer defines the Signature as 'A formal sign-off with your name'."
   },
   {
-    "id": 19,
+    "id": 31,
     "question": "Which of the following is a crucial tip for writing a Motivation Letter?",
     "options": [
       "Use an informal and conversational writing tone.",
@@ -229,223 +374,31 @@ const workImmersionQuestions = [
     "explanation": "One of the tips for writing a motivation letter is to 'Proofread for grammar and clarity'."
   },
   {
-    "id": 20,
+    "id": 32,
     "question": "What is the recommended length for a Motivation Letter?",
     "options": [
-      "One page.",
-      "Half a page.",
       "Two pages minimum.",
+      "Half a page.",
+      "One page.",
       "Three or more pages."
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "The tips section states to 'Keep it to 1 page (unless specified)'."
   },
   {
-    "id": 21,
-    "question": "Which of these accurately defines Work Immersion as a subject?",
-    "options": [
-      "A curriculum focused on hands-on experiences or simulations.",
-      "A curriculum based on online theoretical courses.",
-      "A curriculum for tertiary education.",
-      "A curriculum focused on gaining knowledge."
-    ],
-    "correct": 0,
-    "explanation": "Work Immersion is defined as a 'Subject of Senior High School curriculum involving hands-on experience or work simulation'."
-  },
-  {
-    "id": 22,
-    "question": "Work Immersion enables students to apply competencies and knowledge relevant to what?",
-    "options": [
-      "Their social connections.",
-      "Their personal hobbies.",
-      "Their chosen academic track.",
-      "Their specific family background."
-    ],
-    "correct": 2,
-    "explanation": "Work Immersion allows students to 'Apply their competencies and acquired knowledge relevant to their track'."
-  },
-  {
-    "id": 23,
-    "question": "The relationship between a partner institution and a school is called a what?",
-    "options": [
-      "A binding contract.",
-      "A structured partnership.",
-      "A professional friendship.",
-      "A business-oriented deal."
-    ],
-    "correct": 1,
-    "explanation": "The reviewer defines 'Partnership' as the 'Relationship between the partner institution and the school'."
-  },
-  {
-    "id": 24,
-    "question": "What type of institution is listed as applying Work Immersion?",
-    "options": [
-      "Junior high school institutions.",
-      "Vocational-Technical Institutions.",
-      "Public primary school institutions.",
-      "Private elementary school institutions."
-    ],
-    "correct": 1,
-    "explanation": "The reviewer lists 'Technical-Vocational Institutions' as one of the institutions that apply Work Immersion."
-  },
-  {
-    "id": 25,
-    "question": "The WIPIS can also be a representative of which party in the partnership?",
-    "options": [
-      "The enrolled work immersion student.",
-      "The Work Immersion Teacher.",
-      "The designated School Partnership Focal Person.",
-      "The partnering external institution."
-    ],
-    "correct": 3,
-    "explanation": "The WIPIS 'may also be representative of the partner institution in the partnership'."
-  },
-  {
-    "id": 26,
-    "question": "What is the main objective of the 'Introduction' section of a Motivation Letter?",
-    "options": [
-      "To state your purpose for the degree program.",
-      "To state your academic grades.",
-      "To list your favorite hobbies.",
-      "To summarize your future career goals."
-    ],
-    "correct": 0,
-    "explanation": "The introduction should 'State your purpose: the degree program you're applying for' and 'Briefly mention what motivated you to choose that field of study'."
-  },
-  {
-    "id": 27,
-    "question": "A Motivation Letter's 'Salutation' should be which of the following?",
-    "options": [
-      "Your full name.",
-      "A formal sign-off.",
-      "A greeting that directly addresses the reader.",
-      "A list of your personal skills."
-    ],
-    "correct": 2,
-    "explanation": "The Salutation is a 'Greeting at the beginning of the letter that addresses the reader'."
-  },
-  {
-    "id": 28,
-    "question": "Which of the following is a key tip for writing a motivation letter?",
-    "options": [
-      "Use slang to make the text relatable.",
-      "Limit its length to a maximum of two pages.",
-      "Use an informal and conversational tone.",
-      "Be honest, clear, and focused in your content."
-    ],
-    "correct": 3,
-    "explanation": "One of the tips is to 'Be honest, clear, and focused'."
-  },
-  {
-    "id": 29,
-    "question": "What is a 'Memorandum of Agreement'?",
-    "options": [
-      "A document listing a student's academic performance.",
-      "A legally binding document outlining specific partnership terms.",
-      "A letter of professional recommendation.",
-      "A student's personal and professional resume."
-    ],
-    "correct": 1,
-    "explanation": "A MOA is 'A legally binding document that spells out specific terms and conditions between partners entering into a partnership'."
-  },
-  {
-    "id": 30,
-    "question": "What is a primary responsibility of the School Partnership Focal Person (SPFP)?",
-    "options": [
-      "To directly supervise students.",
-      "To give grades to student work immersion outputs.",
-      "To seek partnerships between DepEd and institutions.",
-      "To help a student write their letter."
-    ],
-    "correct": 2,
-    "explanation": "The SPFP is the 'Person authorized to seek partnerships between DepEd and Institutions'."
-  },
-  {
-    "id": 31,
-    "question": "What is something a motivation letter is NOT intended to demonstrate?",
-    "options": [
-      "Aspiration for your academic goals.",
-      "Your readiness for university.",
-      "A strong fit for the company's culture.",
-      "Evidence of your financial stability."
-    ],
-    "correct": 3,
-    "explanation": "The reviewer does not mention anything about demonstrating financial stability."
-  },
-  {
-    "id": 32,
-    "question": "In a Motivation Letter, which section should contain information about awards?",
-    "options": [
-      "The letter's Header.",
-      "The Academic Background section.",
-      "The Career Goals section.",
-      "The letter's Conclusion."
-    ],
-    "correct": 1,
-    "explanation": "The 'Academic Background' section should include 'Any special awards, honors, or relevant projects'."
-  },
-  {
     "id": 33,
-    "question": "What is the purpose of Work Immersion in terms of future employment?",
+    "question": "What is a major component to include in the Pre-Immersion portion of the program?",
     "options": [
-      "To provide a permanent job.",
-      "To simulate real-world employment.",
-      "To provide a paid internship.",
-      "To get a scholarship or financial aid."
+      "The completion of a Work Immersion Portfolio.",
+      "A culimnating activity like a presentation.",
+      "The signing of the Memorandum of Agreement.",
+      "The daily attendance of the student at the venue."
     ],
-    "correct": 1,
-    "explanation": "One of the purposes of Work Immersion is 'For employment simulation'."
+    "correct": 2,
+    "explanation": "MOA signing is listed as a 'pre-immersion' activity."
   },
   {
     "id": 34,
-    "question": "What is the main purpose of the 'Conclusion' in a Motivation Letter?",
-    "options": [
-      "To list your personal hobbies and interests.",
-      "To express appreciation and reaffirm your commitment.",
-      "To state your past high school achievements.",
-      "To provide a reason for choosing the program."
-    ],
-    "correct": 1,
-    "explanation": "The conclusion should 'Express appreciation for the opportunity' and 'Reaffirm your commitment and enthusiasm'."
-  },
-  {
-    "id": 35,
-    "question": "The 'Salutation' of a Motivation Letter should be addressed to what?",
-    "options": [
-      "The applicant's full name.",
-      "The date of the letter.",
-      "The assigned program director.",
-      "A greeting for the reader."
-    ],
-    "correct": 3,
-    "explanation": "The salutation is a 'Greeting at the beginning of the letter that addresses the reader'."
-  },
-  {
-    "id": 36,
-    "question": "What does it mean for the WIPIS to be the counterpart of the teacher?",
-    "options": [
-      "They are two rival authority figures.",
-      "They have the same responsibilities.",
-      "They are the teacher and supervisor from the partner institution.",
-      "They are colleagues at the same school."
-    ],
-    "correct": 2,
-    "explanation": "The WIPIS is the 'Counterpart of the Work Immersion Teacher and may also be representative of the partner institution in the partnership'."
-  },
-  {
-    "id": 37,
-    "question": "What kind of information should the 'Header' of a Motivation Letter include?",
-    "options": [
-      "A photograph of the applicant.",
-      "Your past academic achievements.",
-      "A formal sign-off.",
-      "Your personal information and recipient details."
-    ],
-    "correct": 3,
-    "explanation": "The header 'includes personal contact information and the recipient's details'."
-  },
-  {
-    "id": 38,
     "question": "Which of these is a key tip for writing a motivation letter?",
     "options": [
       "Use a completely informal tone throughout.",
@@ -457,53 +410,499 @@ const workImmersionQuestions = [
     "explanation": "One of the tips for writing a motivation letter is to 'Use a formal but personal tone'."
   },
   {
-    "id": 39,
-    "question": "What is the main purpose of Work Immersion as per the reviewer?",
+    "id": 35,
+    "question": "According to the reviewer, how should a student dress for Work Immersion?",
     "options": [
-      "To apply competencies within an authentic environment.",
-      "To earn a salary.",
-      "To apply for a job.",
-      "To obtain knowledge about a specific career."
+      "In casual clothes, as long as they are comfortable.",
+      "In the required school uniform or proper attire as advised by the school and partner institution.",
+      "In a way that expresses personal style, with no restrictions.",
+      "In professional attire, such as a suit and tie, every day."
     ],
-    "correct": 0,
-    "explanation": "The reviewer states a purpose is to 'Apply their competencies in areas of specialization/applied subjects in authentic work environments'."
+    "correct": 1,
+    "explanation": "The document states that a student should dress 'In the required school uniform or proper attire as advised by the school and partner institution'."
+  },
+  {
+    "id": 36,
+    "question": "What is one key aspect of professional behavior in the workplace?",
+    "options": [
+      "Giving personal opinions on colleagues' work.",
+      "Prioritizing personal phone calls during work hours.",
+      "Being on time and attending meetings punctually.",
+      "Leaving the office whenever a task is completed."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer emphasizes the importance of 'Being on time and punctual'."
+  },
+  {
+    "id": 37,
+    "question": "When should a student ask questions for clarification on a task?",
+    "options": [
+      "When they are finished with the task.",
+      "Before the task is started, to ensure it is understood correctly.",
+      "During a lunch break, as to not interrupt work.",
+      "Only if they cannot complete the task on their own."
+    ],
+    "correct": 1,
+    "explanation": "The document states that asking 'questions to clarify tasks' is a sign of professionalism and should be done before starting."
+  },
+  {
+    "id": 38,
+    "question": "What is the proper way for a student to address supervisors and colleagues?",
+    "options": [
+      "By using nicknames to build rapport.",
+      "By using their first name, regardless of rank.",
+      "By using a formal title like 'Mr.', 'Ms.', or 'Mx.' unless instructed otherwise.",
+      "By only addressing them in writing."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer advises students to use formal titles to show respect."
+  },
+  {
+    "id": 39,
+    "question": "What is an important part of professional communication in the workplace?",
+    "options": [
+      "Gossiping about colleagues.",
+      "Keeping your phone's ringer on loud.",
+      "Using respectful language and a positive tone.",
+      "Sharing confidential information with your family."
+    ],
+    "correct": 2,
+    "explanation": "The document highlights 'Using respectful language' as part of professionalism."
   },
   {
     "id": 40,
-    "question": "Who is the 'School Partnership Focal Person'?",
+    "question": "How should a student handle receiving constructive criticism?",
     "options": [
-      "The direct Work Immersion Teacher for the students.",
-      "The designated principal of the high school.",
-      "The person who supervises students at the partner site.",
-      "The individual authorized to seek partnerships for DepEd."
+      "Ignore it, as it is just a personal opinion.",
+      "Defend your actions and explain why you did what you did.",
+      "Listen respectfully and view it as a learning opportunity.",
+      "Immediately report the person who gave the criticism."
     ],
-    "correct": 3,
-    "explanation": "The SPFP is the 'Person authorized to seek partnerships between DepEd and Institutions'."
+    "correct": 2,
+    "explanation": "The reviewer suggests that students should 'Listen respectfully and accept feedback gracefully'."
   },
   {
     "id": 41,
-    "question": "In which document are the specific terms and conditions of a partnership spelled out?",
+    "question": "What does a student need to be aware of when working in a laboratory?",
     "options": [
-      "A student's resume.",
-      "A Memorandum of Agreement (MOA).",
-      "A student's Motivation Letter.",
-      "The student's official report card."
+      "The location of the nearest restroom.",
+      "The location of the emergency exits and fire extinguishers.",
+      "The names of all the lab technicians.",
+      "The type of music the lab plays."
     ],
     "correct": 1,
-    "explanation": "The 'Memorandum of Agreement (MOA)' is a document that 'spells out specific terms and conditions between partners'."
+    "explanation": "The document emphasizes the importance of 'Being aware of surroundings, especially the location of emergency exits and fire extinguishers'."
   },
   {
     "id": 42,
-    "question": "What is a main goal of a Motivation Letter?",
+    "question": "Which of these is a crucial step in maintaining workplace safety?",
     "options": [
-      "To function as a student's final examination.",
-      "To serve as a summary of your academic transcript.",
-      "To be utilized as an application for a full-time job.",
-      "To demonstrate a student’s readiness for university."
+      "Using a broken tool to save time.",
+      "Ignoring safety procedures to complete a task faster.",
+      "Following all safety rules and wearing required personal protective equipment (PPE).",
+      "Using a phone while operating heavy machinery."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer instructs students to 'Follow all safety rules and procedures, including the use of Personal Protective Equipment (PPE)'."
+  },
+  {
+    "id": 43,
+    "question": "What should a student do in the event of a workplace accident?",
+    "options": [
+      "Try to handle it on their own without telling anyone.",
+      "Immediately report it to their supervisor or a designated safety officer.",
+      "Clean up the mess before anyone sees it.",
+      "Take a picture of the accident for their portfolio."
+    ],
+    "correct": 1,
+    "explanation": "The document states that a student must 'Immediately report any accidents or injuries to their supervisor'."
+  },
+  {
+    "id": 44,
+    "question": "What is the best way to handle a workplace hazard?",
+    "options": [
+      "Try to fix it yourself, even if you are not trained.",
+      "Take a photo of it and post it on social media.",
+      "Inform your supervisor or a safety officer immediately.",
+      "Ignore it and hope someone else will take care of it."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer advises that students should 'Report hazards to the supervisor'."
+  },
+  {
+    "id": 45,
+    "question": "What kind of information is considered confidential in the workplace?",
+    "options": [
+      "The company's marketing plan.",
+      "The names of all the employees.",
+      "The company's official website.",
+      "The company's social media accounts."
+    ],
+    "correct": 0,
+    "explanation": "The document lists 'Marketing plans' as confidential information."
+  },
+  {
+    "id": 46,
+    "question": "Which action violates workplace confidentiality?",
+    "options": [
+      "Discussing a project with a fellow student.",
+      "Sharing client information with an unauthorized person.",
+      "Talking about your daily tasks with your parents.",
+      "Discussing your schedule with your supervisor."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that students should 'Not share confidential information with unauthorized people'."
+  },
+  {
+    "id": 47,
+    "question": "When is it acceptable to post about your Work Immersion experience on social media?",
+    "options": [
+      "As long as you don't use the company's name.",
+      "At any time, as long as you do not tag your workplace.",
+      "Never, as it is a violation of confidentiality.",
+      "Only with written permission from the company and with the appropriate privacy settings."
     ],
     "correct": 3,
-    "explanation": "The reviewer states that the motivation letter should 'Demonstrate your motivation and readiness for university'."
+    "explanation": "The document states that students must 'Avoid sharing information on social media without proper authorization'."
+  },
+  {
+    "id": 48,
+    "question": "What is an important rule to follow when handling confidential documents?",
+    "options": [
+      "Leave them on your desk so everyone can see them.",
+      "Share them with your friends to show what you're working on.",
+      "Ensure they are stored securely and not left out in the open.",
+      "Take them home to work on in your free time."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer highlights the need to 'Ensure proper handling and storage of sensitive documents'."
+  },
+  {
+    "id": 49,
+    "question": "What is the primary benefit of successfully handling a challenging task during Work Immersion?",
+    "options": [
+      "It allows you to skip out on other tasks.",
+      "It proves you are ready to be hired full-time.",
+      "It builds confidence and shows you can handle responsibility.",
+      "It shows your supervisor that you can work alone."
+    ],
+    "correct": 2,
+    "explanation": "The document states that taking on challenges 'Builds confidence and shows that you can handle responsibility'."
+  },
+  {
+    "id": 50,
+    "question": "How can a student effectively build confidence in the workplace?",
+    "options": [
+      "By avoiding all tasks that seem difficult.",
+      "By keeping to themselves and not socializing with colleagues.",
+      "By reflecting on their successes and learning from mistakes.",
+      "By constantly seeking validation from their supervisor."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer advises students to 'Reflect on successes' and 'learn from your mistakes' to build confidence."
+  },
+  {
+    "id": 51,
+    "question": "What is the best approach to take when a colleague gives you a compliment?",
+    "options": [
+      "Dismiss the compliment and change the subject.",
+      "Accept it graciously and thank them for the kind words.",
+      "Immediately give a compliment back to them.",
+      "Tell them you do not believe it."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer suggests that students should 'Accept compliments gracefully'."
+  },
+  {
+    "id": 52,
+    "question": "When is the best time for a student to ask for feedback from their supervisor?",
+    "options": [
+      "Right before a big meeting, to show initiative.",
+      "At the end of the day, when everyone is busy leaving.",
+      "At a time that is convenient for the supervisor, as arranged beforehand.",
+      "Whenever you feel like it, without any warning."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer suggests that students should 'Arrange a convenient time to ask for feedback' from their supervisor."
+  },
+  {
+    "id": 53,
+    "question": "What does being proactive in the workplace mean?",
+    "options": [
+      "Waiting for a task to be assigned to you before starting anything.",
+      "Taking initiative and finding ways to contribute without being asked.",
+      "Arriving at work on time every day.",
+      "Asking many questions, even when the task is clear."
+    ],
+    "correct": 1,
+    "explanation": "Being proactive is defined as 'Taking initiative and finding ways to contribute'."
+  },
+  {
+    "id": 54,
+    "question": "What is the purpose of the 'Final Presentation' in Work Immersion?",
+    "options": [
+      "To receive a final grade.",
+      "To showcase key learnings and skills gained during the program.",
+      "To show the workplace your potential.",
+      "To get a job at the workplace."
+    ],
+    "correct": 1,
+    "explanation": "The final presentation is described as a platform to 'showcase key learnings and skills'."
+  },
+  {
+    "id": 55,
+    "question": "What is the main purpose of the 'Post-Immersion' phase?",
+    "options": [
+      "To begin the internship.",
+      "To choose a new track for the next school year.",
+      "To evaluate the immersion experience and reflect on outcomes.",
+      "To secure a permanent job with the partner institution."
+    ],
+    "correct": 2,
+    "explanation": "The Post-Immersion phase is for 'Evaluation and reflection' of the experience."
+  },
+  {
+    "id": 56,
+    "question": "What is the significance of the 'parental consent' document?",
+    "options": [
+      "It is an optional document for the school's records.",
+      "It is a mandatory pre-immersion requirement for the student to participate.",
+      "It is a legal contract between the school and the partner institution.",
+      "It is a form to be filled out only if an accident occurs."
+    ],
+    "correct": 1,
+    "explanation": "Parental consent is described as a 'pre-immersion' requirement for a student's participation."
+  },
+  {
+    "id": 57,
+    "question": "What is one key responsibility of the School Partnership Focal Person?",
+    "options": [
+      "To conduct daily visits to all immersion venues.",
+      "To ensure all students have proper medical insurance.",
+      "To seek and secure partnerships with external institutions.",
+      "To provide feedback to the students after the immersion."
+    ],
+    "correct": 2,
+    "explanation": "The SPFP is the 'Person authorized to seek partnerships between DepEd and Institutions'."
+  },
+  {
+    "id": 58,
+    "question": "How should students handle their personal belongings at the workplace?",
+    "options": [
+      "Leave them out in the open, as a sign of trust.",
+      "Ensure they are stored in a secure and designated area.",
+      "Leave them with a colleague for safekeeping.",
+      "Bring only what is absolutely necessary and nothing more."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer suggests students should 'secure personal belongings' in a safe area."
+  },
+  {
+    "id": 59,
+    "question": "What is the primary reason for a student to wear proper attire during Work Immersion?",
+    "options": [
+      "To avoid getting dirty.",
+      "To make a good impression and show respect for the workplace.",
+      "To show off their personal style.",
+      "To make it easier for them to move around."
+    ],
+    "correct": 1,
+    "explanation": "Proper attire is a key part of showing professionalism and making a good impression."
+  },
+  {
+    "id": 60,
+    "question": "What is a major component of the 'During Immersion' phase?",
+    "options": [
+      "The signing of the MOA.",
+      "The final presentation.",
+      "The actual work simulation or experience.",
+      "The selection of a track."
+    ],
+    "correct": 2,
+    "explanation": "The 'During Immersion' phase is characterized by the 'actual work immersion proper'."
+  },
+  {
+    "id": 61,
+    "question": "What is the main purpose of a 'Student Portfolio'?",
+    "options": [
+      "To provide proof of attendance.",
+      "To document the student's learning and experiences.",
+      "To get a passing grade in the subject.",
+      "To show the student's personal hobbies."
+    ],
+    "correct": 1,
+    "explanation": "A student portfolio is a 'collection of a student's outputs and insights from the Work Immersion program'."
+  },
+  {
+    "id": 62,
+    "question": "What is the primary characteristic of a student with a 'B' rating?",
+    "options": [
+      "Outstanding performance.",
+      "Satisfactory performance.",
+      "Needs improvement.",
+      "Unsatisfactory performance."
+    ],
+    "correct": 1,
+    "explanation": "A 'B' rating corresponds to 'Satisfactory' performance."
+  },
+  {
+    "id": 63,
+    "question": "What is the 'Introduction' section of a Motivation Letter for?",
+    "options": [
+      "To state your purpose and mention your motivation for the field.",
+      "To list your past job experiences.",
+      "To describe your family background.",
+      "To provide your complete academic history."
+    ],
+    "correct": 0,
+    "explanation": "The introduction states the purpose and briefly mentions what motivated you to choose that field of study."
+  },
+  {
+    "id": 64,
+    "question": "Which of these is a key tip for writing a Motivation Letter?",
+    "options": [
+      "Make it as verbose and long as possible.",
+      "Be completely informal to show your personality.",
+      "Avoid showing your passion for the subject.",
+      "Be honest, clear, and focused on the topic."
+    ],
+    "correct": 3,
+    "explanation": "The reviewer lists 'Be honest, clear, and focused' as a tip."
+  },
+  {
+    "id": 65,
+    "question": "What should a student do if they are running late for their work immersion?",
+    "options": [
+      "Just show up when they get there.",
+      "Call or message their supervisor to inform them and apologize.",
+      "Wait until the next day to explain their tardiness.",
+      "Ask a colleague to clock them in."
+    ],
+    "correct": 1,
+    "explanation": "Being professional means communicating when you are late."
+  },
+  {
+    "id": 66,
+    "question": "What is a good way to demonstrate initiative at the workplace?",
+    "options": [
+      "By constantly asking for new tasks, even when you have work to do.",
+      "By identifying areas where you can help without being prompted.",
+      "By complaining about tasks that you don't want to do.",
+      "By staying quiet and hoping to go unnoticed."
+    ],
+    "correct": 1,
+    "explanation": "Taking initiative is a key part of professionalism, which involves finding ways to contribute without being asked."
+  },
+  {
+    "id": 67,
+    "question": "How can a student demonstrate good communication skills at the workplace?",
+    "options": [
+      "By speaking loudly so everyone can hear you.",
+      "By being clear, concise, and respectful in all interactions.",
+      "By only using text messages to communicate.",
+      "By avoiding eye contact when speaking to others."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer highlights 'Using respectful and clear language' as a key part of communication."
+  },
+  {
+    "id": 68,
+    "question": "When in the workplace, what should a student do with their cell phone?",
+    "options": [
+      "Use it for all personal calls and social media updates.",
+      "Keep it on silent and use it only for emergencies or work-related tasks, if allowed.",
+      "Leave it at home to avoid distraction.",
+      "Share their phone number with all colleagues."
+    ],
+    "correct": 1,
+    "explanation": "Professionalism at work requires minimizing personal phone use."
+  },
+  {
+    "id": 69,
+    "question": "What is the main benefit of maintaining confidentiality in the workplace?",
+    "options": [
+      "It prevents personal information from being shared.",
+      "It helps protect the company's integrity and intellectual property.",
+      "It allows students to have access to more information.",
+      "It ensures that a student will get a good grade."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that confidentiality helps to protect the 'integrity' of the company."
+  },
+  {
+    "id": 70,
+    "question": "How can a student build confidence through reflection?",
+    "options": [
+      "By writing down a list of their weaknesses.",
+      "By only thinking about their failures and what they could have done better.",
+      "By taking time to reflect on their successes and how they achieved them.",
+      "By ignoring their mistakes and moving on quickly."
+    ],
+    "correct": 2,
+    "explanation": "The document suggests that students should 'reflect on successes' to build confidence."
+  },
+  {
+    "id": 71,
+    "question": "What should a student do if they feel overwhelmed with a task?",
+    "options": [
+      "Quit the task and move on to something else.",
+      "Keep quiet and try to figure it out alone.",
+      "Communicate their feelings to their supervisor and ask for help.",
+      "Tell their friends about it on social media."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer suggests that communicating with supervisors is a way to build confidence."
+  },
+  {
+    "id": 72,
+    "question": "What is the primary role of a Work Immersion Teacher?",
+    "options": [
+      "To give students a final grade.",
+      "To orient and monitor the students throughout the program.",
+      "To ensure the partner institution is a good fit for the company.",
+      "To provide financial support to the students."
+    ],
+    "correct": 1,
+    "explanation": "The Work Immersion Teacher is responsible for 'Orienting and monitoring students'."
+  },
+  {
+    "id": 73,
+    "question": "Which of these is a key responsibility for a student during the Work Immersion?",
+    "options": [
+      "To secure their own insurance coverage.",
+      "To get paid for all the hours they work.",
+      "To report to the Work Immersion venue punctually.",
+      "To find a replacement if they can't attend."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer lists 'Report to the Work Immersion venue' as a responsibility for the learner."
+  },
+  {
+    "id": 74,
+    "question": "What is the purpose of the 'Signature' in a Motivation Letter?",
+    "options": [
+      "To indicate that the document is a legal contract.",
+      "To formally end the letter with the writer's name.",
+      "To signify the end of the letter.",
+      "To provide a place for a handwritten signature."
+    ],
+    "correct": 1,
+    "explanation": "The signature is defined as a 'formal sign-off with your name'."
+  },
+  {
+    "id": 75,
+    "question": "What is the importance of a student portfolio?",
+    "options": [
+      "It is a legal document that proves the student's identity.",
+      "It is a collection of the student's outputs that documents their learning journey.",
+      "It is a mandatory requirement for getting a job after graduation.",
+      "It is a document used to decide a student's final grade."
+    ],
+    "correct": 1,
+    "explanation": "The student portfolio is defined as a 'collection of a student's outputs and insights from the Work Immersion program'."
   }
+
+
 
 ];
 
