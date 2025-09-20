@@ -342,12 +342,50 @@ class QuizSystem {
         const answered = this.userAnswers.filter(answer => answer !== null).length;
         const percentage = Math.round((this.currentQuestionIndex + 1) / this.shuffledQuestions.length * 100);
         
-        // Update progress bar
-        document.getElementById('progress-fill').style.width = `${percentage}%`;
-        document.getElementById('progress-percent').textContent = percentage;
+        // Update current question number
+        const currentQuestionEl = document.getElementById('current-question');
+        if (currentQuestionEl) {
+            currentQuestionEl.textContent = this.currentQuestionIndex + 1;
+        }
         
-        // Update answered count
-        document.getElementById('answered-count').textContent = answered;
+        // Update total questions
+        const totalQuestionsEl = document.getElementById('total-questions');
+        if (totalQuestionsEl) {
+            totalQuestionsEl.textContent = this.shuffledQuestions.length;
+        }
+        
+        // Update percentage display
+        const percentageTextEl = document.getElementById('progress-percent') || document.getElementById('progress-percentage');
+        if (percentageTextEl) {
+            percentageTextEl.textContent = `${percentage}%`;
+        }
+        
+        // Update progress bar
+        const progressFillEl = document.getElementById('progress-fill') || document.getElementById('progress-bar');
+        if (progressFillEl) {
+            progressFillEl.style.width = `${percentage}%`;
+        }
+        
+        // Update progress glow
+        const progressGlowEl = document.getElementById('progress-glow');
+        if (progressGlowEl) {
+            progressGlowEl.style.width = `${percentage}%`;
+        }
+        
+        // Update circular progress ring
+        const progressRingEl = document.getElementById('progress-ring');
+        if (progressRingEl) {
+            const circumference = 2 * Math.PI * 16; // radius = 16
+            const offset = circumference - (percentage / 100) * circumference;
+            progressRingEl.style.strokeDasharray = `${circumference} ${circumference}`;
+            progressRingEl.style.strokeDashoffset = offset;
+        }
+        
+        // Update answered count (if element exists)
+        const answeredCountEl = document.getElementById('answered-count');
+        if (answeredCountEl) {
+            answeredCountEl.textContent = answered;
+        }
     }
 
     updateControls() {
