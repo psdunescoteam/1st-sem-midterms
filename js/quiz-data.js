@@ -2186,7 +2186,815 @@ const contemporaryArtsQuestions = [
   }
 ];
 
+// Empowerment Technologies Quiz Data - 67 Questions
+const empowermentTechnologiesQuestions = [
+  {
+    "id": 1,
+    "question": "What is the primary purpose of a firewall in network security?",
+    "options": [
+      "To monitor website traffic.",
+      "To prevent unauthorized access to a network.",
+      "To encrypt all data transmissions.",
+      "To scan for viruses in emails."
+    ],
+    "correct": 1,
+    "explanation": "Firewalls are defined as security tools that prevent unauthorized access to a network."
+  },
+  {
+    "id": 2,
+    "question": "Which of the following is NOT one of the four periods in the evolution of ICT?",
+    "options": [
+      "Electromechanical Period",
+      "Mechanical Period",
+      "Biological Period",
+      "Electronic Period"
+    ],
+    "correct": 2,
+    "explanation": "The four periods are Pre-Mechanical, Mechanical, Electromechanical, and Electronic. There is no 'Biological Period'."
+  },
+  {
+    "id": 3,
+    "question": "What is the main function of a Trojan horse malware?",
+    "options": [
+      "To replicate itself and spread to other computers.",
+      "To secretly steal user data and passwords.",
+      "To appear as a legitimate file while hiding malicious code.",
+      "To display unwanted advertisements."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer defines a Trojan horse as a malicious program disguised as a legitimate file or application."
+  },
+  {
+    "id": 4,
+    "question": "The invention of the telephone is credited to which individual?",
+    "options": [
+      "Marconi",
+      "Samuel Morse",
+      "Alexander Graham Bell",
+      "Charles Babbage"
+    ],
+    "correct": 2,
+    "explanation": "Alexander Graham Bell is credited with revolutionizing communications by inventing the telephone in 1876."
+  },
+  {
+    "id": 5,
+    "question": "What does MFA stand for in the context of internet security?",
+    "options": [
+      "Mainframe Authorization",
+      "Multifactor Authentication",
+      "Multi-Function Application",
+      "Malware Filtering Agent"
+    ],
+    "correct": 1,
+    "explanation": "MFA is an acronym for Multifactor Authentication, a process that requires several authentication mechanisms for computer access."
+  },
+  {
+    "id": 6,
+    "question": "During which period did the discovery of papyrus and paper occur?",
+    "options": [
+      "Electronic Period",
+      "Pre-Mechanical Period",
+      "Mechanical Period",
+      "Electromechanical Period"
+    ],
+    "correct": 1,
+    "explanation": "The Pre-Mechanical Period is characterized by the use of words and pictograms carved in rocks and the discovery of papyrus and paper."
+  },
+  {
+    "id": 7,
+    "question": "Who is known as the 'Father of the Modern Computer'?",
+    "options": [
+      "William Cooke",
+      "Blaise Pascal",
+      "Charles Babbage",
+      "Marconi"
+    ],
+    "correct": 2,
+    "explanation": "The reviewer explicitly names Charles Babbage as the 'Father of the Modern Computer'."
+  },
+  {
+    "id": 8,
+    "question": "A virus is a type of malware that does what?",
+    "options": [
+      "Displays pop-up ads and unwanted content.",
+      "Infects other programs and self-replicates.",
+      "Logs keystrokes to steal information.",
+      "Encrypts files and demands a ransom."
+    ],
+    "correct": 1,
+    "explanation": "A virus is defined as a malicious program that infects other programs and self-replicates, spreading to other computers."
+  },
+  {
+    "id": 9,
+    "question": "Which of the following is considered a key component of Information and Communication Technology (ICT)?",
+    "options": [
+      "Datafication",
+      "Automotive Engineering",
+      "Biotechnology",
+      "Traditional Media"
+    ],
+    "correct": 0,
+    "explanation": "The reviewer lists Datafication as one of the ICT components, along with Internet Access and Cloud Computing."
+  },
+  {
+    "id": 10,
+    "question": "The ENIAC, a vacuum tube machine, was the first general-purpose what?",
+    "options": [
+      "Electronic digital computer",
+      "Mechanical calculator",
+      "Analytical engine",
+      "Single-circuit telegraph"
+    ],
+    "correct": 0,
+    "explanation": "The ENIAC (Electronic Numerical Integrator and Computer) is identified as the first general-purpose electronic digital computer."
+  },
+  {
+    "id": 11,
+    "question": "What is the main goal of phishing scams?",
+    "options": [
+      "To install a virus on a computer.",
+      "To obtain private and illicit information from users.",
+      "To display a large number of advertisements.",
+      "To slow down a computer's performance."
+    ],
+    "correct": 1,
+    "explanation": "Phishing is a scam created by cybercriminals who intend to ask for private and elicit information."
+  },
+  {
+    "id": 12,
+    "question": "What is the Abacus, invented in Mesopotamia, primarily known for?",
+    "options": [
+      "Being the first mechanical calculator.",
+      "The first device to use electricity for communication.",
+      "The first multipurpose computer.",
+      "An early computing device used for arithmetic calculations."
+    ],
+    "correct": 3,
+    "explanation": "The Abacus is listed under the Mechanical Period and is an early device for calculations, but it is not called the 'first mechanical calculator'."
+  },
+  {
+    "id": 13,
+    "question": "According to the reviewer, what is online ethics?",
+    "options": [
+      "A set of rules for proper online behavior.",
+      "The analysis of how the internet contributes to a good life for people and society.",
+      "A legal framework for regulating internet use.",
+      "A guide for creating secure passwords."
+    ],
+    "correct": 1,
+    "explanation": "Online ethics is defined as the analysis of the role that the internet plays in the development of a good life."
+  },
+  {
+    "id": 14,
+    "question": "Which company did John Bardeen, Walter Brattain, and William Shockley work for when they invented the transistor?",
+    "options": [
+      "Google Labs",
+      "Bell Labs",
+      "Microsoft Research",
+      "Apple"
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that the transistor was invented by the three individuals at Bell Labs."
+  },
+  {
+    "id": 15,
+    "question": "The first single-circuit telegraph was introduced by whom?",
+    "options": [
+      "Alexander Graham Bell",
+      "Samuel Morse",
+      "Blaise Pascal",
+      "Marconi"
+    ],
+    "correct": 1,
+    "explanation": "Samuel Morse in the USA introduced the first single-circuit telegraph."
+  },
+  {
+    "id": 16,
+    "question": "What is the primary difference between a virus and a worm?",
+    "options": [
+      "Worms steal data, while viruses only encrypt it.",
+      "Viruses only affect documents, while worms affect applications.",
+      "A virus requires a host program to spread, while a worm can self-replicate independently.",
+      "A worm is a type of phishing scam, while a virus is not."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer specifies that a virus needs to attach to a host program to replicate, while a worm self-replicates to infect other computers."
+  },
+  {
+    "id": 17,
+    "question": "What is the primary function of a Pascaline?",
+    "options": [
+      "To transmit information over electrical media.",
+      "To serve as a multipurpose computer.",
+      "To convert sound into electricity.",
+      "To be the first mechanical calculator."
+    ],
+    "correct": 3,
+    "explanation": "The Pascaline is identified as the 'First Mechanical Calculator'."
+  },
+  {
+    "id": 18,
+    "question": "What is the core principle of a secure browser?",
+    "options": [
+      "It allows all websites to be accessed.",
+      "It requires a VPN to be used at all times.",
+      "It employs control settings to protect its users.",
+      "It is a browser that is free to use."
+    ],
+    "correct": 2,
+    "explanation": "Secure browsers employ control settings to protect its users."
+  },
+  {
+    "id": 19,
+    "question": "Which type of malware is designed to display unwanted advertisements?",
+    "options": [
+      "Ransomware",
+      "Adware",
+      "Spyware",
+      "Worm"
+    ],
+    "correct": 1,
+    "explanation": "Adware is defined as a malware that displays unwanted advertisements or pop-ups."
+  },
+  {
+    "id": 20,
+    "question": "What is a key aspect of online etiquette regarding humor?",
+    "options": [
+      "Always use sarcasm to be witty.",
+      "Use as much humor as possible to lighten the mood.",
+      "Use appropriate humor and avoid sarcasm.",
+      "Never use humor online, as it can be misunderstood."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states to 'Use appropriate humor and avoid sarcasm'."
+  },
+  {
+    "id": 21,
+    "question": "The Analytical Engine, a multipurpose computer, was designed by whom?",
+    "options": [
+      "Samuel Morse",
+      "Blaise Pascal",
+      "Charles Babbage",
+      "William Cooke"
+    ],
+    "correct": 2,
+    "explanation": "Charles Babbage is credited with creating both the Difference Engine and the Analytical Engine."
+  },
+  {
+    "id": 22,
+    "question": "Which period in ICT history saw the invention of the internet and mobile phones?",
+    "options": [
+      "Pre-Mechanical Period",
+      "Electronic Period",
+      "Mechanical Period",
+      "Electromechanical Period"
+    ],
+    "correct": 1,
+    "explanation": "The Electronic Period is marked by the invention of the internet and mobile phones, among other telecommunications innovations."
+  },
+  {
+    "id": 23,
+    "question": "Which of the following is a key rule of online etiquette for respectful communication?",
+    "options": [
+      "Using only uppercase letters for emphasis.",
+      "Always being the first to comment on a post.",
+      "Respecting others' opinions and dealing with everyone in a humanitarian approach.",
+      "Sharing confidential information with a wide audience."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states: 'Respect others' opinions, deal with everyone in a humanitarian approach'."
+  },
+  {
+    "id": 24,
+    "question": "What is the main objective of a ransomware attack?",
+    "options": [
+      "To gain control of your computer remotely.",
+      "To hold your data for ransom by encrypting it.",
+      "To send you unwanted emails and spam.",
+      "To track your online activities and sell your data."
+    ],
+    "correct": 1,
+    "explanation": "Ransomware is a malware that encrypts files and holds them for ransom, demanding a payment to restore access."
+  },
+  {
+    "id": 25,
+    "question": "Information and Communication Technology (ICT) involves the processing of data using what?",
+    "options": [
+      "Only traditional pen and paper.",
+      "Only the internet and websites.",
+      "Different hardware and software components.",
+      "Only mobile phones and tablets."
+    ],
+    "correct": 2,
+    "explanation": "ICT is defined as the processing of data that includes sending, receiving, editing, locating, and saving using different hardware and software components."
+  },
+  {
+    "id": 26,
+    "question": "Which of the following is an example of an internet security strategy?",
+    "options": [
+      "Creating a simple password that is easy to remember.",
+      "Only using a public Wi-Fi network.",
+      "Using Multifactor Authentication (MFA).",
+      "Disabling all firewalls on your network."
+    ],
+    "correct": 2,
+    "explanation": "Multifactor Authentication (MFA) is listed as one of the key internet security strategies."
+  },
+  {
+    "id": 27,
+    "question": "What is spyware primarily designed to do?",
+    "options": [
+      "To install a virus on a computer.",
+      "To steal your personal data.",
+      "To encrypt your files and demand a ransom.",
+      "To display unwanted advertisements."
+    ],
+    "correct": 1,
+    "explanation": "Spyware is a type of malware designed to secretly steal user data and information without their consent."
+  },
+  {
+    "id": 28,
+    "question": "Who invented the radio by discovering that electrical waves travel through space?",
+    "options": [
+      "Marconi",
+      "William Cooke",
+      "Samuel Morse",
+      "Alexander Graham Bell"
+    ],
+    "correct": 0,
+    "explanation": "The reviewer states that Marconi discovered that electrical waves travel through space and can produce an effect far from the point."
+  },
+  {
+    "id": 29,
+    "question": "The Mechanical Period in ICT history is noted for the development of what?",
+    "options": [
+      "The first single-circuit telegraph.",
+      "The first mechanical calculators and computers.",
+      "The first general-purpose digital computers.",
+      "The discovery of papyrus and paper."
+    ],
+    "correct": 1,
+    "explanation": "The Mechanical Period includes the invention of the Abacus and the Pascaline, which is described as the first mechanical calculator."
+  },
+  {
+    "id": 30,
+    "question": "According to the reviewer, what should you do with a material you use in your work that belongs to someone else?",
+    "options": [
+      "Use it without acknowledging the owner.",
+      "Always acknowledge the owner of the idea or material.",
+      "Change it slightly so it is no longer theirs.",
+      "Only acknowledge the owner if asked to do so."
+    ],
+    "correct": 1,
+    "explanation": "A key rule of online etiquette is to 'Always acknowledge the owners of ideas and materials used'."
+  },
+  {
+    "id": 31,
+    "question": "The Electromechanical Period is characterized by the use of electricity for what purpose?",
+    "options": [
+      "For creating computers and mobile phones.",
+      "For a device that could transmit information over electrical media.",
+      "For powering vacuum tubes.",
+      "For mechanical calculators and engines."
+    ],
+    "correct": 1,
+    "explanation": "The Electromechanical Period is described as having the first device to use electricity to transmit information over an electrical media, the telegraph."
+  },
+  {
+    "id": 32,
+    "question": "What is the primary characteristic of a worm?",
+    "options": [
+      "It requires a host file to spread.",
+      "It hides within a legitimate program.",
+      "It self-replicates and spreads to other computers.",
+      "It monitors user activity secretly."
+    ],
+    "correct": 2,
+    "explanation": "A worm is a type of malware that self-replicates and spreads to other computers without needing to attach to an existing file."
+  },
+  {
+    "id": 33,
+    "question": "Which of the following is NOT a defined component of ICT?",
+    "options": [
+      "Internet Access",
+      "Communication Technology",
+      "Physical Storage",
+      "Cloud Computing"
+    ],
+    "correct": 2,
+    "explanation": "The reviewer lists Datafication, Internet Access, Cloud Computing, Software/hardware, Transactions, and Communication Technology as ICT components, but not 'Physical Storage'."
+  },
+  {
+    "id": 34,
+    "question": "What is the primary function of email security?",
+    "options": [
+      "To prevent unauthorized access to a network.",
+      "To protect from threats associated with email use.",
+      "To ensure all emails are sent and received instantly.",
+      "To store emails in the cloud."
+    ],
+    "correct": 1,
+    "explanation": "Email security is described as a strategy to 'significantly increase protection from threats associated with email use'."
+  },
+  {
+    "id": 35,
+    "question": "The Pre-Mechanical Period is characterized by the use of what to store information?",
+    "options": [
+      "Punch cards and vacuum tubes.",
+      "Words and pictograms carved in rocks.",
+      "The first mechanical calculators.",
+      "Electrical waves and signals."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that the Pre-Mechanical Period began with words and pictograms carved in rocks."
+  },
+  {
+    "id": 36,
+    "question": "What is the key difference between a Trojan horse and a virus?",
+    "options": [
+      "A Trojan horse replicates, while a virus does not.",
+      "A virus is hidden, while a Trojan horse is not.",
+      "A Trojan horse tricks the user into installing it, while a virus can infect a program on its own.",
+      "A virus is a type of malware, while a Trojan is not."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer defines a Trojan horse as a malicious program disguised as a legitimate one, whereas a virus is a program that infects other programs."
+  },
+  {
+    "id": 37,
+    "question": "What does a good life, according to the Markkula Center for Applied Ethics, refer to?",
+    "options": [
+      "A life of wealth and luxury.",
+      "A life of convenience and simplicity.",
+      "The kind of life we want for ourselves and for society overall.",
+      "A life free of all technology and internet use."
+    ],
+    "correct": 2,
+    "explanation": "Online ethics is defined as the analysis of the role that the internet plays in what philosophers call the development of a good life- the kind of life that we want for ourselves, for society overall, the kinds of people we want to be."
+  },
+  {
+    "id": 38,
+    "question": "What is the purpose of using Multifactor Authentication (MFA)?",
+    "options": [
+      "To simplify the login process.",
+      "To create a single password for multiple accounts.",
+      "To control computer access by requiring several authentication mechanisms.",
+      "To track user activity online."
+    ],
+    "correct": 2,
+    "explanation": "MFA is a process by which computer access is controlled by requiring several authentication mechanisms."
+  },
+  {
+    "id": 39,
+    "question": "What is a key aspect of online etiquette regarding communication tone?",
+    "options": [
+      "Using all capital letters to show enthusiasm.",
+      "Being courteous and avoiding foul language.",
+      "Including sarcasm to make your point.",
+      "Using as many exclamation points as possible."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer's tips for online etiquette include: 'Always be courteous' and 'Do not use foul language and incite anger by writing in uppercase and overusing the exclamation mark'."
+  },
+  {
+    "id": 40,
+    "question": "Who invented the telegraph in the UK in 1837?",
+    "options": [
+      "Alexander Graham Bell",
+      "Samuel Morse",
+      "William Cooke and Sir Charles Wheatstone",
+      "Marconi"
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states that the telegraph was invented by William Cooke and Sir Charles Wheatstone in the UK."
+  },
+  {
+    "id": 41,
+    "question": "What is the primary function of a worm?",
+    "options": [
+      "To steal data without the user's knowledge.",
+      "To encrypt files and demand a ransom.",
+      "To self-replicate and spread to other computers.",
+      "To track user keystrokes."
+    ],
+    "correct": 2,
+    "explanation": "A worm is a type of malware that self-replicates and spreads to other computers."
+  },
+  {
+    "id": 42,
+    "question": "The Pascaline, created by Blaise Pascal, is notable for being what?",
+    "options": [
+      "The first multipurpose computer.",
+      "The first mechanical calculator.",
+      "A device for converting sound to electricity.",
+      "The first electronic computer."
+    ],
+    "correct": 1,
+    "explanation": "The Pascaline is specifically identified as the 'First Mechanical Calculator'."
+  },
+  {
+    "id": 43,
+    "question": "What is the main danger of phishing scams?",
+    "options": [
+      "They can slow down your computer's performance.",
+      "They can steal your private and illicit information.",
+      "They can display many pop-up advertisements.",
+      "They can turn your computer into a zombie bot."
+    ],
+    "correct": 1,
+    "explanation": "Phishing scams are created by cybercriminals who intend to ask for private and elicit information."
+  },
+  {
+    "id": 44,
+    "question": "What is the core principle behind the Analytical Engine?",
+    "options": [
+      "It was designed as a single-circuit device.",
+      "It was a mechanical calculator.",
+      "It was a multipurpose computer.",
+      "It was the first general-purpose electronic computer."
+    ],
+    "correct": 2,
+    "explanation": "The Analytical Engine is described as a 'Multipurpose computer'."
+  },
+  {
+    "id": 45,
+    "question": "Which of the following best describes online etiquette?",
+    "options": [
+      "A set of rules for making money online.",
+      "Acceptable conduct that adheres to polite and respectful behaviors.",
+      "The study of ethical problems in the digital age.",
+      "A legal document for using the internet."
+    ],
+    "correct": 1,
+    "explanation": "Online etiquette is defined as 'Acceptable conduct that adheres to polite behaviors and respectful manners'."
+  },
+  {
+    "id": 46,
+    "question": "What is the function of a firewall?",
+    "options": [
+      "To give you unlimited internet access.",
+      "To track unauthorized logins.",
+      "To prevent unauthorized access to a network.",
+      "To block all incoming emails."
+    ],
+    "correct": 2,
+    "explanation": "Firewalls are security tools that prevent unauthorized access to a network."
+  },
+  {
+    "id": 47,
+    "question": "The invention of the transistor at Bell Labs occurred during which period?",
+    "options": [
+      "Pre-Mechanical Period",
+      "Mechanical Period",
+      "Electromechanical Period",
+      "Electronic Period"
+    ],
+    "correct": 3,
+    "explanation": "The transistor was invented during the Electronic Period (1940 up to present)."
+  },
+  {
+    "id": 48,
+    "question": "What is the main difference between a worm and a virus?",
+    "options": [
+      "A worm needs a host to spread, while a virus can self-replicate.",
+      "A virus needs a host to spread, while a worm can self-replicate.",
+      "A virus is a type of spyware, while a worm is not.",
+      "A worm is a malicious program, while a virus is not."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that a virus requires a host to spread, while a worm self-replicates and spreads on its own."
+  },
+  {
+    "id": 49,
+    "question": "What should you NOT do when using online humor?",
+    "options": [
+      "Use appropriate humor.",
+      "Avoid sarcasm.",
+      "Use as much sarcasm as possible.",
+      "Make sure your humor is not offensive."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states: 'Use appropriate humor and avoid sarcasm'."
+  },
+  {
+    "id": 50,
+    "question": "Which of the following is a key aspect of email security?",
+    "options": [
+      "Using a single password for all email accounts.",
+      "Establishing a multilayered and comprehensive security system.",
+      "Turning off all spam filters.",
+      "Sharing your email password with a trusted friend."
+    ],
+    "correct": 1,
+    "explanation": "Email security is described as establishing a multilayered and comprehensive security system."
+  },
+  {
+    "id": 51,
+    "question": "What is the purpose of the ENIAC?",
+    "options": [
+      "To serve as the first multipurpose computer.",
+      "To be the first general-purpose electronic digital computer.",
+      "To be the first mechanical calculator.",
+      "To be the first device to use electricity to transmit information."
+    ],
+    "correct": 1,
+    "explanation": "The ENIAC is identified as the 'first general purpose electronic digital computer'."
+  },
+  {
+    "id": 52,
+    "question": "What is the primary characteristic of the Electronic Period in ICT history?",
+    "options": [
+      "The development of the first mechanical calculators.",
+      "The use of words and pictograms for communication.",
+      "The invention of the internet and mobile phones.",
+      "The use of electricity to transmit information over wires."
+    ],
+    "correct": 2,
+    "explanation": "The Electronic Period is defined by the invention of the internet and mobile phones, among other telecommunications networks."
+  },
+  {
+    "id": 53,
+    "question": "What is the main characteristic of a worm?",
+    "options": [
+      "It requires a host file to spread.",
+      "It can self-replicate and spread to other computers.",
+      "It is a scam that steals personal information.",
+      "It is a program that displays unwanted advertisements."
+    ],
+    "correct": 1,
+    "explanation": "A worm is a type of malware that self-replicates and spreads to other computers without needing to attach to a host file."
+  },
+  {
+    "id": 54,
+    "question": "What is the first line of defense among networks?",
+    "options": [
+      "Antivirus software.",
+      "A firewall.",
+      "A strong password.",
+      "A secure browser."
+    ],
+    "correct": 1,
+    "explanation": "Firewalls are described as the 'first line of defense among networks'."
+  },
+  {
+    "id": 55,
+    "question": "What is a key principle of online ethics?",
+    "options": [
+      "Sharing all of your personal information online.",
+      "Keeping your online activities a secret from everyone.",
+      "Analyzing the internet's role in the development of a good life.",
+      "Only using the internet for entertainment purposes."
+    ],
+    "correct": 2,
+    "explanation": "Online ethics involves the analysis of the role that the internet plays in what philosophers call the development of a good life."
+  },
+  {
+    "id": 56,
+    "question": "What type of malware is a Trojan horse?",
+    "options": [
+      "A program that spreads through a network.",
+      "A program that displays pop-up ads.",
+      "A program that appears to be a legitimate file but is malicious.",
+      "A program that encrypts files for ransom."
+    ],
+    "correct": 2,
+    "explanation": "A Trojan horse is a type of malware that is disguised as a legitimate file or application."
+  },
+  {
+    "id": 57,
+    "question": "What is the purpose of the Pascaline?",
+    "options": [
+      "To transmit signals over a long distance.",
+      "To perform calculations as the first mechanical calculator.",
+      "To create multipurpose computers.",
+      "To convert sound into electricity."
+    ],
+    "correct": 1,
+    "explanation": "The Pascaline is identified as the 'First Mechanical Calculator'."
+  },
+  {
+    "id": 58,
+    "question": "What is the primary function of a telephone, as invented by Alexander Graham Bell?",
+    "options": [
+      "To send electrical waves through space.",
+      "To transmit information over electrical media.",
+      "To convert sound into electricity and transmit it through copper wire.",
+      "To serve as a multipurpose computer."
+    ],
+    "correct": 2,
+    "explanation": "The telephone converts sound into electricity and enables the telephone network to transmit it through copper wire."
+  },
+  {
+    "id": 59,
+    "question": "Which of the following is an example of an internet security strategy?",
+    "options": [
+      "Disabling your browser's security settings.",
+      "Using a browser that is not regularly updated.",
+      "Employing a multilayered and comprehensive email security.",
+      "Downloading files from unknown sources."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states that a multilayered and comprehensive email security is a key internet security strategy."
+  },
+  {
+    "id": 60,
+    "question": "In the context of online etiquette, what does 'think before you act' mean?",
+    "options": [
+      "Always ask for permission before posting.",
+      "Consider the potential impact of your words and actions online before you do them.",
+      "Do not post anything online without consulting a friend first.",
+      "Avoid all online interactions to prevent mistakes."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer concludes the section on online etiquette with the phrase 'Always think before you act!' which implies considering the impact of your actions."
+  },
+  {
+    "id": 61,
+    "question": "Which of the following is NOT a type of malware mentioned in the reviewer?",
+    "options": [
+      "Worm",
+      "Trojan Horse",
+      "Phishing",
+      "Adware"
+    ],
+    "correct": 2,
+    "explanation": "Phishing is a type of scam, not a type of malware, although it is a security threat."
+  },
+  {
+    "id": 62,
+    "question": "What is the main characteristic of the Mechanical Period?",
+    "options": [
+      "The use of paper for writing.",
+      "The invention of the telegraph.",
+      "The use of mechanical devices like the Abacus and Pascaline.",
+      "The invention of the internet."
+    ],
+    "correct": 2,
+    "explanation": "The Mechanical Period is noted for the development of mechanical devices such as the Abacus and Pascaline."
+  },
+  {
+    "id": 63,
+    "question": "What is the primary function of a worm?",
+    "options": [
+      "To steal personal data.",
+      "To self-replicate and spread to other computers.",
+      "To display unwanted ads.",
+      "To lock files for ransom."
+    ],
+    "correct": 1,
+    "explanation": "A worm is a type of malware that self-replicates and spreads to other computers."
+  },
+  {
+    "id": 64,
+    "question": "Which of the following best describes online ethics?",
+    "options": [
+      "A guide for creating strong passwords.",
+      "A set of laws for internet use.",
+      "The analysis of the internet's role in the development of a good life.",
+      "A collection of polite online behaviors."
+    ],
+    "correct": 2,
+    "explanation": "Online ethics is defined as the analysis of the internet's role in the development of a good life for people and society."
+  },
+  {
+    "id": 65,
+    "question": "What does a Trojan horse do?",
+    "options": [
+      "It is a program that appears to be legitimate but contains a virus.",
+      "It is a program that spreads to other computers by attaching to a host program.",
+      "It is a program that displays unwanted ads.",
+      "It is a program that can self-replicate and spread to other computers."
+    ],
+    "correct": 0,
+    "explanation": "A Trojan horse is a type of malware that is disguised as a legitimate file or application to trick a user into installing it."
+  },
+  {
+    "id": 66,
+    "question": "The invention of the radio is attributed to whom?",
+    "options": [
+      "Marconi",
+      "Blaise Pascal",
+      "Charles Babbage",
+      "Samuel Morse"
+    ],
+    "correct": 0,
+    "explanation": "The reviewer states that Marconi invented the radio in 1894."
+  },
+  {
+    "id": 67,
+    "question": "What is the main purpose of email security?",
+    "options": [
+      "To ensure that all emails are delivered instantly.",
+      "To protect from threats associated with email use.",
+      "To allow the user to send and receive large files.",
+      "To prevent unauthorized access to a network."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that a multilayered and comprehensive email security will significantly increase protection from threats associated with email use."
+  }
+];
+
 // Export the questions for use in the quiz system
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions };
+    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions };
 }

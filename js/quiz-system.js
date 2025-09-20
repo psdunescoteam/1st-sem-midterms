@@ -25,7 +25,8 @@ class QuizSystem {
         const subjectMap = {
             'Work-Immersion.html': 'work-immersion',
             'General-Chemistry.html': 'general-chemistry',
-            'Contemporary-Arts.html': 'contemporary-arts'
+            'Contemporary-Arts.html': 'contemporary-arts',
+            'Empowerment-Technologies.html': 'empowerment-technologies'
         };
         return subjectMap[currentPage] || 'work-immersion';
     }
@@ -34,7 +35,8 @@ class QuizSystem {
         const questionMap = {
             'work-immersion': workImmersionQuestions,
             'general-chemistry': generalChemistryQuestions,
-            'contemporary-arts': contemporaryArtsQuestions
+            'contemporary-arts': contemporaryArtsQuestions,
+            'empowerment-technologies': empowermentTechnologiesQuestions
         };
         return questionMap[subject] || workImmersionQuestions;
     }

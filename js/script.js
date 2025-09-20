@@ -76,6 +76,7 @@ class QuizApp {
                 'work-immersion': 'Work-Immersion.html',
                 'general-chemistry': 'General-Chemistry.html',
                 'contemporary-arts': 'Contemporary-Arts.html',
+                'empowerment-technologies': 'Empowerment-Technologies.html',
                 'e-tech': 'E-Tech.html',
                 'general-math': 'General-Math.html',
                 'pe-health': 'PE-Health.html',
