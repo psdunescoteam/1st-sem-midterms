@@ -158,6 +158,8 @@ body {
 .header-right {
     display: flex;
     align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 /* Theme Toggle Button (Navbar) */
@@ -371,27 +373,58 @@ body {
     align-items: center;
     gap: var(--spacing-xs);
     padding: var(--spacing-xs) var(--spacing-md);
-    background: var(--gradient-secondary);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: var(--white);
     text-decoration: none;
     border-radius: var(--radius);
     font-weight: 500;
     font-size: 0.9rem;
-    transition: var(--transition);
-    box-shadow: var(--shadow);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    border: 1px solid rgba(102, 126, 234, 0.2);
     white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.external-link-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.external-link-btn:hover::before {
+    left: 100%;
 }
 
 .external-link-btn:hover {
     transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
-    background: var(--gradient-warm);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #00d4ff 100%);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
 }
 
 .external-link-btn i.fa-external-link-alt {
     font-size: 0.75rem;
     opacity: 0.8;
+}
+
+/* Steph's Reviewers Button Variant - Sleek Purple Gradient */
+.external-link-btn.steph-reviewers {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: white;
+    position: relative;
+}
+
+.external-link-btn.steph-reviewers:hover {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #ec4899 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
 }
 
 /* Main Content */
@@ -763,6 +796,12 @@ body {
     .external-link-btn {
         font-size: 0.8rem;
         padding: 0.5rem var(--spacing-sm);
+    }
+    
+    .header-right {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-end;
     }
     
     .welcome-section h2 {
