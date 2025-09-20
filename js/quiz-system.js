@@ -24,7 +24,8 @@ class QuizSystem {
         const currentPage = window.location.pathname.split('/').pop();
         const subjectMap = {
             'Work-Immersion.html': 'work-immersion',
-            'General-Chemistry.html': 'general-chemistry'
+            'General-Chemistry.html': 'general-chemistry',
+            'Contemporary-Arts.html': 'contemporary-arts'
         };
         return subjectMap[currentPage] || 'work-immersion';
     }
@@ -32,7 +33,8 @@ class QuizSystem {
     loadQuestionsForSubject(subject) {
         const questionMap = {
             'work-immersion': workImmersionQuestions,
-            'general-chemistry': generalChemistryQuestions
+            'general-chemistry': generalChemistryQuestions,
+            'contemporary-arts': contemporaryArtsQuestions
         };
         return questionMap[subject] || workImmersionQuestions;
     }

@@ -1,653 +1,510 @@
 // Work Immersion Quiz Data - 54 Questions
 const workImmersionQuestions = [
-    {
-        id: 1,
-        question: "What is the primary purpose of Work Immersion in the K-12 curriculum?",
-        options: [
-            "To provide students with real workplace experience",
-            "To replace traditional classroom learning",
-            "To help students earn money while studying",
-            "To reduce the number of academic subjects"
-        ],
-        correct: 0,
-        explanation: "Work Immersion is designed to expose students to actual workplace settings and help them develop work-readiness skills."
-    },
-    {
-        id: 2,
-        question: "How many hours are typically required for Work Immersion in Senior High School?",
-        options: [
-            "40 hours",
-            "60 hours",
-            "80 hours",
-            "100 hours"
-        ],
-        correct: 2,
-        explanation: "The standard requirement for Work Immersion is 80 hours of actual workplace exposure."
-    },
-    {
-        id: 3,
-        question: "Which document serves as the agreement between the school and the partner institution for Work Immersion?",
-        options: [
-            "Student Contract",
-            "Memorandum of Agreement (MOA)",
-            "Work Permit",
-            "Internship Letter"
-        ],
-        correct: 1,
-        explanation: "A Memorandum of Agreement (MOA) formalizes the partnership between educational institutions and industry partners."
-    },
-    {
-        id: 4,
-        question: "What is the role of the Work Immersion Coordinator?",
-        options: [
-            "To evaluate student performance only",
-            "To manage and oversee the entire Work Immersion program",
-            "To provide transportation for students",
-            "To replace workplace supervisors"
-        ],
-        correct: 1,
-        explanation: "The Work Immersion Coordinator manages all aspects of the program including partnerships, student placement, and monitoring."
-    },
-    {
-        id: 5,
-        question: "During Work Immersion, students are expected to:",
-        options: [
-            "Work as regular employees with full responsibilities",
-            "Observe workplace activities and participate in guided tasks",
-            "Focus only on academic learning",
-            "Take over management roles"
-        ],
-        correct: 1,
-        explanation: "Work Immersion involves structured learning through observation and guided participation, not full employment."
-    },
-    {
-        id: 6,
-        question: "What is the minimum age requirement for students to participate in Work Immersion?",
-        options: [
-            "15 years old",
-            "16 years old",
-            "17 years old",
-            "18 years old"
-        ],
-        correct: 1,
-        explanation: "Students must be at least 16 years old to participate in Work Immersion programs for safety and legal reasons."
-    },
-    {
-        id: 7,
-        question: "Which of the following is NOT a valid Work Immersion venue?",
-        options: [
-            "Government offices",
-            "Private companies",
-            "Non-government organizations",
-            "Entertainment establishments with age restrictions"
-        ],
-        correct: 3,
-        explanation: "Work Immersion venues must be appropriate and safe for students, excluding establishments with age restrictions."
-    },
-    {
-        id: 8,
-        question: "The Work Immersion portfolio should include:",
-        options: [
-            "Daily time records only",
-            "Reflection papers, accomplishment reports, and certificates",
-            "Personal photos and social media posts",
-            "Academic grades from other subjects"
-        ],
-        correct: 1,
-        explanation: "The portfolio documents the learning experience through reflections, reports, and official certificates."
-    },
-    {
-        id: 9,
-        question: "What is the primary role of the Industry Partner Supervisor?",
-        options: [
-            "To grade the student's academic performance",
-            "To guide and mentor the student during workplace exposure",
-            "To replace school teachers",
-            "To handle student discipline issues"
-        ],
-        correct: 1,
-        explanation: "Industry supervisors provide guidance, mentorship, and workplace-specific learning opportunities."
-    },
-    {
-        id: 10,
-        question: "Work Immersion helps students develop which of the following skills?",
-        options: [
-            "Academic research skills only",
-            "21st-century skills and work-readiness competencies",
-            "Sports and recreation abilities",
-            "Artistic and creative talents exclusively"
-        ],
-        correct: 1,
-        explanation: "Work Immersion focuses on developing practical workplace skills, communication, teamwork, and professional competencies."
-    },
-    {
-        id: 11,
-        question: "The Work Immersion program is typically conducted during which grade level?",
-        options: [
-            "Grade 10",
-            "Grade 11",
-            "Grade 12",
-            "Grade 11 and 12"
-        ],
-        correct: 2,
-        explanation: "Work Immersion is primarily conducted during Grade 12, the final year of Senior High School."
-    },
-    {
-        id: 12,
-        question: "Which document tracks the student's daily activities during Work Immersion?",
-        options: [
-            "Academic transcript",
-            "Daily Time Record (DTR)",
-            "Report card",
-            "Attendance sheet"
-        ],
-        correct: 1,
-        explanation: "The Daily Time Record documents the student's presence and activities during each day of Work Immersion."
-    },
-    {
-        id: 13,
-        question: "Students are required to submit which type of reflection during Work Immersion?",
-        options: [
-            "Academic essays on theoretical concepts",
-            "Daily learning reflections and insights",
-            "Creative writing pieces",
-            "Mathematical problem solutions"
-        ],
-        correct: 1,
-        explanation: "Reflection papers help students process their workplace experiences and connect them to their learning."
-    },
-    {
-        id: 14,
-        question: "The Work Immersion program aligns with which educational philosophy?",
-        options: [
-            "Theoretical learning only",
-            "Experiential and contextual learning",
-            "Rote memorization",
-            "Competitive academic achievement"
-        ],
-        correct: 1,
-        explanation: "Work Immersion emphasizes learning through real-world experience and practical application."
-    },
-    {
-        id: 15,
-        question: "Which safety measure is most important during Work Immersion?",
-        options: [
-            "Wearing school uniforms daily",
-            "Following workplace safety protocols and guidelines",
-            "Bringing personal protective equipment from home",
-            "Working overtime to show dedication"
-        ],
-        correct: 1,
-        explanation: "Following established workplace safety protocols ensures student protection during Work Immersion."
-    },
-    {
-        id: 16,
-        question: "Work Immersion evaluation typically includes assessment from:",
-        options: [
-            "School teachers only",
-            "Industry supervisors only",
-            "Both school coordinators and industry supervisors",
-            "Students themselves only"
-        ],
-        correct: 2,
-        explanation: "Comprehensive evaluation involves both educational institutions and industry partners."
-    },
-    {
-        id: 17,
-        question: "The main goal of pre-immersion orientation is to:",
-        options: [
-            "Test student academic knowledge",
-            "Prepare students for workplace expectations and requirements",
-            "Assign work schedules",
-            "Collect student fees"
-        ],
-        correct: 1,
-        explanation: "Orientation prepares students for professional workplace behavior and expectations."
-    },
-    {
-        id: 18,
-        question: "Which behavior is expected from Work Immersion students?",
-        options: [
-            "Casual and relaxed attitude",
-            "Professional demeanor and positive work ethic",
-            "Competitive behavior with other students",
-            "Independent decision-making without supervision"
-        ],
-        correct: 1,
-        explanation: "Students must demonstrate professionalism and positive work attitudes during their immersion."
-    },
-    {
-        id: 19,
-        question: "Work Immersion certificates are issued by:",
-        options: [
-            "The Department of Education only",
-            "The partner industry/organization",
-            "Student organizations",
-            "Local government units"
-        ],
-        correct: 1,
-        explanation: "Partner organizations issue certificates recognizing student participation and completion."
-    },
-    {
-        id: 20,
-        question: "The post-immersion phase typically involves:",
-        options: [
-            "Immediate return to regular classes",
-            "Reflection, portfolio completion, and presentation of learnings",
-            "Extended vacation period",
-            "Advanced workplace training"
-        ],
-        correct: 1,
-        explanation: "Post-immersion activities help students reflect on and consolidate their learning experiences."
-    },
-    {
-        id: 21,
-        question: "Which track benefits most from Work Immersion in hospitality and tourism?",
-        options: [
-            "STEM",
-            "ABM",
-            "TVL",
-            "HUMSS"
-        ],
-        correct: 2,
-        explanation: "Technical-Vocational-Livelihood (TVL) track directly prepares students for specific industry sectors."
-    },
-    {
-        id: 22,
-        question: "Work Immersion helps bridge the gap between:",
-        options: [
-            "Elementary and high school",
-            "School and the workplace/higher education",
-            "Public and private education",
-            "Urban and rural schools"
-        ],
-        correct: 1,
-        explanation: "Work Immersion connects classroom learning with real-world application and career preparation."
-    },
-    {
-        id: 23,
-        question: "Students are prohibited from doing which activity during Work Immersion?",
-        options: [
-            "Observing workplace operations",
-            "Participating in guided tasks",
-            "Handling hazardous materials without proper training",
-            "Interacting with workplace personnel"
-        ],
-        correct: 2,
-        explanation: "Student safety is paramount; they cannot engage in dangerous activities without proper training and supervision."
-    },
-    {
-        id: 24,
-        question: "The Work Immersion program duration is typically:",
-        options: [
-            "1 week",
-            "2 weeks",
-            "1 month",
-            "3 months"
-        ],
-        correct: 1,
-        explanation: "Most Work Immersion programs span approximately 2 weeks to complete the required 80 hours."
-    },
-    {
-        id: 25,
-        question: "Which document serves as proof of student insurance during Work Immersion?",
-        options: [
-            "School ID",
-            "Medical certificate",
-            "Insurance policy or coverage certificate",
-            "Parent consent form"
-        ],
-        correct: 2,
-        explanation: "Proper insurance coverage is required to protect students during workplace exposure."
-    },
-    {
-        id: 26,
-        question: "Work Immersion placement should be based on:",
-        options: [
-            "Student's home address proximity",
-            "Parent's workplace preference",
-            "Student's track/strand and career interests",
-            "Random assignment by school"
-        ],
-        correct: 2,
-        explanation: "Placement should align with the student's academic track and career aspirations for meaningful learning."
-    },
-    {
-        id: 27,
-        question: "The ideal ratio of students to industry supervisor during Work Immersion is:",
-        options: [
-            "1:1 (one supervisor per student)",
-            "5:1 (five students per supervisor)",
-            "10:1 (ten students per supervisor)",
-            "No specific ratio required"
-        ],
-        correct: 1,
-        explanation: "Ideally, each student should have dedicated supervision for personalized guidance and mentoring."
-    },
-    {
-        id: 28,
-        question: "Work Immersion students should dress according to:",
-        options: [
-            "School uniform requirements",
-            "Personal fashion preferences",
-            "Workplace dress code and safety requirements",
-            "Latest fashion trends"
-        ],
-        correct: 2,
-        explanation: "Students must follow workplace dress codes and safety requirements, which may differ from school uniforms."
-    },
-    {
-        id: 29,
-        question: "Which communication skill is most emphasized during Work Immersion?",
-        options: [
-            "Academic writing",
-            "Professional workplace communication",
-            "Social media interaction",
-            "Casual conversation"
-        ],
-        correct: 1,
-        explanation: "Professional communication skills are essential for workplace success and are emphasized during immersion."
-    },
-    {
-        id: 30,
-        question: "The Work Immersion program helps students understand:",
-        options: [
-            "Theoretical concepts only",
-            "Industry standards and workplace culture",
-            "Academic research methods",
-            "Historical perspectives"
-        ],
-        correct: 1,
-        explanation: "Students gain insight into professional standards, workplace expectations, and industry culture."
-    },
-    {
-        id: 31,
-        question: "Which type of feedback is most valuable during Work Immersion?",
-        options: [
-            "Academic grades from tests",
-            "Constructive feedback on workplace performance",
-            "Peer evaluation from classmates",
-            "Self-assessment only"
-        ],
-        correct: 1,
-        explanation: "Constructive feedback from workplace supervisors helps students improve their professional skills."
-    },
-    {
-        id: 32,
-        question: "Work Immersion contributes to career readiness by:",
-        options: [
-            "Guaranteeing job placement after graduation",
-            "Providing networking opportunities and industry exposure",
-            "Replacing the need for college education",
-            "Eliminating competition in job markets"
-        ],
-        correct: 1,
-        explanation: "Work Immersion builds professional networks and provides valuable industry insights for career development."
-    },
-    {
-        id: 33,
-        question: "Students should handle confidential workplace information by:",
-        options: [
-            "Sharing it with classmates for discussion",
-            "Posting about it on social media",
-            "Maintaining strict confidentiality as required",
-            "Including it in school presentations"
-        ],
-        correct: 2,
-        explanation: "Professional ethics require maintaining confidentiality of sensitive workplace information."
-    },
-    {
-        id: 34,
-        question: "The Work Immersion schedule should:",
-        options: [
-            "Conflict with regular school hours",
-            "Be flexible according to student preferences",
-            "Follow the agreed-upon schedule with the partner organization",
-            "Be determined solely by parents"
-        ],
-        correct: 2,
-        explanation: "Scheduled commitments with industry partners must be respected and followed consistently."
-    },
-    {
-        id: 35,
-        question: "Which attitude is most important for Work Immersion success?",
-        options: [
-            "Competitive spirit against other students",
-            "Willingness to learn and adapt",
-            "Desire to challenge workplace rules",
-            "Focus on personal entertainment"
-        ],
-        correct: 1,
-        explanation: "A positive learning attitude and adaptability are crucial for maximizing the Work Immersion experience."
-    },
-    {
-        id: 36,
-        question: "Work Immersion helps students develop:",
-        options: [
-            "Academic research skills exclusively",
-            "Emotional intelligence and interpersonal skills",
-            "Mathematical computation abilities",
-            "Foreign language proficiency"
-        ],
-        correct: 1,
-        explanation: "Workplace exposure helps develop emotional intelligence, teamwork, and interpersonal communication skills."
-    },
-    {
-        id: 37,
-        question: "The most appropriate response to workplace conflict during Work Immersion is:",
-        options: [
-            "Immediately leave the workplace",
-            "Argue with supervisors or coworkers",
-            "Report to school coordinator and seek guidance",
-            "Handle it independently without informing anyone"
-        ],
-        correct: 2,
-        explanation: "School coordinators should be informed of workplace conflicts to ensure proper resolution and student support."
-    },
-    {
-        id: 38,
-        question: "Work Immersion portfolios are evaluated based on:",
-        options: [
-            "Quantity of pages only",
-            "Quality of reflection and documentation of learning",
-            "Artistic design and creativity",
-            "Personal opinions about the workplace"
-        ],
-        correct: 1,
-        explanation: "Portfolios demonstrate learning through thoughtful reflection and comprehensive documentation of experiences."
-    },
-    {
-        id: 39,
-        question: "Which technology skill is often developed during Work Immersion?",
-        options: [
-            "Gaming proficiency",
-            "Industry-specific software and digital tools",
-            "Social media management for personal use",
-            "Academic presentation software only"
-        ],
-        correct: 1,
-        explanation: "Students learn to use professional software and digital tools relevant to their chosen industry."
-    },
-    {
-        id: 40,
-        question: "The primary benefit of Work Immersion for career decision-making is:",
-        options: [
-            "Guaranteed job offers",
-            "Higher starting salaries",
-            "Informed career choices based on real experience",
-            "Elimination of need for further education"
-        ],
-        correct: 2,
-        explanation: "Real workplace exposure helps students make informed decisions about their future career paths."
-    },
-    {
-        id: 41,
-        question: "Work Immersion students should demonstrate:",
-        options: [
-            "Complete independence from supervision",
-            "Initiative while following workplace guidelines",
-            "Casual approach to work responsibilities",
-            "Preference for individual work only"
-        ],
-        correct: 1,
-        explanation: "Students should show initiative and proactive engagement while respecting workplace protocols."
-    },
-    {
-        id: 42,
-        question: "Which type of learning objective is emphasized in Work Immersion?",
-        options: [
-            "Memorization of theoretical concepts",
-            "Application of knowledge in real-world contexts",
-            "Competitive academic achievement",
-            "Individual creative expression"
-        ],
-        correct: 1,
-        explanation: "Work Immersion emphasizes practical application of classroom learning in authentic workplace settings."
-    },
-    {
-        id: 43,
-        question: "The role of parents/guardians in Work Immersion includes:",
-        options: [
-            "Daily workplace supervision of their child",
-            "Providing consent and support for the program",
-            "Determining workplace policies",
-            "Evaluating student performance"
-        ],
-        correct: 1,
-        explanation: "Parents provide necessary consent and emotional support while trusting the school-industry partnership."
-    },
-    {
-        id: 44,
-        question: "Work Immersion contributes to the development of:",
-        options: [
-            "Academic competition skills",
-            "Global competitiveness and employability",
-            "Individual artistic talents",
-            "Sports and physical abilities"
-        ],
-        correct: 1,
-        explanation: "The program develops skills that enhance students' competitiveness in the global job market."
-    },
-    {
-        id: 45,
-        question: "Which assessment method is commonly used in Work Immersion?",
-        options: [
-            "Multiple choice examinations",
-            "Performance-based assessment and observation",
-            "Essay writing competitions",
-            "Mathematical problem solving"
-        ],
-        correct: 1,
-        explanation: "Assessment focuses on observing student performance and workplace competency development."
-    },
-    {
-        id: 46,
-        question: "The Work Immersion experience should help students:",
-        options: [
-            "Avoid workplace responsibilities",
-            "Understand the value of work and professional ethics",
-            "Develop negative attitudes toward employment",
-            "Focus solely on personal benefits"
-        ],
-        correct: 1,
-        explanation: "Students develop appreciation for work, professional ethics, and understanding of workplace responsibilities."
-    },
-    {
-        id: 47,
-        question: "Industry partners benefit from Work Immersion by:",
-        options: [
-            "Getting free labor from students",
-            "Contributing to youth development and potential talent identification",
-            "Reducing their regular workforce",
-            "Avoiding corporate social responsibility"
-        ],
-        correct: 1,
-        explanation: "Partners contribute to education while potentially identifying future talent for their organizations."
-    },
-    {
-        id: 48,
-        question: "The most important preparation for Work Immersion is:",
-        options: [
-            "Purchasing expensive equipment",
-            "Developing positive attitude and basic workplace skills",
-            "Memorizing company history",
-            "Learning advanced technical skills independently"
-        ],
-        correct: 1,
-        explanation: "Positive attitude, basic professional skills, and work readiness are fundamental preparations."
-    },
-    {
-        id: 49,
-        question: "Work Immersion documentation should include:",
-        options: [
-            "Personal social activities only",
-            "Professional learning experiences and skill development",
-            "Criticism of workplace practices",
-            "Comparison with other students' experiences"
-        ],
-        correct: 1,
-        explanation: "Documentation focuses on professional learning, skill development, and meaningful workplace experiences."
-    },
-    {
-        id: 50,
-        question: "The success of Work Immersion is measured by:",
-        options: [
-            "Number of work hours completed only",
-            "Student's professional growth and skill development",
-            "Financial compensation received",
-            "Popularity with workplace staff"
-        ],
-        correct: 1,
-        explanation: "Success is measured by meaningful learning, skill development, and professional growth achieved."
-    },
-    {
-        id: 51,
-        question: "Which workplace skill is considered most transferable across different industries?",
-        options: [
-            "Technical equipment operation",
-            "Effective communication and teamwork",
-            "Industry-specific knowledge",
-            "Physical strength and endurance"
-        ],
-        correct: 1,
-        explanation: "Communication and teamwork skills are valuable and applicable across all industries and career paths."
-    },
-    {
-        id: 52,
-        question: "Work Immersion helps students understand the importance of:",
-        options: [
-            "Academic grades only",
-            "Punctuality, reliability, and professional behavior",
-            "Personal social media presence",
-            "Individual achievement over teamwork"
-        ],
-        correct: 1,
-        explanation: "Students learn the importance of professional behaviors that are essential for workplace success."
-    },
-    {
-        id: 53,
-        question: "The long-term impact of Work Immersion on students includes:",
-        options: [
-            "Guaranteed career success",
-            "Better preparation for future educational and career choices",
-            "Immediate job placement",
-            "Higher academic grades in all subjects"
-        ],
-        correct: 1,
-        explanation: "Work Immersion provides valuable experience that helps students make informed future decisions."
-    },
-    {
-        id: 54,
-        question: "Which aspect of Work Immersion contributes most to personal development?",
-        options: [
-            "Earning academic credits",
-            "Building self-confidence and professional identity",
-            "Completing required documentation",
-            "Meeting new people casually"
-        ],
-        correct: 1,
-        explanation: "The experience builds self-confidence, professional identity, and personal maturity through real-world exposure."
-    }
+  {
+    "id": 1,
+    "question": "Which specific DepEd Order series dictates the Work Immersion Guidelines?",
+    "options": [
+      "DepEd Order No. 20, Series of 2017",
+      "DepEd Order No. 30, Series of 2017",
+      "DepEd Order No. 40, Series of 2018",
+      "DepEd Order No. 10, Series of 2016"
+    ],
+    "correct": 1,
+    "explanation": "The reviewer specifies that the guidelines are 'Per DepEd Order No. 30, Series of 2017'."
+  },
+  {
+    "id": 2,
+    "question": "Which statement describes an invalid purpose of Work Immersion?",
+    "options": [
+      "To become familiar with the workplace.",
+      "To secure a guaranteed paid internship.",
+      "To engage in employment simulation.",
+      "To apply competencies in a real work setting."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer does not mention anything about securing a paid internship."
+  },
+  {
+    "id": 3,
+    "question": "Work Immersion is a requirement for graduation from which educational level?",
+    "options": [
+      "Junior High School",
+      "Primary School",
+      "Secondary education",
+      "Post-secondary education"
+    ],
+    "correct": 2,
+    "explanation": "The document states that Work Immersion is a 'Requirement for Graduation from secondary education'."
+  },
+  {
+    "id": 4,
+    "question": "Work Immersion is a dedicated subject within which school curriculum?",
+    "options": [
+      "The elementary education curriculum.",
+      "The collegiate education curriculum.",
+      "The senior high school curriculum.",
+      "The junior high school curriculum."
+    ],
+    "correct": 2,
+    "explanation": "Work Immersion is defined as a 'Subject of Senior High School curriculum'."
+  },
+  {
+    "id": 5,
+    "question": "Which aligns with the definition of a Partner Institution?",
+    "options": [
+      "An institution that can provide resources and expertise.",
+      "An institution designed for private school admissions.",
+      "A government office that handles job recruitments.",
+      "A non-profit organization offering public services."
+    ],
+    "correct": 0,
+    "explanation": "The reviewer defines Partner Institutions as 'Public or private institutions that are able and willing to lend expertise and resources'."
+  },
+  {
+    "id": 6,
+    "question": "What is the main function of a Memorandum of Agreement (MOA)?",
+    "options": [
+      "A document outlining student duties.",
+      "A legally binding document for a partnership's terms.",
+      "A contract for a student’s employment.",
+      "A schedule of a student’s tasks."
+    ],
+    "correct": 1,
+    "explanation": "A MOA is described as 'A legally binding document that spells out specific terms and conditions between partners'."
+  },
+  {
+    "id": 7,
+    "question": "Who is authorized to establish partnerships between DepEd and external institutions?",
+    "options": [
+      "The Work Immersion Teacher.",
+      "The School Partnership Focal Person.",
+      "The Work Immersion Partner Institution Supervisor.",
+      "The Senior High School Principal."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that the SPFP is the 'Person authorized to seek partnerships between DepEd and Institutions'."
+  },
+  {
+    "id": 8,
+    "question": "The WIPIS is the direct counterpart of which specific school personnel?",
+    "options": [
+      "The Work Immersion Teacher.",
+      "The School Partnership Focal Person.",
+      "The senior high school principal.",
+      "The school's guidance counselor."
+    ],
+    "correct": 0,
+    "explanation": "The reviewer defines the WIPIS as the 'Counterpart of the Work Immersion Teacher'."
+  },
+  {
+    "id": 9,
+    "question": "What is a main objective of writing a Motivation Letter?",
+    "options": [
+      "To serve as a general employment application.",
+      "To highlight academic and career aspirations.",
+      "To submit a formal request for a scholarship.",
+      "To provide a brief overview of one's resume."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer lists a purpose of a Motivation Letter as to 'Show academic goals and career aspirations'."
+  },
+  {
+    "id": 10,
+    "question": "Which of the following is NOT a defined part of a Motivation Letter?",
+    "options": [
+      "Header",
+      "Personal Statement",
+      "Introduction",
+      "Conclusion"
+    ],
+    "correct": 1,
+    "explanation": "The reviewer lists 'Header', 'Introduction', and 'Conclusion' as parts, but not a 'Personal Statement'."
+  },
+  {
+    "id": 11,
+    "question": "What is the key purpose of the 'Header' section in a Motivation Letter?",
+    "options": [
+      "To include a formal greeting to the reader.",
+      "To provide personal and recipient contact information.",
+      "To state the letter's main purpose.",
+      "To sign off with the author’s full name."
+    ],
+    "correct": 1,
+    "explanation": "The Header is the 'Section at the top of the page that includes personal contact information and the recipient's details'."
+  },
+  {
+    "id": 12,
+    "question": "What key detail should be mentioned briefly within the 'Introduction'?",
+    "options": [
+      "Your high school achievements.",
+      "Your long-term career goals.",
+      "Your motivation for choosing the field of study.",
+      "Your recent skills and achievements."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states that the introduction should 'Briefly mention what motivated you to choose that field of study'."
+  },
+  {
+    "id": 13,
+    "question": "What is the primary function of the 'Salutation' in a Motivation Letter?",
+    "options": [
+      "A greeting that addresses the reader.",
+      "The applicant's name and address.",
+      "The date on which the letter was written.",
+      "The name of the program you are applying to."
+    ],
+    "correct": 0,
+    "explanation": "The Salutation is a 'Greeting at the beginning of the letter that addresses the reader'."
+  },
+  {
+    "id": 14,
+    "question": "Which of the following should be emphasized in the 'Academic Background' section?",
+    "options": [
+      "Your hobbies and general interests.",
+      "Your plans for a future professional career.",
+      "High school achievements and relevant subjects.",
+      "The specific reasons for choosing this program."
+    ],
+    "correct": 2,
+    "explanation": "The Academic Background section should include 'Your high school achievements (especially relevant subjects)'."
+  },
+  {
+    "id": 15,
+    "question": "The 'Interest in the Program' section should explain what main points?",
+    "options": [
+      "Why you selected the course and how it aligns with your goals.",
+      "Any special awards or honors you have received.",
+      "Your personal hopes and aspirations after graduation.",
+      "Any professional work experience you possess."
+    ],
+    "correct": 0,
+    "explanation": "This section explains 'Why you did choose this course or university' and 'How the program aligns with your goals'."
+  },
+  {
+    "id": 16,
+    "question": "What should the 'Career Goals' section of a Motivation Letter explicitly address?",
+    "options": [
+      "How the program will help you achieve future goals.",
+      "Your performance during high school.",
+      "Your previous work setting experience.",
+      "Your hobbies and personal interests."
+    ],
+    "correct": 0,
+    "explanation": "This section should explain 'What do you hope to achieve after graduation' and 'How this program will help you reach those goals'."
+  },
+  {
+    "id": 17,
+    "question": "What is the primary function of the 'Conclusion' in a Motivation Letter?",
+    "options": [
+      "To express appreciation and reaffirm your commitment.",
+      "To summarize all of your skills and accomplishments.",
+      "To review the content of your academic background.",
+      "To restate the original purpose for writing the letter."
+    ],
+    "correct": 0,
+    "explanation": "The Conclusion should 'Express appreciation for the opportunity' and 'Reaffirm your commitment and enthusiasm'."
+  },
+  {
+    "id": 18,
+    "question": "According to the reviewer, what is the 'Signature' in a Motivation Letter?",
+    "options": [
+      "A formal sign-off with your name.",
+      "A required physical handwritten signature.",
+      "A short personal motivational motto.",
+      "Your full name and contact information."
+    ],
+    "correct": 0,
+    "explanation": "The reviewer defines the Signature as 'A formal sign-off with your name'."
+  },
+  {
+    "id": 19,
+    "question": "Which of the following is a crucial tip for writing a Motivation Letter?",
+    "options": [
+      "Use an informal and conversational writing tone.",
+      "Ensure the letter is as long as possible for detail.",
+      "Proofread it carefully for grammar and overall clarity.",
+      "Include personal photos to make it stand out."
+    ],
+    "correct": 2,
+    "explanation": "One of the tips for writing a motivation letter is to 'Proofread for grammar and clarity'."
+  },
+  {
+    "id": 20,
+    "question": "What is the recommended length for a Motivation Letter?",
+    "options": [
+      "One page.",
+      "Half a page.",
+      "Two pages minimum.",
+      "Three or more pages."
+    ],
+    "correct": 0,
+    "explanation": "The tips section states to 'Keep it to 1 page (unless specified)'."
+  },
+  {
+    "id": 21,
+    "question": "Which of these accurately defines Work Immersion as a subject?",
+    "options": [
+      "A curriculum focused on hands-on experiences or simulations.",
+      "A curriculum based on online theoretical courses.",
+      "A curriculum for tertiary education.",
+      "A curriculum focused on gaining knowledge."
+    ],
+    "correct": 0,
+    "explanation": "Work Immersion is defined as a 'Subject of Senior High School curriculum involving hands-on experience or work simulation'."
+  },
+  {
+    "id": 22,
+    "question": "Work Immersion enables students to apply competencies and knowledge relevant to what?",
+    "options": [
+      "Their social connections.",
+      "Their personal hobbies.",
+      "Their chosen academic track.",
+      "Their specific family background."
+    ],
+    "correct": 2,
+    "explanation": "Work Immersion allows students to 'Apply their competencies and acquired knowledge relevant to their track'."
+  },
+  {
+    "id": 23,
+    "question": "The relationship between a partner institution and a school is called a what?",
+    "options": [
+      "A binding contract.",
+      "A structured partnership.",
+      "A professional friendship.",
+      "A business-oriented deal."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer defines 'Partnership' as the 'Relationship between the partner institution and the school'."
+  },
+  {
+    "id": 24,
+    "question": "What type of institution is listed as applying Work Immersion?",
+    "options": [
+      "Junior high school institutions.",
+      "Vocational-Technical Institutions.",
+      "Public primary school institutions.",
+      "Private elementary school institutions."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer lists 'Technical-Vocational Institutions' as one of the institutions that apply Work Immersion."
+  },
+  {
+    "id": 25,
+    "question": "The WIPIS can also be a representative of which party in the partnership?",
+    "options": [
+      "The enrolled work immersion student.",
+      "The Work Immersion Teacher.",
+      "The designated School Partnership Focal Person.",
+      "The partnering external institution."
+    ],
+    "correct": 3,
+    "explanation": "The WIPIS 'may also be representative of the partner institution in the partnership'."
+  },
+  {
+    "id": 26,
+    "question": "What is the main objective of the 'Introduction' section of a Motivation Letter?",
+    "options": [
+      "To state your purpose for the degree program.",
+      "To state your academic grades.",
+      "To list your favorite hobbies.",
+      "To summarize your future career goals."
+    ],
+    "correct": 0,
+    "explanation": "The introduction should 'State your purpose: the degree program you're applying for' and 'Briefly mention what motivated you to choose that field of study'."
+  },
+  {
+    "id": 27,
+    "question": "A Motivation Letter's 'Salutation' should be which of the following?",
+    "options": [
+      "Your full name.",
+      "A formal sign-off.",
+      "A greeting that directly addresses the reader.",
+      "A list of your personal skills."
+    ],
+    "correct": 2,
+    "explanation": "The Salutation is a 'Greeting at the beginning of the letter that addresses the reader'."
+  },
+  {
+    "id": 28,
+    "question": "Which of the following is a key tip for writing a motivation letter?",
+    "options": [
+      "Use slang to make the text relatable.",
+      "Limit its length to a maximum of two pages.",
+      "Use an informal and conversational tone.",
+      "Be honest, clear, and focused in your content."
+    ],
+    "correct": 3,
+    "explanation": "One of the tips is to 'Be honest, clear, and focused'."
+  },
+  {
+    "id": 29,
+    "question": "What is a 'Memorandum of Agreement'?",
+    "options": [
+      "A document listing a student's academic performance.",
+      "A legally binding document outlining specific partnership terms.",
+      "A letter of professional recommendation.",
+      "A student's personal and professional resume."
+    ],
+    "correct": 1,
+    "explanation": "A MOA is 'A legally binding document that spells out specific terms and conditions between partners entering into a partnership'."
+  },
+  {
+    "id": 30,
+    "question": "What is a primary responsibility of the School Partnership Focal Person (SPFP)?",
+    "options": [
+      "To directly supervise students.",
+      "To give grades to student work immersion outputs.",
+      "To seek partnerships between DepEd and institutions.",
+      "To help a student write their letter."
+    ],
+    "correct": 2,
+    "explanation": "The SPFP is the 'Person authorized to seek partnerships between DepEd and Institutions'."
+  },
+  {
+    "id": 31,
+    "question": "What is something a motivation letter is NOT intended to demonstrate?",
+    "options": [
+      "Aspiration for your academic goals.",
+      "Your readiness for university.",
+      "A strong fit for the company's culture.",
+      "Evidence of your financial stability."
+    ],
+    "correct": 3,
+    "explanation": "The reviewer does not mention anything about demonstrating financial stability."
+  },
+  {
+    "id": 32,
+    "question": "In a Motivation Letter, which section should contain information about awards?",
+    "options": [
+      "The letter's Header.",
+      "The Academic Background section.",
+      "The Career Goals section.",
+      "The letter's Conclusion."
+    ],
+    "correct": 1,
+    "explanation": "The 'Academic Background' section should include 'Any special awards, honors, or relevant projects'."
+  },
+  {
+    "id": 33,
+    "question": "What is the purpose of Work Immersion in terms of future employment?",
+    "options": [
+      "To provide a permanent job.",
+      "To simulate real-world employment.",
+      "To provide a paid internship.",
+      "To get a scholarship or financial aid."
+    ],
+    "correct": 1,
+    "explanation": "One of the purposes of Work Immersion is 'For employment simulation'."
+  },
+  {
+    "id": 34,
+    "question": "What is the main purpose of the 'Conclusion' in a Motivation Letter?",
+    "options": [
+      "To list your personal hobbies and interests.",
+      "To express appreciation and reaffirm your commitment.",
+      "To state your past high school achievements.",
+      "To provide a reason for choosing the program."
+    ],
+    "correct": 1,
+    "explanation": "The conclusion should 'Express appreciation for the opportunity' and 'Reaffirm your commitment and enthusiasm'."
+  },
+  {
+    "id": 35,
+    "question": "The 'Salutation' of a Motivation Letter should be addressed to what?",
+    "options": [
+      "The applicant's full name.",
+      "The date of the letter.",
+      "The assigned program director.",
+      "A greeting for the reader."
+    ],
+    "correct": 3,
+    "explanation": "The salutation is a 'Greeting at the beginning of the letter that addresses the reader'."
+  },
+  {
+    "id": 36,
+    "question": "What does it mean for the WIPIS to be the counterpart of the teacher?",
+    "options": [
+      "They are two rival authority figures.",
+      "They have the same responsibilities.",
+      "They are the teacher and supervisor from the partner institution.",
+      "They are colleagues at the same school."
+    ],
+    "correct": 2,
+    "explanation": "The WIPIS is the 'Counterpart of the Work Immersion Teacher and may also be representative of the partner institution in the partnership'."
+  },
+  {
+    "id": 37,
+    "question": "What kind of information should the 'Header' of a Motivation Letter include?",
+    "options": [
+      "A photograph of the applicant.",
+      "Your past academic achievements.",
+      "A formal sign-off.",
+      "Your personal information and recipient details."
+    ],
+    "correct": 3,
+    "explanation": "The header 'includes personal contact information and the recipient's details'."
+  },
+  {
+    "id": 38,
+    "question": "Which of these is a key tip for writing a motivation letter?",
+    "options": [
+      "Use a completely informal tone throughout.",
+      "Maintain a formal but personal tone.",
+      "Do not focus on clear and concise language.",
+      "Make it as long as is physically possible."
+    ],
+    "correct": 1,
+    "explanation": "One of the tips for writing a motivation letter is to 'Use a formal but personal tone'."
+  },
+  {
+    "id": 39,
+    "question": "What is the main purpose of Work Immersion as per the reviewer?",
+    "options": [
+      "To apply competencies within an authentic environment.",
+      "To earn a salary.",
+      "To apply for a job.",
+      "To obtain knowledge about a specific career."
+    ],
+    "correct": 0,
+    "explanation": "The reviewer states a purpose is to 'Apply their competencies in areas of specialization/applied subjects in authentic work environments'."
+  },
+  {
+    "id": 40,
+    "question": "Who is the 'School Partnership Focal Person'?",
+    "options": [
+      "The direct Work Immersion Teacher for the students.",
+      "The designated principal of the high school.",
+      "The person who supervises students at the partner site.",
+      "The individual authorized to seek partnerships for DepEd."
+    ],
+    "correct": 3,
+    "explanation": "The SPFP is the 'Person authorized to seek partnerships between DepEd and Institutions'."
+  },
+  {
+    "id": 41,
+    "question": "In which document are the specific terms and conditions of a partnership spelled out?",
+    "options": [
+      "A student's resume.",
+      "A Memorandum of Agreement (MOA).",
+      "A student's Motivation Letter.",
+      "The student's official report card."
+    ],
+    "correct": 1,
+    "explanation": "The 'Memorandum of Agreement (MOA)' is a document that 'spells out specific terms and conditions between partners'."
+  },
+  {
+    "id": 42,
+    "question": "What is a main goal of a Motivation Letter?",
+    "options": [
+      "To function as a student's final examination.",
+      "To serve as a summary of your academic transcript.",
+      "To be utilized as an application for a full-time job.",
+      "To demonstrate a student’s readiness for university."
+    ],
+    "correct": 3,
+    "explanation": "The reviewer states that the motivation letter should 'Demonstrate your motivation and readiness for university'."
+  }
+
 ];
 
 // General Chemistry Quiz Data - 54 Questions
@@ -1302,7 +1159,635 @@ const generalChemistryQuestions = [
     }
 ];
 
+// Contemporary Arts Quiz Data - 60 Questions
+const contemporaryArtsQuestions = [
+      {
+    "id": 1,
+    "question": "According to the reviewer, what is one of the purposes of art?",
+    "options": [
+      "To express aspirations.",
+      "To convey personal finances.",
+      "To create temporary designs.",
+      "To serve as a legal document."
+    ],
+    "correct": 0,
+    "explanation": "Art is a venue to 'convey thoughts, emotions, or aspirations'."
+  },
+  {
+    "id": 2,
+    "question": "What is the defining characteristic of Contemporary Art as described in the reviewer?",
+    "options": [
+      "Art from the 19th century.",
+      "Art produced from the 1970s onward.",
+      "Art that uses only traditional media.",
+      "Art that is displayed in museums."
+    ],
+    "correct": 1,
+    "explanation": "Contemporary Art is 'Art produced during the 1970s to the present time'."
+  },
+  {
+    "id": 3,
+    "question": "Which of the following is considered a Visual Art?",
+    "options": [
+      "Architecture.",
+      "Music.",
+      "Dance.",
+      "Theater."
+    ],
+    "correct": 0,
+    "explanation": "Architecture is listed under 'Kinds of Visual Arts' as a Fine Art."
+  },
+  {
+    "id": 4,
+    "question": "What is the primary medium for Performing Arts?",
+    "options": [
+      "Paint and brushes.",
+      "Clay and wood.",
+      "The artist's voice and body.",
+      "Canvas and paper."
+    ],
+    "correct": 2,
+    "explanation": "Performing Arts use 'the artist's voice and/or body movements to communicate artistic expression'."
+  },
+  {
+    "id": 5,
+    "question": "Which type of music is described as accessible and commercially available?",
+    "options": [
+      "Traditional Music.",
+      "Art Music.",
+      "Folk Music.",
+      "Popular Music."
+    ],
+    "correct": 3,
+    "explanation": "Popular Music is described as 'Accessible and commercially available to the public'."
+  },
+  {
+    "id": 6,
+    "question": "What is the key characteristic of 'Art Music'?",
+    "options": [
+      "It is presented through oral tradition.",
+      "It is improvised and spontaneous.",
+      "It stemmed from Western Classical Music.",
+      "It is a blend of sounds and dance."
+    ],
+    "correct": 2,
+    "explanation": "Art Music 'Stemmed from Western Classical Music' and is 'Presented and preserved through written musical notation'."
+  },
+  {
+    "id": 7,
+    "question": "What is 'Traditional Music' primarily defined by?",
+    "options": [
+      "Its public commercial availability.",
+      "Its roots in ancient civilizations.",
+      "Its communal and cultural use.",
+      "Its avant-garde and experimental nature."
+    ],
+    "correct": 2,
+    "explanation": "Traditional Music is 'Communally and culturally based' and 'Shared and passed on through oral tradition'."
+  },
+  {
+    "id": 8,
+    "question": "According to the reviewer, what is 'Dance'?",
+    "options": [
+      "A manipulation of pitch.",
+      "The art of human body movement.",
+      "The acting out of a script.",
+      "A combination of music and silence."
+    ],
+    "correct": 1,
+    "explanation": "Dance is defined as 'The art of human body movement'."
+  },
+  {
+    "id": 9,
+    "question": "What is the primary function of 'Printmaking'?",
+    "options": [
+      "Creating unique, single artworks.",
+      "Producing multiple copies of an artwork.",
+      "Sculpting a three-dimensional form.",
+      "Interlacing threads to make fabrics."
+    ],
+    "correct": 1,
+    "explanation": "Printmaking is for 'Producing multiples of an artwork'."
+  },
+  {
+    "id": 10,
+    "question": "Which art form is a manipulation of sound and silence?",
+    "options": [
+      "Theater.",
+      "Music.",
+      "Dance.",
+      "Architecture."
+    ],
+    "correct": 1,
+    "explanation": "Music is described as a 'Manipulation of sound and silence'."
+  },
+  {
+    "id": 11,
+    "question": "What is 'Collage' defined as?",
+    "options": [
+      "A technique of subtracting material.",
+      "A technique of creating a 3D sculpture.",
+      "An artwork made from different materials glued onto a surface.",
+      "An artwork performed in front of an audience."
+    ],
+    "correct": 2,
+    "explanation": "Collage is 'An artistic technique of composing a work of art by gluing on a single surface different materials'."
+  },
+  {
+    "id": 12,
+    "question": "What is the term for a sculptural work made from odds and ends?",
+    "options": [
+      "Assemblage.",
+      "Collage.",
+      "Drawing.",
+      "Painting."
+    ],
+    "correct": 0,
+    "explanation": "Assemblage is a 'Three-dimensional art form made by putting together found objects'."
+  },
+  {
+    "id": 13,
+    "question": "Which sculptural technique involves subtracting and shaping solid materials?",
+    "options": [
+      "Additive sculpture.",
+      "Subtractive sculpture.",
+      "Assemblage.",
+      "Casting."
+    ],
+    "correct": 1,
+    "explanation": "Subtractive sculpture is a 'Manipulation and creating objects by subtracting and shaping solid materials'."
+  },
+  {
+    "id": 14,
+    "question": "What is the Filipino term for a rice god sculpture from Ifugao?",
+    "options": [
+      "Okir.",
+      "Bulul.",
+      "Tnalak.",
+      "Banig."
+    ],
+    "correct": 1,
+    "explanation": "Bulul is listed as 'Ifugao rice god'."
+  },
+  {
+    "id": 15,
+    "question": "Which art form is a mix of visual and performing arts, where the medium is the artist?",
+    "options": [
+      "Installation Art.",
+      "Mobile Art.",
+      "Performance Arts.",
+      "Weaving."
+    ],
+    "correct": 2,
+    "explanation": "Performance Arts are a 'Mix of visual and performing arts' where the 'Medium is the artist'."
+  },
+  {
+    "id": 16,
+    "question": "The art of interlacing threads or fibers to create textiles is called what?",
+    "options": [
+      "Carving.",
+      "Weaving.",
+      "Metalwork.",
+      "Painting."
+    ],
+    "correct": 1,
+    "explanation": "Weaving is defined as 'The art of interlacing threads or fibers to create textiles or fabrics'."
+  },
+  {
+    "id": 17,
+    "question": "Which of these is a dyeing process used in weaving to achieve a desired pattern?",
+    "options": [
+      "Ikat.",
+      "Binakol.",
+      "Pinilian.",
+      "Okir."
+    ],
+    "correct": 0,
+    "explanation": "Ikat is a 'dyeing process that involves resist-dyeing to achieve the desired pattern'."
+  },
+  {
+    "id": 18,
+    "question": "Who is the American artist who pioneered Mobile Art?",
+    "options": [
+      "Jackson Pollock.",
+      "Andy Warhol.",
+      "Pablo Picasso.",
+      "Alexander Calder."
+    ],
+    "correct": 3,
+    "explanation": "Mobile Art was 'Pioneered by American artist Alexander Calder'."
+  },
+  {
+    "id": 19,
+    "question": "What is 'Metalwork'?",
+    "options": [
+      "Creating art from wood scraps.",
+      "The art of creating and manipulating metal.",
+      "The art of interlacing threads.",
+      "Carving geometric patterns."
+    ],
+    "correct": 1,
+    "explanation": "Metalwork is 'The art of creating and manipulating metal'."
+  },
+  {
+    "id": 20,
+    "question": "What is a 'Gador'?",
+    "options": [
+      "A traditional basket.",
+      "A decorated brass urn.",
+      "A type of carved wood.",
+      "A woven fabric design."
+    ],
+    "correct": 1,
+    "explanation": "Gador is described as 'decorated brass urns made using the lost-wax process'."
+  },
+  {
+    "id": 21,
+    "question": "What defines 'Installation Art'?",
+    "options": [
+      "A two-dimensional drawing.",
+      "An arrangement of objects in a given space.",
+      "A three-dimensional wood carving.",
+      "An art form that can be mass-produced."
+    ],
+    "correct": 1,
+    "explanation": "Installation Art is an 'Arrangement of objects in a given space'."
+  },
+  {
+    "id": 22,
+    "question": "Which of these is a type of Decorative Art?",
+    "options": [
+      "Calligraphy.",
+      "Architecture.",
+      "Painting.",
+      "Printmaking."
+    ],
+    "correct": 0,
+    "explanation": "Calligraphy is listed under 'Kinds of Decorative Arts'."
+  },
+  {
+    "id": 23,
+    "question": "What is the term for a product of human creativity and skill to express oneself?",
+    "options": [
+      "Science.",
+      "Art.",
+      "History.",
+      "Literature."
+    ],
+    "correct": 1,
+    "explanation": "Art is defined as a 'Product of human creativity and skill to express oneself'."
+  },
+  {
+    "id": 24,
+    "question": "Which of these is a contemporary art form?",
+    "options": [
+      "Architecture.",
+      "Assemblage.",
+      "Sculpture.",
+      "Drawing."
+    ],
+    "correct": 1,
+    "explanation": "Assemblage is listed as a kind of Contemporary Art."
+  },
+  {
+    "id": 25,
+    "question": "What kind of music is described as 'culturally universal'?",
+    "options": [
+      "Art Music.",
+      "Traditional Music.",
+      "Popular Music.",
+      "Music."
+    ],
+    "correct": 3,
+    "explanation": "Music is described as a 'Culturally universal form of art'."
+  },
+  {
+    "id": 26,
+    "question": "What is the name for the art of carving geometric patterns in Western Mindanao?",
+    "options": [
+      "Okir.",
+      "Bulul.",
+      "Binakol.",
+      "Banig."
+    ],
+    "correct": 0,
+    "explanation": "Okir is a 'Western Mindanao' technique for 'carving geometric patterns'."
+  },
+  {
+    "id": 27,
+    "question": "What is a 'Tnalak'?",
+    "options": [
+      "A type of metal urn.",
+      "A traditional dance.",
+      "A weaving technique.",
+      "A ceremonial cloth of the T'boli people."
+    ],
+    "correct": 3,
+    "explanation": "Tnalak is described as a 'Ceremonial cloth of the T'boli people'."
+  },
+  {
+    "id": 28,
+    "question": "The art of creating decorative items from finely cut paper is called what?",
+    "options": [
+      "Singkaban.",
+      "Pabalat.",
+      "Puni.",
+      "Okir."
+    ],
+    "correct": 1,
+    "explanation": "Pabalat is defined as 'The art of creating decorative covers for pastillas'."
+  },
+  {
+    "id": 29,
+    "question": "What is 'Puni'?",
+    "options": [
+      "The art of creating palm leaf designs.",
+      "The art of wood carving.",
+      "The art of metalwork.",
+      "The art of weaving."
+    ],
+    "correct": 0,
+    "explanation": "Puni is 'The art of creating palm leaf designs'."
+  },
+  {
+    "id": 30,
+    "question": "What is 'Sculpture'?",
+    "options": [
+      "Creating 2D artworks.",
+      "A three-dimensional art form.",
+      "The art of interlacing fibers.",
+      "A method of printing."
+    ],
+    "correct": 1,
+    "explanation": "Sculpture is a 'Three-dimensional art form'."
+  },
+  {
+    "id": 31,
+    "question": "Which form of art is an output of creative expression?",
+    "options": [
+      "Science.",
+      "Art.",
+      "Mathematics.",
+      "History."
+    ],
+    "correct": 1,
+    "explanation": "Art is listed as an 'Output of creative expression'."
+  },
+  {
+    "id": 32,
+    "question": "What is the key difference between Art Music and Popular Music?",
+    "options": [
+      "Art Music is accessible, while Popular Music is not.",
+      "Art Music is based on Western Classical, while Popular is commercially available.",
+      "Art Music is improvised, while Popular Music is not.",
+      "Art Music is written, while Popular Music is oral."
+    ],
+    "correct": 1,
+    "explanation": "Art Music 'Stemmed from Western Classical Music', while Popular Music is 'Accessible and commercially available'."
+  },
+  {
+    "id": 33,
+    "question": "Which of these is a kind of Visual Art?",
+    "options": [
+      "Music.",
+      "Dance.",
+      "Decorative Arts.",
+      "Theater."
+    ],
+    "correct": 2,
+    "explanation": "Decorative Arts is listed as a kind of Visual Art."
+  },
+  {
+    "id": 34,
+    "question": "What is 'Theater'?",
+    "options": [
+      "The manipulation of sound.",
+      "The art of weaving fibers.",
+      "A performance with body movements.",
+      "A collaborative art form."
+    ],
+    "correct": 3,
+    "explanation": "Theater is a 'Collaborative art form' using a combination of 'acting, script, voice, lighting, props, and other elements'."
+  },
+  {
+    "id": 35,
+    "question": "What is 'Drawing'?",
+    "options": [
+      "A form of subtractive sculpture.",
+      "A two-dimensional visual art.",
+      "The art of interlacing fibers.",
+      "A technique for creating multiples."
+    ],
+    "correct": 1,
+    "explanation": "Drawing is a 'Two-dimensional visual art' that involves using instruments to mark a surface."
+  },
+  {
+    "id": 36,
+    "question": "What is the art of creating decorative items from bamboo?",
+    "options": [
+      "Singkaban.",
+      "Pabalat.",
+      "Puni.",
+      "Okir."
+    ],
+    "correct": 0,
+    "explanation": "Singkaban is 'The art of creating decorative items from bamboo'."
+  },
+  {
+    "id": 37,
+    "question": "What is a 'Banig'?",
+    "options": [
+      "A type of metal urn.",
+      "A handwoven mat.",
+      "A form of wood carving.",
+      "A decorative palm leaf."
+    ],
+    "correct": 1,
+    "explanation": "Banig is defined as a 'Handwoven mat'."
+  },
+  {
+    "id": 38,
+    "question": "What is a 'Tapestry'?",
+    "options": [
+      "A woven fabric with designs.",
+      "A type of subtractive sculpture.",
+      "A decorative bamboo arch.",
+      "A specific dyeing technique."
+    ],
+    "correct": 0,
+    "explanation": "Tapestry is a 'Woven fabric with designs'."
+  },
+  {
+    "id": 39,
+    "question": "Who is the artist in Performance Arts?",
+    "options": [
+      "The audience.",
+      "The stage manager.",
+      "The artist themselves.",
+      "The theater."
+    ],
+    "correct": 2,
+    "explanation": "In Performance Arts, the 'Medium is the artist'."
+  },
+  {
+    "id": 40,
+    "question": "What is the artwork in Performance Arts?",
+    "options": [
+      "The movements of the artist.",
+      "The physical setting.",
+      "The written script.",
+      "The sound effects."
+    ],
+    "correct": 0,
+    "explanation": "The 'Artwork is the acting and movements of the artist'."
+  },
+  {
+    "id": 41,
+    "question": "What is a unique characteristic of Installation Art?",
+    "options": [
+      "It is a permanent display.",
+      "It is created only for a private audience.",
+      "It is designed to be temporary.",
+      "It can be a piece of furniture."
+    ],
+    "correct": 2,
+    "explanation": "Installation Art is 'Designed as temporary'."
+  },
+  {
+    "id": 42,
+    "question": "What is the art of creating decorative covers for pastillas?",
+    "options": [
+      "Puni.",
+      "Singkaban.",
+      "Pabalat.",
+      "Banig."
+    ],
+    "correct": 2,
+    "explanation": "Pabalat is defined as 'The art of creating decorative covers for pastillas'."
+  },
+  {
+    "id": 43,
+    "question": "The 'Binakol' and 'Pinilian' are examples of what?",
+    "options": [
+      "Sculptures.",
+      "Blankets.",
+      "Metalwork.",
+      "Weaving techniques."
+    ],
+    "correct": 1,
+    "explanation": "Binakol & Pinilian are listed as 'blankets'."
+  },
+  {
+    "id": 44,
+    "question": "Which type of visual art is created primarily for its appearance?",
+    "options": [
+      "Fine Arts.",
+      "Decorative Arts.",
+      "Contemporary Arts.",
+      "Performance Arts."
+    ],
+    "correct": 0,
+    "explanation": "Fine Arts are 'Created primarily for their appearance'."
+  },
+  {
+    "id": 45,
+    "question": "What is the primary characteristic of 'Fine Arts'?",
+    "options": [
+      "Drawing, Painting, Sculpture.",
+      "Baskets and mats.",
+      "Temporary and avant-garde.",
+      "Performance and movement."
+    ],
+    "correct": 0,
+    "explanation": "Drawing, Painting, Sculpture, Print, Graphic Art, Architecture, Calligraphy are listed as Fine Arts."
+  },
+  {
+    "id": 46,
+    "question": "Which of these is a kind of Decorative Art?",
+    "options": [
+      "Drawing.",
+      "Weaving.",
+      "Printmaking.",
+      "Painting."
+    ],
+    "correct": 1,
+    "explanation": "Weaving is listed as a kind of Decorative Art."
+  },
+  {
+    "id": 47,
+    "question": "The term for art produced using newer art techniques is what?",
+    "options": [
+      "Ancient Art.",
+      "Modern Art.",
+      "Contemporary Art.",
+      "Classical Art."
+    ],
+    "correct": 2,
+    "explanation": "Contemporary Art is 'Art produced... using newer art techniques'."
+  },
+  {
+    "id": 48,
+    "question": "What is the art of making decorative designs from colored rice paper?",
+    "options": [
+      "Pabalat.",
+      "Singkaban.",
+      "Puni.",
+      "Okir."
+    ],
+    "correct": 0,
+    "explanation": "Pabalat is the 'art of creating decorative covers for pastillas', which are often made with rice paper."
+  },
+  {
+    "id": 49,
+    "question": "What is the art of creating items from wood scraps and discards?",
+    "options": [
+      "Drawing.",
+      "Assemblage.",
+      "Painting.",
+      "Sculpture."
+    ],
+    "correct": 1,
+    "explanation": "Assemblage is a 'Three-dimensional art form... made with odds and ends, discards, collages, wood scraps, etc'."
+  },
+  {
+    "id": 50,
+    "question": "Which technique involves combining two or more pieces of metal?",
+    "options": [
+      "Sculpture.",
+      "Weaving.",
+      "Metalwork.",
+      "Painting."
+    ],
+    "correct": 2,
+    "explanation": "Metalwork is the 'art of creating and manipulating metal'."
+  },
+  {
+    "id": 51,
+    "question": "What is the primary difference between a Collage and an Assemblage?",
+    "options": [
+      "Collage is 3D and Assemblage is 2D.",
+      "Collage is 2D and Assemblage is 3D.",
+      "Collage uses wood, Assemblage uses paper.",
+      "Collage is a drawing, Assemblage is a painting."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer states that Collage is an 'artistic technique of composing a work of art by gluing on a single surface' (2D), while Assemblage is a 'Three-dimensional art form'."
+  },
+  {
+    "id": 52,
+    "question": "The artwork in Performance Arts is focused more on what element?",
+    "options": [
+      "The musical score.",
+      "The artist's movements.",
+      "The set design.",
+      "The audience reactions."
+    ],
+    "correct": 1,
+    "explanation": "Performance Arts 'focused more on the movements' of the artist."
+  }
+];
+
 // Export the questions for use in the quiz system
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { workImmersionQuestions, generalChemistryQuestions };
+    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions };
 }
