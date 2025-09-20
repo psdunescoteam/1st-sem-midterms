@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Chemistry Quiz - Grade 12 Quiz App</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <!-- Header -->
+        <header class="quiz-header">
+            <div class="header-content">
+                <div class="quiz-nav">
+                    <button class="back-btn" onclick="window.location.href='index.html'">
+                        <i class="fas fa-arrow-left"></i> Back to Subjects
+                    </button>
+                    <div class="quiz-title">
+                        <i class="fas fa-flask"></i>
+                        <h1>General Chemistry Quiz</h1>
+                    </div>
+                </div>
+                
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-info">
+                        <span class="question-counter">Question <span id="current-question">1</span> of <span id="total-questions">54</span></span>
+                        <span class="progress-percentage"><span id="progress-percent">2</span>%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quiz Content -->
+        <main class="quiz-main">
+            <div class="quiz-content">
+                <!-- Question Card -->
+                <div class="question-card">
+                    <div class="question-number">
+                        <span id="question-num">Question 1</span>
+                    </div>
+                    <div class="question-text">
+                        <h2 id="question-text">Loading question...</h2>
+                    </div>
+                    <div class="options-container" id="options-container">
+                        <!-- Options will be dynamically generated -->
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <div class="quiz-controls">
+                    <button class="btn-secondary" id="prev-btn" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <div class="question-status">
+                        <span id="answered-count">0</span> of <span id="total-count">54</span> answered
+                    </div>
+                    <button class="btn-primary" id="next-btn" disabled>
+                        Select an Answer
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Quiz Summary Modal -->
+        <div class="quiz-summary-modal" id="summary-modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3><i class="fas fa-check-circle"></i> Quiz Complete!</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="summary-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="correct-answers">0</div>
+                            <div class="stat-label">Correct</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="incorrect-answers">0</div>
+                            <div class="stat-label">Incorrect</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="final-score">0%</div>
+                            <div class="stat-label">Score</div>
+                        </div>
+                    </div>
+                    <div class="score-message" id="score-message">
+                        Great job! You've completed the quiz.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="window.location.href='index.html'">
+                        <i class="fas fa-home"></i> Back to Home
+                    </button>
+                    <button class="btn-primary" onclick="quizSystem.showResults()">
+                        <i class="fas fa-chart-line"></i> View Results
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Theme Toggle -->
+    <button class="theme-toggle" onclick="quizSystem.toggleTheme()" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <script src="js/quiz-data.js"></script>
+    <script src="js/quiz-system.js"></script>
+</body>
+</html>

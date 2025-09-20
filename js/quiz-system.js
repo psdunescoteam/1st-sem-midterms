@@ -1,7 +1,9 @@
 // Quiz System - Handles all quiz functionality
 class QuizSystem {
     constructor() {
-        this.questions = workImmersionQuestions;
+        // Detect current subject based on page
+        this.currentSubject = this.detectCurrentSubject();
+        this.questions = this.loadQuestionsForSubject(this.currentSubject);
         this.currentQuestionIndex = 0;
         this.userAnswers = new Array(this.questions.length).fill(null);
         this.selectedOption = null; // Currently selected option (before submission)
@@ -16,6 +18,23 @@ class QuizSystem {
         
         this.initializeQuiz();
         this.loadTheme();
+    }
+
+    detectCurrentSubject() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const subjectMap = {
+            'Work-Immersion.html': 'work-immersion',
+            'General-Chemistry.html': 'general-chemistry'
+        };
+        return subjectMap[currentPage] || 'work-immersion';
+    }
+
+    loadQuestionsForSubject(subject) {
+        const questionMap = {
+            'work-immersion': workImmersionQuestions,
+            'general-chemistry': generalChemistryQuestions
+        };
+        return questionMap[subject] || workImmersionQuestions;
     }
 
     shuffleAllAnswerChoices() {
@@ -103,7 +122,7 @@ class QuizSystem {
         
         // Update question number and text
         document.getElementById('question-num').textContent = `Question ${this.currentQuestionIndex + 1}`;
-        document.getElementById('question-text').textContent = question.question;
+        document.getElementById('question-text').innerHTML = question.question;
         
         // Update progress counters
         document.getElementById('current-question').textContent = this.currentQuestionIndex + 1;
@@ -480,7 +499,8 @@ class QuizSystem {
             questions: this.shuffledQuestions, // Use shuffled questions
             originalQuestions: this.questions, // Keep original for reference
             startTime: this.startTime,
-            endTime: this.endTime
+            endTime: this.endTime,
+            subject: this.currentSubject
         }));
     }
 
