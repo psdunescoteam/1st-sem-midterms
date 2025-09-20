@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 12 Quiz App Reviewer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Grade 12 Quiz App</h1>
+                </div>
+                <p class="subtitle">By Aaron & Rb :) <br> if  you have any questions please ask us!</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="welcome-section">
+                    <h2>Choose Your Subject</h2>
+                    <p>Select a subject to start reviewing and test your knowledge!</p>
+                </div>
+
+                <div class="subjects-grid">
+                    <!-- First Row -->
+                    <div class="subject-card" data-subject="work-immersion">
+                        <div class="subject-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="subject-content">
+                            <h4>Work Immersion</h4>
+                            <p>Professional skills & workplace readiness</p>
+                            <div class="subject-stats">
+                                <span><i class="fas fa-question-circle"></i> 25 Questions</span>
+                                <span><i class="fas fa-clock"></i> 30 min</span>
+                            </div>
+                        </div>
+                        <div class="subject-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="subject-card" data-subject="general-chemistry">
+                        <div class="subject-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="subject-content">
+                            <h4>General Chemistry 1</h4>
+                            <p>Chemical principles & molecular structures</p>
+                            <div class="subject-stats">
+                                <span><i class="fas fa-question-circle"></i> 30 Questions</span>
+                                <span><i class="fas fa-clock"></i> 35 min</span>
+                            </div>
+                        </div>
+                        <div class="subject-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="subject-card" data-subject="contemporary-arts">
+                        <div class="subject-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="subject-content">
+                            <h4>Contemporary Arts</h4>
+                            <p>Modern art forms & creative expression</p>
+                            <div class="subject-stats">
+                                <span><i class="fas fa-question-circle"></i> 20 Questions</span>
+                                <span><i class="fas fa-clock"></i> 25 min</span>
+                            </div>
+                        </div>
+                        <div class="subject-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 1st Sem Grade 12 Reviewers</p>
+                <p>Good luck guys!</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Alert Bar -->
+    <div class="alert-bar">
+        <div class="alert-content">
+            <i class="fas fa-info-circle"></i>
+            <span>2nd and 3rd day will be added soon :)</span>
+        </div>
+        <button class="alert-close" onclick="this.parentElement.style.display='none'">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Fixed Theme Toggle -->
+    <button class="theme-toggle" onclick="quizApp.toggleTheme()" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
