@@ -198,6 +198,34 @@ body {
     color: #fbbf24;
 }
 
+/* Auto mode indicator */
+.theme-toggle.auto-mode {
+    position: relative;
+}
+
+.theme-toggle.auto-mode::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(45deg, #10b981, #3b82f6);
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    opacity: 0.9;
+    animation: autoModeGlow 2s infinite ease-in-out;
+}
+
+[data-theme="dark"] .theme-toggle.auto-mode::before {
+    border-color: var(--surface-2);
+}
+
+@keyframes autoModeGlow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
 /* Dark theme specific overrides */
 [data-theme="dark"] .subject-card {
     border: 1px solid rgba(255, 255, 255, 0.1);

@@ -449,6 +449,9 @@
 
 /* Theme Toggle Button */
 .theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
     width: 3rem;
     height: 3rem;
     border: none;
@@ -461,6 +464,8 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    z-index: 1000;
+    font-size: 1.2rem;
 }
 
 .theme-toggle:hover {
@@ -479,6 +484,34 @@
 [data-theme="dark"] .theme-toggle .fa-sun {
     display: block;
     color: #fbbf24;
+}
+
+/* Auto mode indicator */
+.theme-toggle.auto-mode {
+    position: relative;
+}
+
+.theme-toggle.auto-mode::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(45deg, #10b981, #3b82f6);
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    opacity: 0.9;
+    animation: autoModeGlow 2s infinite ease-in-out;
+}
+
+[data-theme="dark"] .theme-toggle.auto-mode::before {
+    border-color: var(--surface-2);
+}
+
+@keyframes autoModeGlow {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
 }
 
 /* Main Quiz Content Enhanced */

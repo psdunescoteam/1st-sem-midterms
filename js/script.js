@@ -255,12 +255,20 @@ class QuizApp {
 
     // Theme management
     toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        const currentThemePreference = localStorage.getItem('theme') || 'auto';
+        let newThemePreference;
         
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        this.updateThemeIcon(newTheme);
+        // Cycle through: auto -> light -> dark -> auto
+        if (currentThemePreference === 'auto') {
+            newThemePreference = 'light';
+        } else if (currentThemePreference === 'light') {
+            newThemePreference = 'dark';
+        } else {
+            newThemePreference = 'auto';
+        }
+        
+        localStorage.setItem('theme', newThemePreference);
+        this.applyTheme();
         
         // Add a subtle animation when toggling
         const themeToggle = document.querySelector('.theme-toggle');
@@ -271,36 +279,72 @@ class QuizApp {
     }
 
     loadTheme() {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // Set default to auto if no preference is saved
+        const savedTheme = localStorage.getItem('theme') || 'auto';
+        if (savedTheme !== 'auto' && savedTheme !== 'light' && savedTheme !== 'dark') {
+            localStorage.setItem('theme', 'auto');
+        }
         
-        // Set initial theme
-        const theme = savedTheme !== 'light' && savedTheme !== 'dark' ? 
-            (prefersDark ? 'dark' : 'light') : savedTheme;
-        
-        document.documentElement.setAttribute('data-theme', theme);
-        this.updateThemeIcon(theme);
+        this.applyTheme();
         
         // Listen for system theme changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            if (localStorage.getItem('theme') === null) {
-                const newTheme = e.matches ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                this.updateThemeIcon(newTheme);
+        this.systemThemeListener = window.matchMedia('(prefers-color-scheme: dark)');
+        this.systemThemeListener.addEventListener('change', () => {
+            if (localStorage.getItem('theme') === 'auto') {
+                this.applyTheme();
             }
         });
     }
 
-    updateThemeIcon(theme) {
+    applyTheme() {
+        const themePreference = localStorage.getItem('theme') || 'auto';
+        let actualTheme;
+        
+        if (themePreference === 'auto') {
+            // Follow system preference
+            actualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        } else {
+            // Use manual preference
+            actualTheme = themePreference;
+        }
+        
+        document.documentElement.setAttribute('data-theme', actualTheme);
+        this.updateThemeIcon(themePreference, actualTheme);
+    }
+
+    updateThemeIcon(themePreference, actualTheme) {
+        const themeToggle = document.querySelector('.theme-toggle');
         const moonIcon = document.querySelector('.theme-toggle .fa-moon');
         const sunIcon = document.querySelector('.theme-toggle .fa-sun');
         
-        if (theme === 'dark') {
-            if (moonIcon) moonIcon.style.display = 'none';
-            if (sunIcon) sunIcon.style.display = 'inline-block';
+        if (!themeToggle || !moonIcon || !sunIcon) return;
+        
+        // Update button title to show current mode
+        let title;
+        if (themePreference === 'auto') {
+            title = `Auto (${actualTheme === 'dark' ? 'Dark' : 'Light'}) - Click for Light mode`;
+        } else if (themePreference === 'light') {
+            title = 'Light mode - Click for Dark mode';
         } else {
-            if (moonIcon) moonIcon.style.display = 'inline-block';
-            if (sunIcon) sunIcon.style.display = 'none';
+            title = 'Dark mode - Click for Auto mode';
+        }
+        themeToggle.setAttribute('aria-label', title);
+        themeToggle.title = title;
+        
+        // Show appropriate icon based on actual theme
+        if (actualTheme === 'dark') {
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'inline-block';
+        } else {
+            moonIcon.style.display = 'inline-block';
+            sunIcon.style.display = 'none';
+        }
+        
+        // Add visual indicator for auto mode
+        if (themePreference === 'auto') {
+            themeToggle.classList.add('auto-mode');
+        } else {
+            themeToggle.classList.remove('auto-mode');
         }
     }
 
