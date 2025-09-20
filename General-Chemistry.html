@@ -39,6 +39,10 @@
                         </div>
                     </div>
                     <div class="quiz-header-right">
+                        <button class="theme-toggle-nav" onclick="toggleTheme()" aria-label="Toggle dark mode" title="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                        </button>
                         <div class="progress-stats">
                             <div class="question-indicator">
                                 <span class="current-q" id="current-question">1</span>
@@ -132,12 +136,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Fixed Theme Toggle -->
-    <button class="theme-toggle" onclick="quizSystem.toggleTheme()" aria-label="Toggle dark mode">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-    </button>
 
     <script src="js/quiz-data.js"></script>
     <script src="js/quiz-system.js"></script>

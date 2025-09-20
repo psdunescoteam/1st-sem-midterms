@@ -133,39 +133,49 @@ class QuizSystem {
     }
 
     updateThemeIcon(themePreference, actualTheme) {
-        const themeToggle = document.querySelector('.theme-toggle');
-        const moonIcon = document.querySelector('.theme-toggle .fa-moon');
-        const sunIcon = document.querySelector('.theme-toggle .fa-sun');
+        // Update both fixed and navbar theme toggles
+        const themeToggles = document.querySelectorAll('.theme-toggle, .theme-toggle-nav');
         
-        if (!themeToggle || !moonIcon || !sunIcon) return;
-        
-        // Update button title to show current mode
-        let title;
-        if (themePreference === 'auto') {
-            title = `Auto (${actualTheme === 'dark' ? 'Dark' : 'Light'}) - Click for Light mode`;
-        } else if (themePreference === 'light') {
-            title = 'Light mode - Click for Dark mode';
-        } else {
-            title = 'Dark mode - Click for Auto mode';
-        }
-        themeToggle.setAttribute('aria-label', title);
-        themeToggle.title = title;
-        
-        // Show appropriate icon based on actual theme
-        if (actualTheme === 'dark') {
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'inline-block';
-        } else {
-            moonIcon.style.display = 'inline-block';
-            sunIcon.style.display = 'none';
-        }
-        
-        // Add visual indicator for auto mode
-        if (themePreference === 'auto') {
-            themeToggle.classList.add('auto-mode');
-        } else {
-            themeToggle.classList.remove('auto-mode');
-        }
+        themeToggles.forEach(themeToggle => {
+            const moonIcon = themeToggle.querySelector('.fa-moon');
+            const sunIcon = themeToggle.querySelector('.fa-sun');
+            
+            if (!themeToggle || !moonIcon || !sunIcon) {
+                return; // Skip this button if elements are missing
+            }
+            
+            try {
+                // Update button title to show current mode
+                let title;
+                if (themePreference === 'auto') {
+                    title = `Auto (${actualTheme === 'dark' ? 'Dark' : 'Light'}) - Click for Light mode`;
+                } else if (themePreference === 'light') {
+                    title = 'Light mode - Click for Dark mode';
+                } else {
+                    title = 'Dark mode - Click for Auto mode';
+                }
+                themeToggle.setAttribute('aria-label', title);
+                themeToggle.title = title;
+                
+                // Show appropriate icon based on actual theme
+                if (actualTheme === 'dark') {
+                    moonIcon.style.display = 'none';
+                    sunIcon.style.display = 'inline-block';
+                } else {
+                    moonIcon.style.display = 'inline-block';
+                    sunIcon.style.display = 'none';
+                }
+                
+                // Add visual indicator for auto mode
+                if (themePreference === 'auto') {
+                    themeToggle.classList.add('auto-mode');
+                } else {
+                    themeToggle.classList.remove('auto-mode');
+                }
+            } catch (error) {
+                console.error('Error updating theme icon:', error);
+            }
+        });
     }
 
     updateTotalQuestions() {
@@ -749,6 +759,20 @@ class QuizSystem {
                 this.saveProgress();
             }
         });
+    }
+}
+
+// Global theme toggle function for quiz pages
+function toggleTheme() {
+    if (typeof quizSystem !== 'undefined' && quizSystem) {
+        quizSystem.toggleTheme();
+    } else {
+        // Fallback if quizSystem is not ready
+        console.warn('QuizSystem not initialized yet, using fallback theme toggle');
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
     }
 }
 

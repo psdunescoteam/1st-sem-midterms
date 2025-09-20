@@ -18,6 +18,11 @@ class QuizApp {
         const subjectCards = document.querySelectorAll('.subject-card');
         subjectCards.forEach(card => {
             card.addEventListener('click', (e) => {
+                // Don't trigger navigation if clicking video button
+                if (e.target.closest('.video-btn')) {
+                    return;
+                }
+                
                 const subject = card.dataset.subject;
                 this.selectSubject(subject);
             });
@@ -28,8 +33,26 @@ class QuizApp {
             });
         });
 
-        // Keyboard navigation
+        // Video button click handlers
+        const videoButtons = document.querySelectorAll('.video-btn');
+        videoButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent card click
+            });
+        });
+
+        // Consolidated keyboard event handler
         document.addEventListener('keydown', (e) => {
+            // Close video modal with Escape key
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('videoModal');
+                if (modal && modal.classList.contains('active')) {
+                    this.closeVideo();
+                    return;
+                }
+            }
+            
+            // Handle other keyboard navigation
             this.handleKeyboardNavigation(e);
         });
 
@@ -313,39 +336,49 @@ class QuizApp {
     }
 
     updateThemeIcon(themePreference, actualTheme) {
-        const themeToggle = document.querySelector('.theme-toggle');
-        const moonIcon = document.querySelector('.theme-toggle .fa-moon');
-        const sunIcon = document.querySelector('.theme-toggle .fa-sun');
+        // Update both fixed and navbar theme toggles
+        const themeToggles = document.querySelectorAll('.theme-toggle, .theme-toggle-nav');
         
-        if (!themeToggle || !moonIcon || !sunIcon) return;
-        
-        // Update button title to show current mode
-        let title;
-        if (themePreference === 'auto') {
-            title = `Auto (${actualTheme === 'dark' ? 'Dark' : 'Light'}) - Click for Light mode`;
-        } else if (themePreference === 'light') {
-            title = 'Light mode - Click for Dark mode';
-        } else {
-            title = 'Dark mode - Click for Auto mode';
-        }
-        themeToggle.setAttribute('aria-label', title);
-        themeToggle.title = title;
-        
-        // Show appropriate icon based on actual theme
-        if (actualTheme === 'dark') {
-            moonIcon.style.display = 'none';
-            sunIcon.style.display = 'inline-block';
-        } else {
-            moonIcon.style.display = 'inline-block';
-            sunIcon.style.display = 'none';
-        }
-        
-        // Add visual indicator for auto mode
-        if (themePreference === 'auto') {
-            themeToggle.classList.add('auto-mode');
-        } else {
-            themeToggle.classList.remove('auto-mode');
-        }
+        themeToggles.forEach(themeToggle => {
+            const moonIcon = themeToggle.querySelector('.fa-moon');
+            const sunIcon = themeToggle.querySelector('.fa-sun');
+            
+            if (!themeToggle || !moonIcon || !sunIcon) {
+                return; // Skip this button if elements are missing
+            }
+            
+            try {
+                // Update button title to show current mode
+                let title;
+                if (themePreference === 'auto') {
+                    title = `Auto (${actualTheme === 'dark' ? 'Dark' : 'Light'}) - Click for Light mode`;
+                } else if (themePreference === 'light') {
+                    title = 'Light mode - Click for Dark mode';
+                } else {
+                    title = 'Dark mode - Click for Auto mode';
+                }
+                themeToggle.setAttribute('aria-label', title);
+                themeToggle.title = title;
+                
+                // Show appropriate icon based on actual theme
+                if (actualTheme === 'dark') {
+                    moonIcon.style.display = 'none';
+                    sunIcon.style.display = 'inline-block';
+                } else {
+                    moonIcon.style.display = 'inline-block';
+                    sunIcon.style.display = 'none';
+                }
+                
+                // Add visual indicator for auto mode
+                if (themePreference === 'auto') {
+                    themeToggle.classList.add('auto-mode');
+                } else {
+                    themeToggle.classList.remove('auto-mode');
+                }
+            } catch (error) {
+                console.error('Error updating theme icon:', error);
+            }
+        });
     }
 
     // Study reminder
@@ -371,6 +404,63 @@ class QuizApp {
             </div>
         `;
         document.body.appendChild(reminder);
+    }
+
+    // Video functionality
+    playVideo(videoPath, title) {
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('modalVideo');
+        const videoSource = document.getElementById('videoSource');
+        const videoTitle = document.getElementById('videoTitle');
+        
+        // Set video source and title
+        videoSource.src = videoPath;
+        video.load(); // Reload the video element
+        videoTitle.textContent = title;
+        
+        // Show modal
+        modal.classList.add('active');
+        
+        // Prevent body scroll
+        document.body.style.overflow = 'hidden';
+        
+        // Auto play video (if allowed by browser)
+        video.play().catch(e => {
+            console.log('Auto-play prevented:', e);
+        });
+
+        // Handle video load error
+        video.addEventListener('error', () => {
+            this.showVideoError(title);
+        });
+    }
+
+    closeVideo() {
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('modalVideo');
+        
+        // Hide modal
+        modal.classList.remove('active');
+        
+        // Restore body scroll
+        document.body.style.overflow = '';
+        
+        // Pause and reset video
+        video.pause();
+        video.currentTime = 0;
+    }
+
+    showVideoError(title) {
+        const modal = document.getElementById('videoModal');
+        const videoContainer = modal.querySelector('.video-container');
+        
+        videoContainer.innerHTML = `
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px; color: var(--text-muted);">
+                <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem; color: #f59e0b;"></i>
+                <h3 style="margin: 0 0 0.5rem 0;">Video Not Found</h3>
+                <p style="text-align: center; margin: 0;">The video for ${title} is not available.<br>Please check if the video file exists.</p>
+            </div>
+        `;
     }
 }
 
@@ -651,6 +741,20 @@ const additionalCSS = `
 const style = document.createElement('style');
 style.textContent = additionalCSS;
 document.head.appendChild(style);
+
+// Global theme toggle function
+function toggleTheme() {
+    if (typeof quizApp !== 'undefined' && quizApp) {
+        quizApp.toggleTheme();
+    } else {
+        // Fallback if quizApp is not ready
+        console.warn('QuizApp not initialized yet, using fallback theme toggle');
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    }
+}
 
 // Initialize the app when DOM is ready
 let quizApp;
