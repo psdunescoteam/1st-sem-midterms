@@ -2994,7 +2994,421 @@ const empowermentTechnologiesQuestions = [
   }
 ];
 
+// General Mathematics Quiz Data - 35 Questions
+const generalMathematicsQuestions = [
+  {
+    "id": 1,
+    "question": "What is a set of objects, such as numbers, grouped with one another which may or may not represent a pattern?",
+    "options": [
+      "Function",
+      "Domain",
+      "Relation",
+      "Range"
+    ],
+    "correct": 2,
+    "explanation": "A relation is defined as a set of objects, such as numbers, grouped with one another which may or may not represent a pattern."
+  },
+  {
+    "id": 2,
+    "question": "A special kind of relation in which no two distinct ordered pairs have the same first element is called a...",
+    "options": [
+      "Function",
+      "Relation",
+      "Domain",
+      "Range"
+    ],
+    "correct": 0,
+    "explanation": "A function is a special kind of relation where no two distinct ordered pairs have the same first element."
+  },
+  {
+    "id": 3,
+    "question": "Which of the following describes a relation where each value of the independent variable ($x$) is unique and is associated with a unique value of the dependent variable ($y$)?",
+    "options": [
+      "Many-to-one correspondence",
+      "One-to-one correspondence",
+      "One-to-many correspondence",
+      "Many-to-many correspondence"
+    ],
+    "correct": 1,
+    "explanation": "A one-to-one correspondence is a relation where each unique $x$ value is associated with a unique $y$ value."
+  },
+  {
+    "id": 4,
+    "question": "True or False: The Vertical Line Test can be used to determine if a graph represents a function.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "The Vertical Line Test is used to determine if a graph represents a function."
+  },
+  {
+    "id": 5,
+    "question": "In the set of ordered pairs $F = [(1, 2), (3, 4), (5, 6), (7, 8)]$, is F a function? Why or why not?",
+    "options": [
+      "Yes, because no two distinct ordered pairs have the same first element.",
+      "No, because the first elements are not all the same.",
+      "Yes, because the first elements are not unique.",
+      "No, because the second elements are unique."
+    ],
+    "correct": 0,
+    "explanation": "Yes, F is a function because no two distinct ordered pairs have the same first element, which is the definition of a function."
+  },
+  {
+    "id": 6,
+    "question": "Which type of relation is shown in the following set: $S = [(Miguel, DLSU), (Karlo, ADMU), (Bien, ADMU)]$?",
+    "options": [
+      "One-to-one",
+      "Many-to-one",
+      "One-to-many",
+      "Many-to-many"
+    ],
+    "correct": 1,
+    "explanation": "This is a many-to-one correspondence because two different first elements (Karlo and Bien) are associated with the same second element (ADMU)."
+  },
+  {
+    "id": 7,
+    "question": "A relation where some values of $x$ and $y$ are associated with more than one value of their counterpart is called a...",
+    "options": [
+      "One-to-one correspondence",
+      "Many-to-one correspondence",
+      "One-to-many correspondence",
+      "Many-to-many correspondence"
+    ],
+    "correct": 3,
+    "explanation": "A many-to-many correspondence is a relation where some values of x and y are associated with more than one value of their counterpart."
+  },
+  {
+    "id": 8,
+    "question": "Given the ordered pairs $[(2, 4), (2, 6), (3, 8)]$, does this set represent a function?",
+    "options": [
+      "Yes",
+      "No"
+    ],
+    "correct": 1,
+    "explanation": "No, because the first element '2' is repeated with two different second elements, which violates the definition of a function."
+  },
+  {
+    "id": 9,
+    "question": "When an equation in two variables, $x$ and $y$, is a function, how may the variable $y$ be expressed?",
+    "options": [
+      "As $g(x)$",
+      "As $f(y)$",
+      "As $f(x)$",
+      "As $x$"
+    ],
+    "correct": 2,
+    "explanation": "The reviewer states that if an equation in two variables is a function, the variable $y$ may be expressed as $f(x)$."
+  },
+  {
+    "id": 10,
+    "question": "What is the key characteristic that distinguishes a function from a general relation?",
+    "options": [
+      "A function is a relation that has a specific pattern.",
+      "In a function, no two distinct ordered pairs can have the same first element.",
+      "A function only has one-to-one correspondence.",
+      "A function can be a many-to-many correspondence."
+    ],
+    "correct": 1,
+    "explanation": "The key distinction is that in a function, each input ($x$) has only one output ($y$)."
+  },
+  {
+    "id": 11,
+    "question": "Given the functions $f(x) = 2x+3$ and $g(x) = x-5$, what is the value of $(f+g)(x)$?",
+    "options": [
+      "$3x-2$",
+      "$x+8$",
+      "$2x^2-7x-15$",
+      "$x+2$"
+    ],
+    "correct": 0,
+    "explanation": "$(f+g)(x) = f(x) + g(x) = (2x+3) + (x-5) = 3x-2$."
+  },
+  {
+    "id": 12,
+    "question": "Given the functions $f(x) = 2x+3$ and $g(x) = x-5$, what is the value of $(f-g)(x)$?",
+    "options": [
+      "$3x-2$",
+      "$x+8$",
+      "$2x^2-7x-15$",
+      "$x+2$"
+    ],
+    "correct": 1,
+    "explanation": "$(f-g)(x) = f(x) - g(x) = (2x+3) - (x-5) = x+8$."
+  },
+  {
+    "id": 13,
+    "question": "Given the functions $f(x) = 2x+3$ and $g(x) = x-5$, what is the value of $(f \\cdot g)(x)$?",
+    "options": [
+      "$3x-2$",
+      "$x+8$",
+      "$2x^2-7x-15$",
+      "$x+2$"
+    ],
+    "correct": 2,
+    "explanation": "$(f \\cdot g)(x) = f(x) \\cdot g(x) = (2x+3)(x-5) = 2x^2 - 7x - 15$."
+  },
+  {
+    "id": 14,
+    "question": "Given the functions $f(x) = 2x+3$ and $g(x) = x-5$, what is the value of $(\\frac{f}{g})(x)$?",
+    "options": [
+      "$\\frac{2x+3}{x-5}$",
+      "$2x+3-x+5$",
+      "$2x^2-7x-15$",
+      "$x-5$"
+    ],
+    "correct": 0,
+    "explanation": "The division of functions is $(\\frac{f}{g})(x) = \\frac{f(x)}{g(x)} = \\frac{2x+3}{x-5}$."
+  },
+  {
+    "id": 15,
+    "question": "Given the functions $f(x) = 2x+3$ and $g(x) = x-5$, what is the result of the composition $(f \\circ g)(x)$?",
+    "options": [
+      "$3x-2$",
+      "$x+8$",
+      "$2x-7$",
+      "$2x-2$"
+    ],
+    "correct": 2,
+    "explanation": "The composition is $(f \\circ g)(x) = f(g(x)) = 2(x-5)+3 = 2x-7$."
+  },
+  {
+    "id": 16,
+    "question": "Given the functions $f(x) = 2x+3$ and $g(x) = x-5$, what is the result of the composition $(g \\circ f)(x)$?",
+    "options": [
+      "$2x-2$",
+      "$x+8$",
+      "$2x-7$",
+      "$2x^2-7x-15$"
+    ],
+    "correct": 0,
+    "explanation": "The composition is $(g \\circ f)(x) = g(f(x)) = (2x+3)-5 = 2x-2$."
+  },
+  {
+    "id": 17,
+    "question": "Given the functions $f(x)=x^2+1$ and $g(x)=x-1$, find $(f \\circ g)(x)$.",
+    "options": [
+      "$x^2-2x+2$",
+      "$x^2-2x+1$",
+      "$x^2+x$",
+      "$x^2$"
+    ],
+    "correct": 0,
+    "explanation": "The composition is $(f \\circ g)(x) = f(g(x)) = (x-1)^2+1 = x^2-2x+2$."
+  },
+  {
+    "id": 18,
+    "question": "Given the functions $f(x)=x^2+1$ and $g(x)=x-1$, find $(g \\circ f)(x)$.",
+    "options": [
+      "$x^2-2x+2$",
+      "$x^2-2x+1$",
+      "$x^2+x$",
+      "$x^2$"
+    ],
+    "correct": 3,
+    "explanation": "The composition is $(g \\circ f)(x) = g(f(x)) = (x^2+1)-1 = x^2$."
+  },
+  {
+    "id": 19,
+    "question": "True or False: The formula for the composition of functions is $(f \\circ g)(x) = f(g(x))$.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "This is the correct formula for the composition of functions, where you substitute the entire function $g(x)$ into the function $f(x)$."
+  },
+  {
+    "id": 20,
+    "question": "The operation of adding two functions together is represented by the formula $(f+g)(x) = $...",
+    "options": [
+      "$f(x)+g(x)$",
+      "$f(g(x))$",
+      "$f(x) \\cdot g(x)$",
+      "$f(x)-g(x)$"
+    ],
+    "correct": 0,
+    "explanation": "The addition of two functions is given by the formula $(f+g)(x) = f(x)+g(x)$."
+  },
+  {
+    "id": 21,
+    "question": "What is the name of the operation represented by $(\\frac{f}{g})(x)$?",
+    "options": [
+      "Sum of functions",
+      "Difference of functions",
+      "Product of functions",
+      "Quotient of functions"
+    ],
+    "correct": 3,
+    "explanation": "The operation $(\\frac{f}{g})(x)$ is called the quotient of functions."
+  },
+  {
+    "id": 22,
+    "question": "True or False: For the operation $(\\frac{f}{g})(x)$, the denominator $g(x)$ can be equal to zero.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "False. The denominator of a fraction cannot be zero, as division by zero is undefined."
+  },
+  {
+    "id": 23,
+    "question": "A rational function is a function of the form $f(x) = \\frac{p(x)}{q(x)}$ where $p(x)$ and $q(x)$ are polynomials. What is the key condition for the denominator $q(x)$?",
+    "options": [
+      "$q(x)=0$",
+      "$q(x) > 0$",
+      "$q(x) \\ne 0$",
+      "$q(x) < 0$"
+    ],
+    "correct": 2,
+    "explanation": "A key condition for a rational function is that the denominator, $q(x)$, cannot be equal to zero."
+  },
+  {
+    "id": 24,
+    "question": "A line that a curve approaches but does not intersect is called a/an...",
+    "options": [
+      "Tangent",
+      "Secant",
+      "Asymptote",
+      "Normal"
+    ],
+    "correct": 2,
+    "explanation": "An asymptote is a line that a curve approaches but never touches."
+  },
+  {
+    "id": 25,
+    "question": "The vertical line passing through the zeroes of the denominator of the rational function is called the...",
+    "options": [
+      "Horizontal asymptote",
+      "Oblique asymptote",
+      "Vertical asymptote",
+      "Zeroes of the function"
+    ],
+    "correct": 2,
+    "explanation": "This is the definition of a vertical asymptote."
+  },
+  {
+    "id": 26,
+    "question": "For the function $f(x)=\\frac{x+2}{x-1}$, what is the vertical asymptote?",
+    "options": [
+      "$x=2$",
+      "$x=-1$",
+      "$x=-2$",
+      "$x=1$"
+    ],
+    "correct": 3,
+    "explanation": "The vertical asymptote is found by setting the denominator equal to zero. $x-1 = 0 \\implies x = 1$."
+  },
+  {
+    "id": 27,
+    "question": "For the function $f(x)=\\frac{2x+5}{x+3}$, what is the vertical asymptote?",
+    "options": [
+      "$x=3$",
+      "$x=-3$",
+      "$x=-5/2$",
+      "$x=-2/5$"
+    ],
+    "correct": 1,
+    "explanation": "The vertical asymptote is found by setting the denominator equal to zero. $x+3 = 0 \\implies x = -3$."
+  },
+  {
+    "id": 28,
+    "question": "True or False: A horizontal asymptote is a horizontal line of the form $x=b$ which the curve approaches but never touches.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "False. A horizontal asymptote is a horizontal line of the form $y=b$."
+  },
+  {
+    "id": 29,
+    "question": "Let $n$ be the degree of the numerator and $m$ be the degree of the denominator. If $n < m$, what is the horizontal asymptote?",
+    "options": [
+      "$y=0$",
+      "$y=1$",
+      "$y=a_n/b_m$",
+      "There is no horizontal asymptote."
+    ],
+    "correct": 0,
+    "explanation": "If the degree of the numerator is less than the degree of the denominator ($n<m$), the horizontal asymptote is $y=0$."
+  },
+  {
+    "id": 30,
+    "question": "If the degree of the numerator is equal to the degree of the denominator ($n=m$), how do you find the horizontal asymptote?",
+    "options": [
+      "The horizontal asymptote is $y=0$.",
+      "Divide the leading coefficients of the numerator and the denominator.",
+      "There is no horizontal asymptote.",
+      "Find the zeroes of the denominator."
+    ],
+    "correct": 1,
+    "explanation": "If the degrees are equal, the horizontal asymptote is the ratio of the leading coefficients."
+  },
+  {
+    "id": 31,
+    "question": "For the function $f(x)=\\frac{x+1}{x^2+2}$, what is the horizontal asymptote?",
+    "options": [
+      "$y=1/2$",
+      "$y=0$",
+      "$x=2$",
+      "No horizontal asymptote."
+    ],
+    "correct": 1,
+    "explanation": "The degree of the numerator ($n=1$) is less than the degree of the denominator ($m=2$), so the horizontal asymptote is $y=0$."
+  },
+  {
+    "id": 32,
+    "question": "For the function $f(x)=\\frac{4x^2+5}{2x^2-1}$, what is the horizontal asymptote?",
+    "options": [
+      "$y=0$",
+      "$y=4/5$",
+      "$y=2$",
+      "No horizontal asymptote."
+    ],
+    "correct": 2,
+    "explanation": "The degree of the numerator ($n=2$) is equal to the degree of the denominator ($m=2$). The horizontal asymptote is the ratio of the leading coefficients, $y = \\frac{4}{2} = 2$."
+  },
+  {
+    "id": 33,
+    "question": "What is the vertical asymptote of the function $f(x)=\\frac{x^2-4}{x-2}$?",
+    "options": [
+      "$x=2$",
+      "$x=-2$",
+      "No vertical asymptote",
+      "$x=4$"
+    ],
+    "correct": 2,
+    "explanation": "The function simplifies to $f(x) = x+2$, so there is a hole at $x=2$ but no vertical asymptote."
+  },
+  {
+    "id": 34,
+    "question": "A rational function is a ratio of two polynomial functions. The word \"rational\" comes from which mathematical term?",
+    "options": [
+      "Radix",
+      "Ratio",
+      "Rate",
+      "Radius"
+    ],
+    "correct": 1,
+    "explanation": "The term 'rational' in mathematics comes from the word 'ratio', as a rational function is a ratio of two polynomials."
+  },
+  {
+    "id": 35,
+    "question": "The concept of an asymptote is a characteristic of what type of function?",
+    "options": [
+      "Polynomial function",
+      "Linear function",
+      "Rational function",
+      "Quadratic function"
+    ],
+    "correct": 2,
+    "explanation": "Asymptotes are a key characteristic of rational functions."
+  }
+];
+
 // Export the questions for use in the quiz system
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions };
+    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions };
 }

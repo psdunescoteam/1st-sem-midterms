@@ -130,6 +130,30 @@ class ResultsSystem {
             const questionCard = this.createQuestionCard(question, index, userAnswer, isCorrect);
             container.appendChild(questionCard);
         });
+        
+        // Render MathJax for all mathematical expressions
+        this.renderMathJax();
+    }
+
+    renderMathJax() {
+        // Wait for MathJax to be ready before attempting to render
+        if (typeof MathJax !== 'undefined') {
+            if (MathJax.typesetPromise) {
+                // MathJax v3 - render the entire questions container
+                MathJax.typesetPromise([document.getElementById('questions-container')]).catch(function (err) {
+                    console.log('MathJax v3 rendering error on results page:', err.message);
+                });
+            } else if (MathJax.Hub) {
+                // MathJax v2 fallback
+                MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.getElementById('questions-container')]);
+            } else {
+                // MathJax is loading, try again in a moment
+                setTimeout(() => this.renderMathJax(), 100);
+            }
+        } else {
+            // MathJax not loaded yet, try again
+            setTimeout(() => this.renderMathJax(), 100);
+        }
     }
 
     createQuestionCard(question, index, userAnswer, isCorrect) {
@@ -249,6 +273,11 @@ class ResultsSystem {
         
         if (toggleButton) {
             toggleButton.textContent = this.showExplanations ? 'Hide Explanations' : 'Show Explanations';
+        }
+        
+        // Re-render MathJax when explanations become visible
+        if (this.showExplanations) {
+            this.renderMathJax();
         }
     }
 

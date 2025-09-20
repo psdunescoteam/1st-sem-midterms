@@ -26,7 +26,8 @@ class QuizSystem {
             'Work-Immersion.html': 'work-immersion',
             'General-Chemistry.html': 'general-chemistry',
             'Contemporary-Arts.html': 'contemporary-arts',
-            'Empowerment-Technologies.html': 'empowerment-technologies'
+            'Empowerment-Technologies.html': 'empowerment-technologies',
+            'General-Mathematics.html': 'general-mathematics'
         };
         return subjectMap[currentPage] || 'work-immersion';
     }
@@ -36,7 +37,8 @@ class QuizSystem {
             'work-immersion': workImmersionQuestions,
             'general-chemistry': generalChemistryQuestions,
             'contemporary-arts': contemporaryArtsQuestions,
-            'empowerment-technologies': empowermentTechnologiesQuestions
+            'empowerment-technologies': empowermentTechnologiesQuestions,
+            'general-mathematics': generalMathematicsQuestions
         };
         return questionMap[subject] || workImmersionQuestions;
     }
@@ -205,6 +207,47 @@ class QuizSystem {
         
         // Render options first
         this.renderOptions(question);
+        
+        // Render MathJax if available - with better error handling
+        this.renderMathJax();
+    }
+
+    renderMathJax() {
+        // Wait for MathJax to be ready before attempting to render
+        if (typeof MathJax !== 'undefined') {
+            if (MathJax.typesetPromise) {
+                // MathJax v3 - render all quiz content areas
+                const elementsToRender = [
+                    document.getElementById('question-text'),
+                    document.getElementById('options-container')
+                ];
+                
+                // Also include explanation if it exists
+                const explanationDiv = document.querySelector('.question-explanation');
+                if (explanationDiv) {
+                    elementsToRender.push(explanationDiv);
+                }
+                
+                MathJax.typesetPromise(elementsToRender).catch(function (err) {
+                    console.log('MathJax v3 rendering error:', err.message);
+                });
+            } else if (MathJax.Hub) {
+                // MathJax v2 fallback
+                MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.getElementById('question-text')]);
+                MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.getElementById('options-container')]);
+                
+                const explanationDiv = document.querySelector('.question-explanation');
+                if (explanationDiv) {
+                    MathJax.Hub.Queue(['Typeset', MathJax.Hub, explanationDiv]);
+                }
+            } else {
+                // MathJax is loading, try again in a moment
+                setTimeout(() => this.renderMathJax(), 100);
+            }
+        } else {
+            // MathJax not loaded yet, try again
+            setTimeout(() => this.renderMathJax(), 100);
+        }
         
         // Check if this question was already answered and revealed
         const isAnswered = this.userAnswers[this.currentQuestionIndex] !== null;
@@ -401,6 +444,9 @@ class QuizSystem {
             explanationDiv.style.transition = 'all 0.5s ease';
             explanationDiv.style.opacity = '1';
             explanationDiv.style.transform = 'translateY(0)';
+            
+            // Render MathJax for the explanation content
+            this.renderMathJax();
             
             // After animation completes (0.5s transition + buffer), enable next button
             setTimeout(() => {
