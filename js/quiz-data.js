@@ -908,654 +908,948 @@ const workImmersionQuestions = [
 
 // General Chemistry Quiz Data - 54 Questions
 const generalChemistryQuestions = [
-    {
-        id: 1,
-        question: "According to the provided reviewer, what is the smallest unit of matter that retains the identity and properties of an element?",
-        options: [
-            "Molecule",
-            "Atom",
-            "Ion",
-            "Subatomic Particle"
-        ],
-        correct: 1,
-        explanation: "The reviewer defines an Atom as the 'smallest unit of matter' that 'retains the identity and properties of an element'."
-    },
-    {
-        id: 2,
-        question: "In the Isotopic Symbol <sup>A</sup><sub>Z</sub>X, what does the letter 'A' represent?",
-        options: [
-            "Atomic Number (#protons)",
-            "Atomic Symbol",
-            "Mass Number (#protons + #neutrons)",
-            "Number of Electrons"
-        ],
-        correct: 2,
-        explanation: "In the Isotopic Symbol, 'A' is the Mass number, which is the sum of protons and neutrons."
-    },
-    {
-        id: 3,
-        question: "Which type of subatomic particle has a relative charge of +1?",
-        options: [
-            "Electron",
-            "Neutron",
-            "Proton",
-            "Ion"
-        ],
-        correct: 2,
-        explanation: "Based on the table of subatomic particles, a proton has a relative charge of +1."
-    },
-    {
-        id: 4,
-        question: "What happens when an atom loses an electron?",
-        options: [
-            "It becomes a negatively charged anion.",
-            "It becomes a neutrally charged atom.",
-            "It becomes a positively charged cation.",
-            "It becomes a molecule."
-        ],
-        correct: 2,
-        explanation: "The reviewer states that a Cation is 'positively charged, formed when a metal loses an electron'."
-    },
-    {
-        id: 5,
-        question: "What is a group of two or more atoms that are chemically bonded called?",
-        options: [
-            "Ion",
-            "Compound",
-            "Molecule",
-            "Nucleus"
-        ],
-        correct: 2,
-        explanation: "A Molecule is defined as 'A group of two or more atoms that are chemically bonded'."
-    },
-    {
-        id: 6,
-        question: "Which of the following is NOT one of the classifications of elements mentioned in the reviewer?",
-        options: [
-            "Metals",
-            "Nonmetals",
-            "Gases",
-            "Metalloids"
-        ],
-        correct: 2,
-        explanation: "The reviewer lists three classifications of elements: Metals, Nonmetals, and Metalloids. Gases is not a primary classification."
-    },
-    {
-        id: 7,
-        question: "What determines the atomic element of an atom?",
-        options: [
-            "The number of neutrons",
-            "The number of electrons",
-            "The mass number",
-            "The number of protons"
-        ],
-        correct: 3,
-        explanation: "The reviewer explicitly states that 'Protons determine the atomic element'."
-    },
-    {
-        id: 8,
-        question: "How many elements are on the periodic table according to the reviewer?",
-        options: [
-            "100",
-            "118",
-            "92",
-            "120"
-        ],
-        correct: 1,
-        explanation: "The reviewer states there are '118 Elements' on the periodic table."
-    },
-    {
-        id: 9,
-        question: "What is the relative mass (in amu) of a neutron?",
-        options: [
-            "0",
-            "-1",
-            "1",
-            "+1"
-        ],
-        correct: 2,
-        explanation: "Based on the subatomic particles table, a neutron has a relative mass of 1 amu."
-    },
-    {
-        id: 10,
-        question: "How is a Cation formed?",
-        options: [
-            "When a nonmetal gains an electron.",
-            "When a metal loses an electron.",
-            "When an atom gains a proton.",
-            "When an atom loses a neutron."
-        ],
-        correct: 1,
-        explanation: "A Cation is a positively charged ion formed when a metal loses an electron."
-    },
-    {
-        id: 11,
-        question: "Which side of the periodic table do nonmetals primarily reside?",
-        options: [
-            "Left side",
-            "Middle side",
-            "Right side",
-            "Bottom section"
-        ],
-        correct: 2,
-        explanation: "Nonmetals are found on the 'Right Side and Hydrogen' of the periodic table."
-    },
-    {
-        id: 12,
-        question: "What is the charge of an electron?",
-        options: [
-            "+1",
-            "-1",
-            "0",
-            "Varies"
-        ],
-        correct: 1,
-        explanation: "The table of subatomic particles shows that the electron has a relative charge of -1."
-    },
-    {
-        id: 13,
-        question: "What is the relationship between the number of protons and electrons in a neutrally charged atom?",
-        options: [
-            "Protons are greater than electrons.",
-            "Protons are less than electrons.",
-            "Protons are equal to electrons.",
-            "There is no relationship."
-        ],
-        correct: 2,
-        explanation: "For a neutrally charged atom, the number of protons equals the number of electrons."
-    },
-    {
-        id: 14,
-        question: "What are the components of the nucleus of an atom?",
-        options: [
-            "Protons and electrons",
-            "Protons and neutrons",
-            "Electrons and neutrons",
-            "Only protons"
-        ],
-        correct: 1,
-        explanation: "The reviewer states that the nucleus, or 'Nucleons', consists of 'protons and neutrons'."
-    },
-    {
-        id: 15,
-        question: "Which of the following is a sign of a chemical reaction?",
-        options: [
-            "Boiling of water",
-            "Production of heat or light",
-            "Condensation",
-            "Evaporation"
-        ],
-        correct: 1,
-        explanation: "The reviewer lists 'Production of heat or light' as a sign of a chemical reaction."
-    },
-    {
-        id: 16,
-        question: "Which type of chemical reaction is represented by the general equation A + B → AB?",
-        options: [
-            "Decomposition",
-            "Synthesis",
-            "Single Replacement",
-            "Double Replacement"
-        ],
-        correct: 1,
-        explanation: "The reviewer defines Synthesis or Combination reactions as 'Two or more reactants combine to form a single product', with the general equation A + B → AB."
-    },
-    {
-        id: 17,
-        question: "In a Synthesis or Combination reaction, what happens to the reactants?",
-        options: [
-            "One reactant breaks down.",
-            "Two or more reactants combine to form one product.",
-            "An element replaces another element.",
-            "Ionic compounds exchange cations and anions."
-        ],
-        correct: 1,
-        explanation: "The definition for a Synthesis reaction is that 'Two or more reactants combine to form a single product'."
-    },
-    {
-        id: 18,
-        question: "The name for the alkane C₂H₆ is what?",
-        options: [
-            "Methane",
-            "Butane",
-            "Ethane",
-            "Propane"
-        ],
-        correct: 2,
-        explanation: "Based on the table of alkanes, C₂H₆ corresponds to the name 'Ethane'."
-    },
-    {
-        id: 19,
-        question: "What is the general equation for an Analysis or Decomposition reaction?",
-        options: [
-            "A + B → AB",
-            "AB → A + B",
-            "A + BC → AC + B",
-            "AB + CD → AD + CB"
-        ],
-        correct: 1,
-        explanation: "An Analysis or Decomposition reaction is where 'One reactant breaks to form two or more products', with the general equation AB → A + B."
-    },
-    {
-        id: 20,
-        question: "What is the name for the alkane with the chemical formula C₄H₁₀?",
-        options: [
-            "Propane",
-            "Pentane",
-            "Butane",
-            "Hexane"
-        ],
-        correct: 2,
-        explanation: "From the list of alkanes, C₄H₁₀ is named 'Butane'."
-    },
-    {
-        id: 21,
-        question: "In a Substitution or Single Replacement reaction, what is the role of the more active element?",
-        options: [
-            "It breaks down into two or more elements.",
-            "It combines with a less active element.",
-            "It replaces the less active element in a compound.",
-            "It exchanges cations and anions with another element."
-        ],
-        correct: 2,
-        explanation: "A Substitution reaction is where 'A more active element replaces the less active element in a compound'."
-    },
-    {
-        id: 22,
-        question: "What is the general equation for a Metathesis or Double Replacement Reaction?",
-        options: [
-            "A + B → AB",
-            "AB → A + B",
-            "A + BC → AC + B",
-            "AB + CD → AD + CB"
-        ],
-        correct: 3,
-        explanation: "The reviewer shows that the general equation for a Metathesis reaction is AB + CD → AD + CB."
-    },
-    {
-        id: 23,
-        question: "What is the chemical name for the alkane with one carbon atom?",
-        options: [
-            "Ethane",
-            "Methane",
-            "Propane",
-            "Butane"
-        ],
-        correct: 1,
-        explanation: "The alkane list shows that 'Methane' has 1 carbon atom, with the formula CH₄."
-    },
-    {
-        id: 24,
-        question: "What is the name of the alkane with the chemical formula C₈H₁₈?",
-        options: [
-            "Heptane",
-            "Nonane",
-            "Octane",
-            "Decane"
-        ],
-        correct: 2,
-        explanation: "Based on the alkane table, C₈H₁₈ is 'Octane'."
-    },
-    {
-        id: 25,
-        question: "What must be done to balance a chemical equation?",
-        options: [
-            "Make the number of reactants and products different.",
-            "Ensure the amount of reactants is equal to the amount of products.",
-            "Add more elements to the products side.",
-            "Remove elements from the reactants side."
-        ],
-        correct: 1,
-        explanation: "The reviewer advises that 'When balancing chemical equations, make sure that the reactant amount is equal to the product amount'."
-    },
-    {
-        id: 26,
-        question: "Which of the following is a sign of a chemical reaction?",
-        options: [
-            "Change in volume",
-            "Change in temperature",
-            "Boiling of water",
-            "Sublimation"
-        ],
-        correct: 1,
-        explanation: "The reviewer lists 'Change in temperature' as a sign of a chemical reaction."
-    },
-    {
-        id: 27,
-        question: "What is the chemical formula for Propane?",
-        options: [
-            "C₂H₆",
-            "C₃H₈",
-            "C₄H₁₀",
-            "CH₄"
-        ],
-        correct: 1,
-        explanation: "The alkane table lists 'Propane' with the chemical formula C₃H₈."
-    },
-    {
-        id: 28,
-        question: "Which of the following describes the Metathesis or Double Replacement reaction?",
-        options: [
-            "Two or more reactants combine.",
-            "One reactant breaks down.",
-            "An element replaces another in a compound.",
-            "Two ionic compounds exchange cations and anions."
-        ],
-        correct: 3,
-        explanation: "A Metathesis reaction is defined as 'Two ionic compounds exchange cations and anions with each other'."
-    },
-    {
-        id: 29,
-        question: "Which classification of elements is found in a 'Zigzag Formation' on the right side of the periodic table?",
-        options: [
-            "Metals",
-            "Nonmetals",
-            "Metalloids",
-            "Noble Gases"
-        ],
-        correct: 2,
-        explanation: "Metalloids are found on the 'Right Side' in a 'Zigzag Formation'."
-    },
-    {
-        id: 30,
-        question: "What is the name for the alkane with the chemical formula C₇H₁₆?",
-        options: [
-            "Heptane",
-            "Hexane",
-            "Octane",
-            "Nonane"
-        ],
-        correct: 0,
-        explanation: "From the provided list, C₇H₁₆ is named 'Heptane'."
-    },
-    {
-        id: 31,
-        question: "How are ions formed?",
-        options: [
-            "When an atom gains or loses a proton.",
-            "When an atom gains or loses a neutron.",
-            "When an atom gains or loses an electron.",
-            "When an atom is combined with another atom."
-        ],
-        correct: 2,
-        explanation: "The reviewer states that an 'Ion' is 'Formed when an atom gains or loses an electron'."
-    },
-    {
-        id: 32,
-        question: "The total number of protons and neutrons in an atom is its:",
-        options: [
-            "Atomic Number",
-            "Atomic Symbol",
-            "Mass Number",
-            "Atomic Charge"
-        ],
-        correct: 2,
-        explanation: "The Mass Number is the sum of the number of protons and neutrons."
-    },
-    {
-        id: 33,
-        question: "Which type of chemical reaction is characterized by a single reactant breaking down into two or more products?",
-        options: [
-            "Synthesis",
-            "Decomposition",
-            "Substitution",
-            "Metathesis"
-        ],
-        correct: 1,
-        explanation: "Analysis or Decomposition reactions involve 'One reactant break[ing] to form two or more products'."
-    },
-    {
-        id: 34,
-        question: "What are the particles in the nucleus of an atom called?",
-        options: [
-            "Electrons",
-            "Isotopes",
-            "Nucleons",
-            "Cations"
-        ],
-        correct: 2,
-        explanation: "The center of the atom, which consists of protons and neutrons, is called 'Nucleons'."
-    },
-    {
-        id: 35,
-        question: "What is a sign of a chemical reaction?",
-        options: [
-            "Change in odor",
-            "Change in density",
-            "Change in color of the container",
-            "Change in mass"
-        ],
-        correct: 0,
-        explanation: "The reviewer lists 'Change in odor' as a sign of a chemical reaction."
-    },
-    {
-        id: 36,
-        question: "Which of the following is an example of a Synthesis or Combination reaction?",
-        options: [
-            "CaCO₃ → CaO + CO₂",
-            "2Na + 2H₂O → 2NaOH + H₂",
-            "H₂ + Cl₂ → 2HCl",
-            "AgNO₃ + NaCl → AgCl + NaNO₃"
-        ],
-        correct: 2,
-        explanation: "The reaction H₂ + Cl₂ → 2HCl shows two reactants combining to form a single product, which is a Synthesis reaction."
-    },
-    {
-        id: 37,
-        question: "Which type of chemical reaction is a displacement reaction?",
-        options: [
-            "Metathesis or Double Replacement Reaction",
-            "Synthesis or Combination Reaction",
-            "Analysis or Decomposition Reaction",
-            "Substitution or Single Replacement Reaction"
-        ],
-        correct: 3,
-        explanation: "A Substitution reaction is also known as a 'Displacement Reaction'."
-    },
-    {
-        id: 38,
-        question: "What is the relative mass of a proton in amu?",
-        options: [
-            "0",
-            "1",
-            "2",
-            "-1"
-        ],
-        correct: 1,
-        explanation: "Based on the subatomic particles table, a proton has a relative mass of 1 amu."
-    },
-    {
-        id: 39,
-        question: "What does a more active element do in a Single Replacement reaction?",
-        options: [
-            "It is replaced by a less active element.",
-            "It replaces the less active element.",
-            "It breaks down the compound.",
-            "It forms a new compound by combining with a less active element."
-        ],
-        correct: 1,
-        explanation: "In a Substitution or Single Replacement reaction, a more active element replaces the less active element in a compound."
-    },
-    {
-        id: 40,
-        question: "What is the name for the alkane with 10 carbon atoms?",
-        options: [
-            "Nonane",
-            "Decane",
-            "Undecane",
-            "Hexane"
-        ],
-        correct: 1,
-        explanation: "The alkane table indicates that 'Decane' has 10 carbon atoms, with the formula C₁₀H₂₂."
-    },
-    {
-        id: 41,
-        question: "What is the symbol for an electron?",
-        options: [
-            "p+",
-            "n^0",
-            "e-",
-            "A"
-        ],
-        correct: 2,
-        explanation: "The reviewer's table shows the symbol for an electron is 'e-'."
-    },
-    {
-        id: 42,
-        question: "In the Isotopic Symbol <sup>A</sup><sub>Z</sub>X, what does the letter 'Z' represent?",
-        options: [
-            "Mass Number",
-            "Atomic Number (#protons)",
-            "Symbol of element",
-            "Atomic Mass Unit"
-        ],
-        correct: 1,
-        explanation: "The letter 'Z' in the symbol represents the Atomic Number, which is the number of protons."
-    },
-    {
-        id: 43,
-        question: "Which of the following is a sign of a chemical reaction?",
-        options: [
-            "Production of bubbles",
-            "Change in state (liquid to solid)",
-            "Production of sound",
-            "Production of bubbles and sound"
-        ],
-        correct: 3,
-        explanation: "Both 'Production of bubbles' and 'Production of sound' are listed as signs of a chemical reaction."
-    },
-    {
-        id: 44,
-        question: "What is the name for the alkane with the chemical formula C₅H₁₂?",
-        options: [
-            "Propane",
-            "Pentane",
-            "Butane",
-            "Hexane"
-        ],
-        correct: 1,
-        explanation: "From the list of alkanes, C₅H₁₂ is named 'Pentane'."
-    },
-    {
-        id: 45,
-        question: "What does it mean for an atom to be neutrally charged?",
-        options: [
-            "It has more protons than electrons.",
-            "It has more electrons than protons.",
-            "The number of protons is equal to the number of electrons.",
-            "It has lost all its electrons."
-        ],
-        correct: 2,
-        explanation: "A neutrally charged atom has an equal number of protons and electrons."
-    },
-    {
-        id: 46,
-        question: "How do you know what the products and reactants will be for a chemical reaction?",
-        options: [
-            "You must know each type of chemical reaction does to know its reactants and products.",
-            "You can always assume the products will be different elements.",
-            "The products are always the same as the reactants.",
-            "You must look up the reaction in a textbook."
-        ],
-        correct: 0,
-        explanation: "The reviewer states, 'When predicting, know what each type of chemical reaction does to know its reactants and products'."
-    },
-    {
-        id: 47,
-        question: "What is the general equation for a Substitution or Single Replacement reaction?",
-        options: [
-            "A + B → AB",
-            "AB → A + B",
-            "A + BC → AC + B",
-            "AB + CD → AD + CB"
-        ],
-        correct: 2,
-        explanation: "The general equation for this reaction is A + BC → AC + B."
-    },
-    {
-        id: 48,
-        question: "Which subatomic particle has a relative charge of 0?",
-        options: [
-            "Electron",
-            "Proton",
-            "Neutron",
-            "Ion"
-        ],
-        correct: 2,
-        explanation: "Based on the table, a neutron has a relative charge of 0."
-    },
-    {
-        id: 49,
-        question: "Which of the following is a classification of elements on the periodic table?",
-        options: [
-            "Gases",
-            "Liquids",
-            "Metals",
-            "Solids"
-        ],
-        correct: 2,
-        explanation: "The reviewer explicitly classifies elements as Metals, Nonmetals, and Metalloids."
-    },
-    {
-        id: 50,
-        question: "What does it mean for an element to be classified as a metalloid?",
-        options: [
-            "It is found on the left side of the periodic table.",
-            "It has properties of both metals and nonmetals.",
-            "It is a gas at room temperature.",
-            "It has a negative charge."
-        ],
-        correct: 1,
-        explanation: "Metalloids have properties of both metals and nonmetals, and are found in a zigzag pattern."
-    },
-    {
-        id: 51,
-        question: "What is the name for the alkane with the chemical formula C₉H₂₀?",
-        options: [
-            "Nonane",
-            "Octane",
-            "Decane",
-            "Heptane"
-        ],
-        correct: 0,
-        explanation: "According to the provided list, the alkane with 9 carbon atoms and 20 hydrogen atoms is 'Nonane'."
-    },
-    {
-        id: 52,
-        question: "Which of the following describes an Analysis or Decomposition reaction?",
-        options: [
-            "Two elements combine to form a compound.",
-            "A compound breaks down into two or more products.",
-            "Two compounds exchange components.",
-            "An element replaces another in a compound."
-        ],
-        correct: 1,
-        explanation: "A Decomposition reaction is defined as 'One reactant breaks to form two or more products'."
-    },
-    {
-        id: 53,
-        question: "How are Metathesis and Substitution reactions different?",
-        options: [
-            "Metathesis involves only one reactant, while Substitution involves two.",
-            "Metathesis involves the exchange of cations and anions, while Substitution involves one element replacing another.",
-            "Metathesis is only for metals, while Substitution is for nonmetals.",
-            "They are the same type of reaction."
-        ],
-        correct: 1,
-        explanation: "Metathesis involves the exchange of ions between two compounds (AB + CD → AD + CB), while Substitution involves one element replacing another in a compound (A + BC → AC + B)."
-    },
-    {
-        id: 54,
-        question: "Which of the following is an example of a sign of a chemical reaction?",
-        options: [
-            "Production of mechanical energy",
-            "Melting of ice",
-            "A physical change in shape",
-            "Sublimation of a solid"
-        ],
-        correct: 0,
-        explanation: "The reviewer lists 'Production of mechanical energy' as a sign of a chemical reaction."
-    }
+      {
+    "id": 1,
+    "question": "What is the smallest unit of matter that retains the identity and properties of an element?",
+    "options": [
+      "Molecule",
+      "Atom",
+      "Proton",
+      "Ion"
+    ],
+    "correct": 1,
+    "explanation": "An atom is the smallest unit of matter that retains the identity and properties of an element."
+  },
+  {
+    "id": 2,
+    "question": "Which subatomic particle has a positive electric charge and is found in all atomic nuclei?",
+    "options": [
+      "Electron",
+      "Neutron",
+      "Proton",
+      "Nucleon"
+    ],
+    "correct": 2,
+    "explanation": "A proton is a stable subatomic particle with a positive charge, located in the nucleus."
+  },
+  {
+    "id": 3,
+    "question": "What is the symbol for a neutron?",
+    "options": [
+      "$p^+$",
+      "$e^-$",
+      "$n^0$",
+      "$N$"
+    ],
+    "correct": 2,
+    "explanation": "The symbol for a neutron is $n^0$ with a relative mass of 1 amu and a charge of 0."
+  },
+  {
+    "id": 4,
+    "question": "Where are protons and neutrons located within an atom?",
+    "options": [
+      "Electron cloud",
+      "Orbits",
+      "Nucleus",
+      "Shells"
+    ],
+    "correct": 2,
+    "explanation": "Protons and neutrons are located in the nucleus, forming nucleons."
+  },
+  {
+    "id": 5,
+    "question": "What is the total number of elements on the periodic table as stated in the reviewer?",
+    "options": [
+      "100",
+      "118",
+      "92",
+      "120"
+    ],
+    "correct": 1,
+    "explanation": "The periodic table contains 118 elements."
+  },
+  {
+    "id": 6,
+    "question": "Which of the following is NOT a characteristic of a nonmetal?",
+    "options": [
+      "Dull appearance",
+      "Good conductor of heat and electricity",
+      "Brittle (if solid)",
+      "Poor conductor of heat and electricity"
+    ],
+    "correct": 1,
+    "explanation": "Nonmetals are poor conductors, unlike metals which are good conductors."
+  },
+  {
+    "id": 7,
+    "question": "Which of the following elements is a noble gas?",
+    "options": [
+      "S",
+      "Ar",
+      "Br",
+      "Si"
+    ],
+    "correct": 1,
+    "explanation": "Argon (Ar) is an element in Group 18, also known as a noble gas."
+  },
+  {
+    "id": 8,
+    "question": "The combination of protons and neutrons is called...",
+    "options": [
+      "Ions",
+      "Subatomic particles",
+      "Nucleons",
+      "Molecules"
+    ],
+    "correct": 2,
+    "explanation": "Protons and neutrons together are referred to as nucleons."
+  },
+  {
+    "id": 9,
+    "question": "Which of these is an example of a metalloid?",
+    "options": [
+      "C",
+      "H",
+      "Si",
+      "F"
+    ],
+    "correct": 2,
+    "explanation": "Silicon (Si) is one of the metalloids listed in the reviewer."
+  },
+  {
+    "id": 10,
+    "question": "What is an ion that is positively charged and formed when a metal loses an electron?",
+    "options": [
+      "Anion",
+      "Cation",
+      "Nucleon",
+      "Molecule"
+    ],
+    "correct": 1,
+    "explanation": "A cation is a positively charged ion formed when a metal loses an electron."
+  },
+  {
+    "id": 11,
+    "question": "A group of two or more atoms that are chemically bonded is called a...",
+    "options": [
+      "Proton",
+      "Neutron",
+      "Atom",
+      "Molecule"
+    ],
+    "correct": 3,
+    "explanation": "A molecule is a group of two or more chemically bonded atoms."
+  },
+  {
+    "id": 12,
+    "question": "The symbol $^A_Z X$ represents the isotopic symbol. What does 'Z' stand for?",
+    "options": [
+      "Mass number",
+      "Atomic number",
+      "Element symbol",
+      "Isotope"
+    ],
+    "correct": 1,
+    "explanation": "In the isotopic symbol, Z represents the atomic number (number of protons)."
+  },
+  {
+    "id": 13,
+    "question": "In a neutrally charged atom, what is equal to the number of protons?",
+    "options": [
+      "Number of neutrons",
+      "Number of electrons",
+      "Atomic mass",
+      "Mass number"
+    ],
+    "correct": 1,
+    "explanation": "In a neutrally charged atom, the number of protons is equal to the number of electrons."
+  },
+  {
+    "id": 14,
+    "question": "Which group of elements is known for being chemically inert and unreactive under normal conditions due to full valence electron shells?",
+    "options": [
+      "Halogens",
+      "Metalloids",
+      "Nonmetals",
+      "Noble gases"
+    ],
+    "correct": 3,
+    "explanation": "Noble gases have full valence electron shells, making them unreactive."
+  },
+  {
+    "id": 15,
+    "question": "What is the collective name for elements in Group 17 of the periodic table?",
+    "options": [
+      "Noble gases",
+      "Alkaline metals",
+      "Halogens",
+      "Lanthanides"
+    ],
+    "correct": 2,
+    "explanation": "The halogens are in Group 17 (VIIA) of the periodic table."
+  },
+  {
+    "id": 16,
+    "question": "What happens when an atom gains or loses an electron?",
+    "options": [
+      "It becomes a different element.",
+      "It becomes an isotope.",
+      "It becomes an ion.",
+      "Its mass number changes."
+    ],
+    "correct": 2,
+    "explanation": "An ion is formed when an atom gains or loses an electron."
+  },
+  {
+    "id": 17,
+    "question": "The majority of elements on the periodic table are classified as...",
+    "options": [
+      "Metalloids",
+      "Nonmetals",
+      "Halogens",
+      "Metals"
+    ],
+    "correct": 3,
+    "explanation": "Metals make up the majority of the elements on the periodic table."
+  },
+  {
+    "id": 18,
+    "question": "Who is credited as the first to propose the concept of the atom as the smallest unit of matter?",
+    "options": [
+      "John Dalton",
+      "Ernest Rutherford",
+      "J.J. Thomson",
+      "Dmitri Mendeleev"
+    ],
+    "correct": 0,
+    "explanation": "John Dalton is often called the father of modern atomic theory for his work on the atom."
+  },
+  {
+    "id": 19,
+    "question": "What is the general formula for a saturated hydrocarbon, or alkane?",
+    "options": [
+      "$\\text{C}_n\\text{H}_{2n}$",
+      "$\\text{C}_n\\text{H}_{2n+2}$",
+      "$\\text{C}_n\\text{H}_{2n-2}$",
+      "$\\text{C}_n\\text{H}_n$"
+    ],
+    "correct": 1,
+    "explanation": "The general formula for alkanes is $\\text{C}_n\\text{H}_{2n+2}$."
+  },
+  {
+    "id": 20,
+    "question": "How many carbon atoms are in the alkane named Decane?",
+    "options": [
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    "correct": 2,
+    "explanation": "Decane is the tenth alkane in the series, so it has 10 carbon atoms ($\\text{C}_{10}\\text{H}_{22}$)."
+  },
+  {
+    "id": 21,
+    "question": "What is the chemical formula for Propane?",
+    "options": [
+      "$\\text{C}_2\\text{H}_6$",
+      "$\\text{C}_3\\text{H}_8$",
+      "$\\text{C}_4\\text{H}_{10}$",
+      "$\\text{C}_5\\text{H}_{12}$"
+    ],
+    "correct": 1,
+    "explanation": "Propane is the third alkane, so its formula is $\\text{C}_3\\text{H}_8$."
+  },
+  {
+    "id": 22,
+    "question": "What type of chemical reaction occurs when two or more reactants combine to form a single product?",
+    "options": [
+      "Analysis",
+      "Substitution",
+      "Synthesis",
+      "Metathesis"
+    ],
+    "correct": 2,
+    "explanation": "Synthesis or combination is a reaction where two or more reactants form one product ($A + B \\rightarrow AB$)."
+  },
+  {
+    "id": 23,
+    "question": "What is the name of the chemical reaction in which one reactant breaks down to form two or more products?",
+    "options": [
+      "Combination",
+      "Decomposition",
+      "Single replacement",
+      "Double replacement"
+    ],
+    "correct": 1,
+    "explanation": "Analysis or decomposition is a reaction where one reactant breaks down into two or more products ($AB \\rightarrow A + B$)."
+  },
+  {
+    "id": 24,
+    "question": "Which of the following is an example of a synthesis reaction?",
+    "options": [
+      "$\\text{H}_2\\text{O} \\rightarrow \\text{H}_2 + \\text{O}_2$",
+      "$\\text{NaOH} + \\text{HCl} \\rightarrow \\text{NaCl} + \\text{H}_2\\text{O}$",
+      "$\\text{Fe} + \\text{H}_2\\text{SO}_4 \\rightarrow \\text{FeSO}_4 + \\text{H}_2$",
+      "$2\\text{H}_2 + \\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O}$"
+    ],
+    "correct": 3,
+    "explanation": "This reaction shows two reactants ($\\text{H}_2$ and $\\text{O}_2$) combining to form a single product ($\\text{H}_2\\text{O}$). This is a synthesis reaction."
+  },
+  {
+    "id": 25,
+    "question": "In a single replacement reaction, a more active element replaces a less active element in a compound. Which halogen is the most active in the series?",
+    "options": [
+      "Cl",
+      "Br",
+      "I",
+      "F"
+    ],
+    "correct": 3,
+    "explanation": "The activity series for halogens is F>Cl>Br>I, making Fluorine (F) the most active."
+  },
+  {
+    "id": 26,
+    "question": "What type of reaction involves two ionic compounds exchanging cations and anions with each other?",
+    "options": [
+      "Combination",
+      "Decomposition",
+      "Single replacement",
+      "Double replacement"
+    ],
+    "correct": 3,
+    "explanation": "Metathesis or double replacement reactions involve the exchange of ions between two compounds ($AB + CD \\rightarrow AD + CB$)."
+  },
+  {
+    "id": 27,
+    "question": "Which of the following indicates that a chemical reaction has occurred?",
+    "options": [
+      "Production of sound",
+      "Change in phase only",
+      "Maintaining the same odor",
+      "Keeping the same temperature"
+    ],
+    "correct": 0,
+    "explanation": "The reviewer lists 'production of sound' as one of the indicators of a chemical reaction."
+  },
+  {
+    "id": 28,
+    "question": "True or False: When balancing a chemical equation, the amount of reactants must be equal to the amount of products.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "This is a fundamental principle of balancing chemical equations, based on the law of conservation of mass."
+  },
+  {
+    "id": 29,
+    "question": "What is the chemical formula for Methane?",
+    "options": [
+      "$\\text{CH}_4$",
+      "$\\text{C}_2\\text{H}_6$",
+      "$\\text{C}_3\\text{H}_8$",
+      "$\\text{C}_4\\text{H}_{10}$"
+    ],
+    "correct": 0,
+    "explanation": "Methane is the simplest alkane with one carbon atom, so its formula is $\\text{CH}_4$."
+  },
+  {
+    "id": 30,
+    "question": "What is the process of predicting the products of a chemical reaction based on the type of reaction?",
+    "options": [
+      "Balancing",
+      "Synthesis",
+      "Stoichiometry",
+      "Prediction"
+    ],
+    "correct": 3,
+    "explanation": "The reviewer states that to predict a reaction, one must know what each type of chemical reaction does to know its reactants and products."
+  },
+  {
+    "id": 31,
+    "question": "Who is credited with the discovery of the electron using a cathode ray tube?",
+    "options": [
+      "Ernest Rutherford",
+      "Niels Bohr",
+      "J.J. Thomson",
+      "Marie Curie"
+    ],
+    "correct": 2,
+    "explanation": "J.J. Thomson's experiments with cathode rays led to the discovery of the electron."
+  },
+  {
+    "id": 32,
+    "question": "What is the relative charge of an electron?",
+    "options": [
+      "+1",
+      "0",
+      "-1",
+      "+2"
+    ],
+    "correct": 2,
+    "explanation": "An electron has a relative charge of -1."
+  },
+  {
+    "id": 33,
+    "question": "What is the relative mass (in amu) of a proton?",
+    "options": [
+      "1",
+      "0",
+      "1/1836",
+      "2"
+    ],
+    "correct": 0,
+    "explanation": "Protons have a relative mass of 1 atomic mass unit (amu)."
+  },
+  {
+    "id": 34,
+    "question": "What is an anion?",
+    "options": [
+      "A positively charged ion",
+      "A neutrally charged atom",
+      "A negatively charged ion",
+      "An isotope"
+    ],
+    "correct": 2,
+    "explanation": "An anion is a negatively charged ion formed when a nonmetal gains an electron."
+  },
+  {
+    "id": 35,
+    "question": "According to the reviewer, which elements are considered nonmetals and are located on the right side of the periodic table, including Hydrogen?",
+    "options": [
+      "Metals",
+      "Metalloids",
+      "Nonmetals",
+      "Noble Gases"
+    ],
+    "correct": 2,
+    "explanation": "Nonmetals are primarily found on the right side of the periodic table, with hydrogen being an exception on the left."
+  },
+  {
+    "id": 36,
+    "question": "Who proposed the model of the atom with electrons orbiting a central nucleus?",
+    "options": [
+      "Niels Bohr",
+      "Ernest Rutherford",
+      "John Dalton",
+      "J.J. Thomson"
+    ],
+    "correct": 1,
+    "explanation": "Ernest Rutherford's gold foil experiment led to the discovery of the nucleus and the nuclear model of the atom."
+  },
+  {
+    "id": 37,
+    "question": "What is the name of the process by which a nonmetal X replaces another nonmetal in a compound?",
+    "options": [
+      "Synthesis",
+      "Analysis",
+      "Substitution",
+      "Metathesis"
+    ],
+    "correct": 2,
+    "explanation": "This is an example of a substitution or single replacement reaction."
+  },
+  {
+    "id": 38,
+    "question": "What is the chemical formula for Ethane?",
+    "options": [
+      "$\\text{C}_2\\text{H}_4$",
+      "$\\text{C}_2\\text{H}_6$",
+      "$\\text{C}_3\\text{H}_8$",
+      "$\\text{C}_4\\text{H}_{10}$"
+    ],
+    "correct": 1,
+    "explanation": "Ethane is the second alkane, with a formula of $\\text{C}_2\\text{H}_6$."
+  },
+  {
+    "id": 39,
+    "question": "Which of the following is NOT an alkane?",
+    "options": [
+      "Pentane",
+      "Decane",
+      "Ethene",
+      "Hexane"
+    ],
+    "correct": 2,
+    "explanation": "Ethene is an alkene, which is a different homologous series."
+  },
+  {
+    "id": 40,
+    "question": "What is the chemical formula for Butane?",
+    "options": [
+      "$\\text{C}_3\\text{H}_8$",
+      "$\\text{C}_4\\text{H}_{10}$",
+      "$\\text{C}_5\\text{H}_{12}$",
+      "$\\text{C}_6\\text{H}_{14}$"
+    ],
+    "correct": 1,
+    "explanation": "Butane is the fourth alkane with the formula $\\text{C}_4\\text{H}_{10}$."
+  },
+  {
+    "id": 41,
+    "question": "How many hydrogen atoms are in the alkane with 7 carbon atoms?",
+    "options": [
+      "14",
+      "15",
+      "16",
+      "18"
+    ],
+    "correct": 2,
+    "explanation": "Using the general formula $\\text{C}_n\\text{H}_{2n+2}$, for $n=7$, the number of hydrogen atoms is $2(7)+2 = 16$."
+  },
+  {
+    "id": 42,
+    "question": "In the reaction $A + BC \\rightarrow AC + B$, what type of reaction is this?",
+    "options": [
+      "Synthesis",
+      "Decomposition",
+      "Single Replacement",
+      "Double Replacement"
+    ],
+    "correct": 2,
+    "explanation": "This is the general form of a single replacement reaction."
+  },
+  {
+    "id": 43,
+    "question": "The chemical reaction represented by $AB \\rightarrow A + B$ is known as...",
+    "options": [
+      "Decomposition",
+      "Combination",
+      "Substitution",
+      "Metathesis"
+    ],
+    "correct": 0,
+    "explanation": "This is the general form of an analysis or decomposition reaction."
+  },
+  {
+    "id": 44,
+    "question": "What are the products of the reaction between $\\text{CaCO}_3$ when it undergoes a decomposition reaction?",
+    "options": [
+      "$\\text{Ca} + \\text{CO}_3$",
+      "$\\text{CaO} + \\text{CO}_2$",
+      "$\\text{Ca(OH)}_2 + \\text{CO}_2$",
+      "$\\text{Ca} + \\text{C} + \\text{O}_2$"
+    ],
+    "correct": 1,
+    "explanation": "The reviewer shows the decomposition of $\\text{CaCO}_3$ into $\\text{CaO}$ and $\\text{CO}_2$."
+  },
+  {
+    "id": 45,
+    "question": "In the reaction $\\text{Al} + \\text{Fe}_2\\text{O}_3 \\rightarrow \\text{Al}_2\\text{O}_3 + \\text{Fe}$, what is the single element that is more active?",
+    "options": [
+      "Al",
+      "$\\text{Fe}_2\\text{O}_3$",
+      "Fe",
+      "$\\text{Al}_2\\text{O}_3$"
+    ],
+    "correct": 0,
+    "explanation": "Aluminum (Al) is more active and replaces Iron (Fe) from its compound."
+  },
+  {
+    "id": 46,
+    "question": "What is the name of the process shown in the reaction $2\\text{NaBr}(aq) + \\text{Cl}_2(aq) \\rightarrow 2\\text{NaCl}(aq) + \\text{Br}_2(g)$?",
+    "options": [
+      "Synthesis",
+      "Analysis",
+      "Single Replacement",
+      "Double Replacement"
+    ],
+    "correct": 2,
+    "explanation": "Chlorine ($\\text{Cl}$) replaces Bromine ($\\text{Br}$) in a single replacement reaction."
+  },
+  {
+    "id": 47,
+    "question": "According to the provided text, what is a key feature of a homologous series?",
+    "options": [
+      "All members have different functional groups.",
+      "All members are saturated hydrocarbons.",
+      "All members follow a specific general formula.",
+      "All members are gases at room temperature."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer highlights the general formula for alkanes, which is a homologous series."
+  },
+  {
+    "id": 48,
+    "question": "What is the name of the alkane with the chemical formula $\\text{C}_6\\text{H}_{14}$?",
+    "options": [
+      "Pentane",
+      "Hexane",
+      "Heptane",
+      "Octane"
+    ],
+    "correct": 1,
+    "explanation": "Hexane is the sixth alkane in the series, so its formula is $\\text{C}_6\\text{H}_{14}$."
+  },
+  {
+    "id": 49,
+    "question": "True or False: A change in odor is a physical indicator that a chemical reaction has occurred.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "A change in odor is a chemical change, indicating a chemical reaction, not a physical one."
+  },
+  {
+    "id": 50,
+    "question": "What is the chemical formula for Octane?",
+    "options": [
+      "$\\text{C}_7\\text{H}_{16}$",
+      "$\\text{C}_8\\text{H}_{18}$",
+      "$\\text{C}_9\\text{H}_{20}$",
+      "$\\text{C}_{10}\\text{H}_{22}$"
+    ],
+    "correct": 1,
+    "explanation": "Octane is the eighth alkane with the formula $\\text{C}_8\\text{H}_{18}$."
+  },
+  {
+    "id": 51,
+    "question": "Who is considered the 'father of modern chemistry' for his work on the law of conservation of mass?",
+    "options": [
+      "Robert Boyle",
+      "Antoine Lavoisier",
+      "Joseph Priestley",
+      "Louis Pasteur"
+    ],
+    "correct": 1,
+    "explanation": "Antoine Lavoisier's work on the conservation of mass laid the foundation for modern chemistry."
+  },
+  {
+    "id": 52,
+    "question": "What type of reaction is represented by the general formula $AB + CD \\rightarrow AD + CB$?",
+    "options": [
+      "Synthesis",
+      "Analysis",
+      "Single Replacement",
+      "Double Replacement"
+    ],
+    "correct": 3,
+    "explanation": "This is the general form for a double replacement reaction."
+  },
+  {
+    "id": 53,
+    "question": "What is the name of the alkane with 9 carbon atoms?",
+    "options": [
+      "Heptane",
+      "Octane",
+      "Nonane",
+      "Decane"
+    ],
+    "correct": 2,
+    "explanation": "Nonane has 9 carbon atoms."
+  },
+  {
+    "id": 54,
+    "question": "What is the formula for Heptane?",
+    "options": [
+      "$\\text{C}_6\\text{H}_{14}$",
+      "$\\text{C}_7\\text{H}_{16}$",
+      "$\\text{C}_8\\text{H}_{18}$",
+      "$\\text{C}_9\\text{H}_{20}$"
+    ],
+    "correct": 1,
+    "explanation": "Heptane has 7 carbon atoms, so its formula is $\\text{C}_7\\text{H}_{16}$."
+  },
+  {
+    "id": 55,
+    "question": "True or False: All hydrocarbons are saturated.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "Hydrocarbons can be saturated (like alkanes) or unsaturated (like alkenes and alkynes)."
+  },
+  {
+    "id": 56,
+    "question": "What is the symbol and charge of an electron?",
+    "options": [
+      "$e^-$, -1",
+      "$p^+$, +1",
+      "$n^0$, 0",
+      "$e^-$, 0"
+    ],
+    "correct": 0,
+    "explanation": "An electron's symbol is $e^-$ with a relative charge of -1."
+  },
+  {
+    "id": 57,
+    "question": "Which of the following is a characteristic of a metal?",
+    "options": [
+      "Dull",
+      "Brittle",
+      "Malleable",
+      "Poor conductor"
+    ],
+    "correct": 2,
+    "explanation": "Metals are typically malleable and ductile, and are good conductors of heat and electricity."
+  },
+  {
+    "id": 58,
+    "question": "What are the products of the decomposition of $\\text{NaClO}_3$?",
+    "options": [
+      "$\\text{NaCl} + \\text{O}_2$",
+      "$\\text{Na} + \\text{Cl}_2 + \\text{O}_2$",
+      "$\\text{Na} + \\text{ClO}_3$",
+      "$\\text{NaCl} + \\text{Cl} + \\text{O}_2$"
+    ],
+    "correct": 0,
+    "explanation": "The reviewer shows the decomposition of $\\text{NaClO}_3$ into $\\text{NaCl}$ and $\\text{O}_2$."
+  },
+  {
+    "id": 59,
+    "question": "Who is credited with arranging the first 63 known elements into the periodic table based on their atomic mass?",
+    "options": [
+      "John Dalton",
+      "Dmitri Mendeleev",
+      "Niels Bohr",
+      "Robert Boyle"
+    ],
+    "correct": 1,
+    "explanation": "Dmitri Mendeleev created the first periodic table of elements."
+  },
+  {
+    "id": 60,
+    "question": "The term 'Homologous series' refers to a series of compounds that...",
+    "options": [
+      "Are all saturated.",
+      "Have the same chemical formula.",
+      "Have the same functional group and similar chemical properties.",
+      "Are all gases at standard temperature and pressure."
+    ],
+    "correct": 2,
+    "explanation": "A homologous series is a series of compounds with similar chemical properties due to the same functional group."
+  },
+  {
+    "id": 61,
+    "question": "What is the main difference between an atom and an ion?",
+    "options": [
+      "Atoms are larger.",
+      "Ions have a net electric charge.",
+      "Atoms have more protons.",
+      "Ions are always positively charged."
+    ],
+    "correct": 1,
+    "explanation": "An ion is formed by gaining or losing electrons, giving it a net electric charge, unlike a neutral atom."
+  },
+  {
+    "id": 62,
+    "question": "Which of the following is a metalloid according to the reviewer?",
+    "options": [
+      "F",
+      "S",
+      "As",
+      "H"
+    ],
+    "correct": 2,
+    "explanation": "Arsenic (As) is listed as a metalloid."
+  },
+  {
+    "id": 63,
+    "question": "What is the name of the alkane with the formula $C_{10}H_{22}$?",
+    "options": [
+      "Hexane",
+      "Nonane",
+      "Heptane",
+      "Decane"
+    ],
+    "correct": 3,
+    "explanation": "Decane is the tenth alkane in the series."
+  },
+  {
+    "id": 64,
+    "question": "In the isotopic symbol, what does 'A' represent?",
+    "options": [
+      "Atomic number",
+      "Mass number",
+      "Number of protons",
+      "Number of electrons"
+    ],
+    "correct": 1,
+    "explanation": "A represents the mass number, which is the sum of protons and neutrons."
+  },
+  {
+    "id": 65,
+    "question": "Who is known for proposing that an atom is mostly empty space with a small, dense, positively charged nucleus?",
+    "options": [
+      "Ernest Rutherford",
+      "J.J. Thomson",
+      "John Dalton",
+      "Niels Bohr"
+    ],
+    "correct": 0,
+    "explanation": "Rutherford's famous gold foil experiment led to this conclusion about the structure of the atom."
+  },
+  {
+    "id": 66,
+    "question": "Which type of chemical reaction is shown in the reaction $\\text{H}_2\\text{O} \\rightarrow \\text{H}_2 + \\text{O}_2$?",
+    "options": [
+      "Synthesis",
+      "Analysis",
+      "Substitution",
+      "Double replacement"
+    ],
+    "correct": 1,
+    "explanation": "This is a decomposition (analysis) reaction where a compound breaks down into simpler substances."
+  },
+  {
+    "id": 67,
+    "question": "What are the common indicators of a chemical reaction?",
+    "options": [
+      "Change in phase, volume, and shape.",
+      "Production of heat, light, sound, and a change in color or odor.",
+      "Melting, boiling, and freezing.",
+      "Dissolving in a solvent."
+    ],
+    "correct": 1,
+    "explanation": "The reviewer lists these as indicators of a chemical reaction."
+  },
+  {
+    "id": 68,
+    "question": "What is the common term for a displacement reaction?",
+    "options": [
+      "Combination",
+      "Metathesis",
+      "Substitution",
+      "Decomposition"
+    ],
+    "correct": 2,
+    "explanation": "A substitution (or single replacement) reaction is also known as a displacement reaction."
+  },
+  {
+    "id": 69,
+    "question": "What is the chemical formula for Nonane?",
+    "options": [
+      "$\\text{C}_8\\text{H}_{18}$",
+      "$\\text{C}_9\\text{H}_{20}$",
+      "$\\text{C}_{10}\\text{H}_{22}$",
+      "$\\text{C}_{11}\\text{H}_{24}$"
+    ],
+    "correct": 1,
+    "explanation": "Nonane has 9 carbon atoms and its formula is $\\text{C}_9\\text{H}_{20}$."
+  },
+  {
+    "id": 70,
+    "question": "What is the key principle that guides the balancing of chemical equations?",
+    "options": [
+      "Law of Multiple Proportions",
+      "Law of Conservation of Energy",
+      "Law of Conservation of Mass",
+      "Law of Definite Proportions"
+    ],
+    "correct": 2,
+    "explanation": "Balancing equations ensures that mass is conserved, with the same number of atoms on both the reactant and product sides."
+  },
+  {
+    "id": 71,
+    "question": "In the reaction $A+B \\rightarrow AB$, what is the term for A and B?",
+    "options": [
+      "Products",
+      "Reactants",
+      "Catalysts",
+      "Molecules"
+    ],
+    "correct": 1,
+    "explanation": "A and B are the substances that react, which are called reactants."
+  },
+  {
+    "id": 72,
+    "question": "What element is a nonmetal but is located in Group 1?",
+    "options": [
+      "Sodium",
+      "Hydrogen",
+      "Lithium",
+      "Helium"
+    ],
+    "correct": 1,
+    "explanation": "Hydrogen is a nonmetal but is in Group 1, unlike the alkali metals in the same group."
+  },
+  {
+    "id": 73,
+    "question": "The chemical elements that have properties intermediate between those of metals and nonmetals are called?",
+    "options": [
+      "Alkali metals",
+      "Halogens",
+      "Metalloids",
+      "Noble gases"
+    ],
+    "correct": 2,
+    "explanation": "This is the definition of a metalloid."
+  },
+  {
+    "id": 74,
+    "question": "In the chemical reaction $\\text{CaO} + \\text{CO}_2 \\rightarrow \\text{CaCO}_3$, what is the name of the product?",
+    "options": [
+      "Calcium oxide",
+      "Calcium carbonate",
+      "Carbon dioxide",
+      "Calcium carbide"
+    ],
+    "correct": 1,
+    "explanation": "$\\text{CaCO}_3$ is Calcium Carbonate."
+  },
+  {
+    "id": 75,
+    "question": "What is the term for a chemical that speeds up a reaction without being consumed?",
+    "options": [
+      "Inhibitor",
+      "Reactant",
+      "Product",
+      "Catalyst"
+    ],
+    "correct": 3,
+    "explanation": "A catalyst increases the rate of a chemical reaction without undergoing any permanent chemical change."
+  },
+  {
+    "id": 76,
+    "question": "What is a hydrated salt?",
+    "options": [
+      "A salt dissolved in water.",
+      "A salt with water molecules incorporated into its crystal structure.",
+      "A salt that reacts with water.",
+      "A salt that is insoluble in water."
+    ],
+    "correct": 1,
+    "explanation": "A hydrated salt is an ionic compound that has a specific number of water molecules bound to each formula unit within its crystal lattice."
+  },
+  {
+    "id": 77,
+    "question": "According to the Arrhenius theory, what defines an acid?",
+    "options": [
+      "A substance that accepts a proton.",
+      "A substance that donates a proton.",
+      "A substance that produces $\\text{H}^+$ ions in an aqueous solution.",
+      "A substance that produces $\\text{OH}^-$ ions in an aqueous solution."
+    ],
+    "correct": 2,
+    "explanation": "The Arrhenius definition of an acid is a substance that dissociates in an aqueous solution to produce hydrogen ions ($\\text{H}^+$)."
+  },
+  {
+    "id": 78,
+    "question": "What is the main difference between a binary acid and a ternary acid?",
+    "options": [
+      "Binary acids contain oxygen, while ternary acids do not.",
+      "Binary acids contain only two elements, while ternary acids contain three or more elements.",
+      "Binary acids are strong, while ternary acids are weak.",
+      "Binary acids are organic, while ternary acids are inorganic."
+    ],
+    "correct": 1,
+    "explanation": "A binary acid consists of hydrogen and one other nonmetal. A ternary acid (or oxyacid) contains hydrogen, a nonmetal, and oxygen."
+  },
+  {
+    "id": 80,
+    "question": "Who proposed the 'plum pudding' model of the atom?",
+    "options": [
+      "John Dalton",
+      "J.J. Thomson",
+      "Ernest Rutherford",
+      "Niels Bohr"
+    ],
+    "correct": 1,
+    "explanation": "J.J. Thomson's 'plum pudding' model described the atom as a sphere of positive charge with electrons embedded in it."
+  }
 ];
 
 // Contemporary Arts Quiz Data - 60 Questions
