@@ -1,25 +1,38 @@
-// Quiz System - Handles all quiz functionality
+/**
+ * Quiz System - Complete Quiz Management for Grade 12 Reviewer
+ * Handles multi-subject quizzes with theme system, MathJax integration, and progress tracking
+ */
+
 class QuizSystem {
     constructor() {
-        // Detect current subject based on page
+        // Core quiz state
         this.currentSubject = this.detectCurrentSubject();
         this.questions = this.loadQuestionsForSubject(this.currentSubject);
         this.currentQuestionIndex = 0;
         this.userAnswers = new Array(this.questions.length).fill(null);
-        this.selectedOption = null; // Currently selected option (before submission)
-        this.justSubmitted = false; // Flag to track if answer was just submitted
-        this.explanationAnimating = false; // Flag to track if explanation is animating
+        this.revealedAnswers = new Array(this.questions.length).fill(false);
+        
+        // Selection and submission state
+        this.selectedOption = null;
+        this.justSubmitted = false;
+        this.explanationAnimating = false;
+        
+        // Quiz timing and completion
         this.startTime = new Date();
         this.endTime = null;
         this.isCompleted = false;
         
-        // Shuffle answer choices for each question
+        // Shuffle answer choices for randomization
         this.shuffledQuestions = this.shuffleAllAnswerChoices();
         
+        // Initialize the quiz
         this.initializeQuiz();
         this.loadTheme();
     }
 
+    /**
+     * Detect which subject quiz is currently running based on the page URL
+     */
     detectCurrentSubject() {
         const currentPage = window.location.pathname.split('/').pop();
         const subjectMap = {
@@ -32,6 +45,9 @@ class QuizSystem {
         return subjectMap[currentPage] || 'work-immersion';
     }
 
+    /**
+     * Load questions for the detected subject
+     */
     loadQuestionsForSubject(subject) {
         const questionMap = {
             'work-immersion': workImmersionQuestions,
@@ -43,9 +59,12 @@ class QuizSystem {
         return questionMap[subject] || workImmersionQuestions;
     }
 
+    /**
+     * Shuffle answer choices for all questions to prevent memorization
+     */
     shuffleAllAnswerChoices() {
         return this.questions.map(question => {
-            // Create an array of options with their original indices
+            // Create array of options with their original indices
             const optionsWithIndices = question.options.map((option, index) => ({
                 text: option,
                 originalIndex: index
@@ -54,7 +73,7 @@ class QuizSystem {
             // Shuffle the options
             const shuffledOptions = this.shuffleArray([...optionsWithIndices]);
             
-            // Find the new position of the correct answer
+            // Find new position of correct answer
             const newCorrectIndex = shuffledOptions.findIndex(
                 option => option.originalIndex === question.correct
             );
@@ -69,6 +88,9 @@ class QuizSystem {
         });
     }
 
+    /**
+     * Fisher-Yates shuffle algorithm
+     */
     shuffleArray(array) {
         const shuffled = [...array];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -78,17 +100,22 @@ class QuizSystem {
         return shuffled;
     }
 
+    /**
+     * Initialize quiz UI and state
+     */
     initializeQuiz() {
         this.updateTotalQuestions();
         this.renderCurrentQuestion();
         this.updateProgress();
-        this.updateControls();
+        this.updateSubmitButton();
     }
 
+    /**
+     * Theme System - Load and apply themes with auto-detection
+     */
     loadTheme() {
-        // Set default to auto if no preference is saved
         const savedTheme = localStorage.getItem('theme') || 'auto';
-        if (savedTheme !== 'auto' && savedTheme !== 'light' && savedTheme !== 'dark') {
+        if (!['auto', 'light', 'dark'].includes(savedTheme)) {
             localStorage.setItem('theme', 'auto');
         }
         
@@ -103,11 +130,13 @@ class QuizSystem {
         });
     }
 
+    /**
+     * Toggle between theme modes: auto -> light -> dark -> auto
+     */
     toggleTheme() {
         const currentThemePreference = localStorage.getItem('theme') || 'auto';
         let newThemePreference;
         
-        // Cycle through: auto -> light -> dark -> auto
         if (currentThemePreference === 'auto') {
             newThemePreference = 'light';
         } else if (currentThemePreference === 'light') {
@@ -120,15 +149,16 @@ class QuizSystem {
         this.applyTheme();
     }
 
+    /**
+     * Apply the selected theme to the document
+     */
     applyTheme() {
         const themePreference = localStorage.getItem('theme') || 'auto';
         let actualTheme;
         
         if (themePreference === 'auto') {
-            // Follow system preference
             actualTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
         } else {
-            // Use manual preference
             actualTheme = themePreference;
         }
         
@@ -136,20 +166,20 @@ class QuizSystem {
         this.updateThemeIcon(themePreference, actualTheme);
     }
 
+    /**
+     * Update theme toggle button icons and tooltips
+     */
     updateThemeIcon(themePreference, actualTheme) {
-        // Update both fixed and navbar theme toggles
         const themeToggles = document.querySelectorAll('.theme-toggle, .theme-toggle-nav');
         
         themeToggles.forEach(themeToggle => {
             const moonIcon = themeToggle.querySelector('.fa-moon');
             const sunIcon = themeToggle.querySelector('.fa-sun');
             
-            if (!themeToggle || !moonIcon || !sunIcon) {
-                return; // Skip this button if elements are missing
-            }
+            if (!themeToggle || !moonIcon || !sunIcon) return;
             
             try {
-                // Update button title to show current mode
+                // Update button title
                 let title;
                 if (themePreference === 'auto') {
                     title = `Auto (${actualTheme === 'dark' ? 'Dark' : 'Light'}) - Click for Light mode`;
@@ -161,7 +191,7 @@ class QuizSystem {
                 themeToggle.setAttribute('aria-label', title);
                 themeToggle.title = title;
                 
-                // Show appropriate icon based on actual theme
+                // Show appropriate icon
                 if (actualTheme === 'dark') {
                     moonIcon.style.display = 'none';
                     sunIcon.style.display = 'inline-block';
@@ -170,7 +200,7 @@ class QuizSystem {
                     sunIcon.style.display = 'none';
                 }
                 
-                // Add visual indicator for auto mode
+                // Visual indicator for auto mode
                 if (themePreference === 'auto') {
                     themeToggle.classList.add('auto-mode');
                 } else {
@@ -182,6 +212,9 @@ class QuizSystem {
         });
     }
 
+    /**
+     * Update total question count in UI
+     */
     updateTotalQuestions() {
         const totalElements = document.querySelectorAll('#total-questions, #total-count');
         totalElements.forEach(element => {
@@ -189,40 +222,127 @@ class QuizSystem {
         });
     }
 
+    /**
+     * Render the current question and its options
+     */
     renderCurrentQuestion() {
-        const question = this.shuffledQuestions[this.currentQuestionIndex];
+        // Safety checks
+        if (!this.shuffledQuestions || this.currentQuestionIndex >= this.shuffledQuestions.length) {
+            console.error('Invalid question state');
+            return;
+        }
         
-        // Aggressive explanation clearing at the start
+        const question = this.shuffledQuestions[this.currentQuestionIndex];
+        if (!question || !question.question) {
+            console.error('Invalid question object:', question);
+            return;
+        }
+        
+        // Clear previous explanation
         this.clearExplanation();
         
-        // Update question number and text
+        // Update question display
         document.getElementById('question-num').textContent = `Question ${this.currentQuestionIndex + 1}`;
         document.getElementById('question-text').innerHTML = question.question;
-        
-        // Update progress counters
         document.getElementById('current-question').textContent = this.currentQuestionIndex + 1;
         
-        // Clear again before rendering options
-        this.clearExplanation();
-        
-        // Render options first
+        // Render answer options
         this.renderOptions(question);
         
-        // Render MathJax if available - with better error handling
+        // Setup question state based on previous answers
+        this.setupQuestionState();
+        
+        // Render mathematical expressions
         this.renderMathJax();
     }
 
-    renderMathJax() {
-        // Wait for MathJax to be ready before attempting to render
+    /**
+     * Setup question state based on whether it was previously answered
+     */
+    setupQuestionState() {
+        const isAnswered = this.userAnswers[this.currentQuestionIndex] !== null;
+        const isRevealed = this.revealedAnswers[this.currentQuestionIndex];
+        
+        if (isAnswered && isRevealed) {
+            // Question completed - show results
+            this.selectedOption = null;
+            this.showAnswerResults();
+            this.displayCompletedExplanation();
+        } else if (isAnswered && !isRevealed) {
+            // Question answered but not revealed (edge case)
+            this.selectedOption = this.userAnswers[this.currentQuestionIndex];
+            this.updateVisualSelection();
+        } else {
+            // Fresh question
+            this.selectedOption = null;
+            this.explanationAnimating = false;
+        }
+        
+        this.updateSubmitButton();
+    }
+
+    /**
+     * Update visual selection of answer options
+     */
+    updateVisualSelection() {
+        const optionButtons = document.querySelectorAll('.option-button');
+        optionButtons.forEach((button, index) => {
+            if (index === this.selectedOption) {
+                button.classList.add('selected');
+            } else {
+                button.classList.remove('selected');
+            }
+        });
+    }
+
+    /**
+     * Display explanation for already completed questions
+     */
+    displayCompletedExplanation() {
+        const currentQuestion = this.shuffledQuestions[this.currentQuestionIndex];
+        const userAnswer = this.userAnswers[this.currentQuestionIndex];
+        const correctAnswer = currentQuestion.correct;
+        const isCorrect = userAnswer === correctAnswer;
+        
+        const explanationDiv = document.createElement('div');
+        explanationDiv.className = 'question-explanation';
+        
+        const questionCard = document.querySelector('.question-card');
+        if (!questionCard) return;
+        
+        const resultIcon = isCorrect ? 'fa-check-circle' : 'fa-times-circle';
+        const resultClass = isCorrect ? 'correct' : 'incorrect';
+        const resultText = isCorrect ? 'Correct!' : 'Incorrect';
+        
+        explanationDiv.innerHTML = `
+            <div class="answer-result ${resultClass}">
+                <i class="fas ${resultIcon}"></i>
+                <span>${resultText}</span>
+            </div>
+            <div class="explanation-content">
+                <h4><i class="fas fa-lightbulb"></i> Explanation:</h4>
+                <p>${currentQuestion.explanation}</p>
+            </div>
+        `;
+        
+        questionCard.appendChild(explanationDiv);
+        this.renderMathJax();
+    }
+
+    /**
+     * Render mathematical expressions using MathJax
+     */
+    renderMathJax(retryCount = 0) {
+        const maxRetries = 10;
+        
         if (typeof MathJax !== 'undefined') {
             if (MathJax.typesetPromise) {
-                // MathJax v3 - render all quiz content areas
+                // MathJax v3
                 const elementsToRender = [
                     document.getElementById('question-text'),
                     document.getElementById('options-container')
                 ];
                 
-                // Also include explanation if it exists
                 const explanationDiv = document.querySelector('.question-explanation');
                 if (explanationDiv) {
                     elementsToRender.push(explanationDiv);
@@ -240,45 +360,17 @@ class QuizSystem {
                 if (explanationDiv) {
                     MathJax.Hub.Queue(['Typeset', MathJax.Hub, explanationDiv]);
                 }
-            } else {
-                // MathJax is loading, try again in a moment
-                setTimeout(() => this.renderMathJax(), 100);
+            } else if (retryCount < maxRetries) {
+                setTimeout(() => this.renderMathJax(retryCount + 1), 100);
             }
-        } else {
-            // MathJax not loaded yet, try again
-            setTimeout(() => this.renderMathJax(), 100);
+        } else if (retryCount < maxRetries) {
+            setTimeout(() => this.renderMathJax(retryCount + 1), 100);
         }
-        
-        // Check if this question was already answered and revealed
-        const isAnswered = this.userAnswers[this.currentQuestionIndex] !== null;
-        const isRevealed = this.isAnswerRevealed(this.currentQuestionIndex);
-        
-        if (isAnswered && isRevealed) {
-            // Reset selected option for already answered questions
-            this.selectedOption = null;
-            // Show the revealed state for this specific question
-            this.revealAnswer();
-        } else if (isAnswered && !isRevealed) {
-            // Question was answered but not revealed (shouldn't happen in normal flow)
-            this.selectedOption = this.userAnswers[this.currentQuestionIndex];
-            // Show the selected state
-            const optionButtons = document.querySelectorAll('.option-button');
-            optionButtons.forEach((button, index) => {
-                button.classList.toggle('selected', index === this.selectedOption);
-            });
-        } else {
-            // Reset selected option for new/unanswered questions
-            this.selectedOption = null;
-        }
-        
-        // Final clear after everything is set up
-        setTimeout(() => {
-            if (!isRevealed) {
-                this.clearExplanation();
-            }
-        }, 50);
     }
 
+    /**
+     * Render answer option buttons
+     */
     renderOptions(question) {
         const container = document.getElementById('options-container');
         container.innerHTML = '';
@@ -287,9 +379,6 @@ class QuizSystem {
             const optionButton = document.createElement('button');
             optionButton.className = 'option-button';
             optionButton.onclick = () => this.selectOption(index);
-            
-            // Start with clean button - no pre-selected states
-            // The renderCurrentQuestion method will handle setting states appropriately
             
             optionButton.innerHTML = `
                 <span class="option-letter">${String.fromCharCode(65 + index)}</span>
@@ -300,69 +389,114 @@ class QuizSystem {
         });
     }
 
+    /**
+     * Handle user selection of an answer option
+     */
     selectOption(optionIndex) {
-        // Check if this question has already been submitted and revealed
-        if (this.userAnswers[this.currentQuestionIndex] !== null && this.isAnswerRevealed(this.currentQuestionIndex)) {
-            return; // Prevent changing answer after reveal
+        // Prevent selection if question already answered and revealed
+        if (this.userAnswers[this.currentQuestionIndex] !== null && 
+            this.revealedAnswers[this.currentQuestionIndex]) {
+            return;
         }
         
-        // Store the selected option (but don't submit yet)
+        // Store selection
         this.selectedOption = optionIndex;
         
         // Update visual selection
         const optionButtons = document.querySelectorAll('.option-button');
         optionButtons.forEach((button, index) => {
-            button.classList.toggle('selected', index === optionIndex);
+            if (index === optionIndex) {
+                button.classList.add('selected');
+            } else {
+                button.classList.remove('selected');
+            }
         });
         
-        // Update controls to show submit button
-        this.updateControls();
+        // Update submit button
+        this.updateSubmitButton();
     }
 
-    submitAnswer() {
-        // Check if an option is selected
+    /**
+     * Update submit/next button state and text
+     */
+    updateSubmitButton() {
+        const nextBtn = document.getElementById('next-btn');
+        const isAnswered = this.userAnswers[this.currentQuestionIndex] !== null;
+        const isRevealed = this.revealedAnswers[this.currentQuestionIndex];
+        const hasSelection = this.selectedOption !== null && this.selectedOption !== undefined;
+        
+        if (isAnswered && isRevealed) {
+            // Question completed
+            if (this.explanationAnimating) {
+                nextBtn.innerHTML = '<i class="fas fa-hourglass-half"></i> Reading Explanation...';
+                nextBtn.disabled = true;
+                nextBtn.onclick = null;
+            } else {
+                if (this.currentQuestionIndex === this.shuffledQuestions.length - 1) {
+                    nextBtn.innerHTML = '<i class="fas fa-flag-checkered"></i> Finish Quiz';
+                    nextBtn.disabled = false;
+                    nextBtn.onclick = () => this.finishQuiz();
+                } else {
+                    nextBtn.innerHTML = 'Next Question <i class="fas fa-chevron-right"></i>';
+                    nextBtn.disabled = false;
+                    nextBtn.onclick = () => this.moveToNextQuestion();
+                }
+            }
+        } else if (hasSelection && !isAnswered) {
+            // Ready to submit
+            nextBtn.innerHTML = '<i class="fas fa-check"></i> Submit Answer';
+            nextBtn.disabled = false;
+            nextBtn.onclick = () => this.handleSubmitAnswer();
+        } else {
+            // No selection
+            nextBtn.innerHTML = 'Select an Answer';
+            nextBtn.disabled = true;
+            nextBtn.onclick = null;
+        }
+    }
+
+    /**
+     * Handle answer submission
+     */
+    handleSubmitAnswer() {
+        // Validate selection
         if (this.selectedOption === null || this.selectedOption === undefined) {
             return;
         }
         
-        // Check if already submitted
-        if (this.userAnswers[this.currentQuestionIndex] !== null && this.isAnswerRevealed(this.currentQuestionIndex)) {
+        // Prevent double submission
+        if (this.userAnswers[this.currentQuestionIndex] !== null) {
             return;
         }
         
-        // Store the user's final answer
+        // Store answer
         this.userAnswers[this.currentQuestionIndex] = this.selectedOption;
+        this.revealedAnswers[this.currentQuestionIndex] = true;
         
-        // Set flag to indicate this is a fresh submission
-        this.justSubmitted = true;
-        
-        // Set animation flag to disable next button immediately
+        // Start explanation animation
         this.explanationAnimating = true;
         
-        // Show correct answer immediately
-        this.revealAnswer();
+        // Update button to processing state
+        const nextBtn = document.getElementById('next-btn');
+        nextBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        nextBtn.disabled = true;
+        nextBtn.onclick = null;
         
-        // Update controls and progress
-        this.updateControls();
-        this.updateProgress();
+        // Show results and explanation
+        this.showAnswerResults();
+        
+        setTimeout(() => {
+            this.displayExplanation();
+        }, 1000);
     }
 
-    isAnswerRevealed(questionIndex) {
-        return this.revealedAnswers && this.revealedAnswers[questionIndex];
-    }
-
-    revealAnswer() {
+    /**
+     * Show correct/incorrect answer results
+     */
+    showAnswerResults() {
         const currentQuestion = this.shuffledQuestions[this.currentQuestionIndex];
         const userAnswer = this.userAnswers[this.currentQuestionIndex];
         const correctAnswer = currentQuestion.correct;
-        
-        // Initialize revealed answers array if not exists
-        if (!this.revealedAnswers) {
-            this.revealedAnswers = new Array(this.shuffledQuestions.length).fill(false);
-        }
-        
-        // Mark this answer as revealed
-        this.revealedAnswers[this.currentQuestionIndex] = true;
         
         const optionButtons = document.querySelectorAll('.option-button');
         
@@ -371,55 +505,39 @@ class QuizSystem {
             button.disabled = true;
             button.style.cursor = 'not-allowed';
             
-            // Remove any existing state classes
+            // Remove previous states
             button.classList.remove('selected', 'correct-answer', 'incorrect-answer', 'user-correct');
             
             if (index === correctAnswer) {
-                // Show correct answer
                 button.classList.add('correct-answer');
                 if (index === userAnswer) {
-                    // User got it right
                     button.classList.add('user-correct');
                 }
             } else if (index === userAnswer) {
-                // Show user's incorrect answer
                 button.classList.add('incorrect-answer');
             }
         });
-        
-        // Only show explanation if this is a fresh submission (not navigation)
-        if (this.justSubmitted) {
-            setTimeout(() => {
-                this.showExplanation();
-                this.justSubmitted = false; // Reset the flag
-            }, 1000);
-        }
     }
 
-    showExplanation() {
-        // Use the current question context
+    /**
+     * Display explanation with animation
+     */
+    displayExplanation() {
         const currentQuestion = this.shuffledQuestions[this.currentQuestionIndex];
         const userAnswer = this.userAnswers[this.currentQuestionIndex];
         const correctAnswer = currentQuestion.correct;
+        const isCorrect = userAnswer === correctAnswer;
         
-        // Clear any existing explanation first
+        // Clear existing explanation
         this.clearExplanation();
         
-        // Set animation flag and disable next button
-        this.explanationAnimating = true;
-        this.updateControls(); // This will disable the next button
-        
-        // Create new explanation element
+        // Create explanation element
         const explanationDiv = document.createElement('div');
         explanationDiv.className = 'question-explanation';
         
         const questionCard = document.querySelector('.question-card');
-        if (!questionCard) return; // Safety check
+        if (!questionCard) return;
         
-        questionCard.appendChild(explanationDiv);
-        
-        // Determine if the current question was answered correctly
-        const isCorrect = userAnswer === correctAnswer;
         const resultIcon = isCorrect ? 'fa-check-circle' : 'fa-times-circle';
         const resultClass = isCorrect ? 'correct' : 'incorrect';
         const resultText = isCorrect ? 'Correct!' : 'Incorrect';
@@ -435,7 +553,9 @@ class QuizSystem {
             </div>
         `;
         
-        // Animate in
+        // Add with animation
+        questionCard.appendChild(explanationDiv);
+        
         explanationDiv.style.opacity = '0';
         explanationDiv.style.transform = 'translateY(20px)';
         explanationDiv.style.display = 'block';
@@ -445,18 +565,90 @@ class QuizSystem {
             explanationDiv.style.opacity = '1';
             explanationDiv.style.transform = 'translateY(0)';
             
-            // Render MathJax for the explanation content
+            // Render MathJax for explanation
             this.renderMathJax();
             
-            // After animation completes (0.5s transition + buffer), enable next button
+            // Enable next button after animation
             setTimeout(() => {
                 this.explanationAnimating = false;
-                this.updateControls(); // Re-enable the next button
-            }, 800); // 500ms transition + 300ms buffer for reading
-            
+                this.updateSubmitButton();
+                this.updateProgress();
+            }, 600);
         }, 100);
     }
 
+    /**
+     * Move to the next question
+     */
+    moveToNextQuestion() {
+        if (this.currentQuestionIndex < this.shuffledQuestions.length - 1) {
+            // Clear current state
+            this.selectedOption = null;
+            this.explanationAnimating = false;
+            this.clearExplanation();
+            
+            // Move to next question
+            this.currentQuestionIndex++;
+            
+            // Render new question
+            this.renderCurrentQuestion();
+            this.updateProgress();
+            this.updateSubmitButton();
+        }
+    }
+
+    /**
+     * Move to the previous question
+     */
+    previousQuestion() {
+        if (this.currentQuestionIndex > 0) {
+            // Reset flags
+            this.justSubmitted = false;
+            this.explanationAnimating = false;
+            
+            this.currentQuestionIndex--;
+            
+            // Reset selection for unanswered questions
+            if (this.userAnswers[this.currentQuestionIndex] === null) {
+                this.selectedOption = null;
+            }
+            
+            this.clearExplanation();
+            this.renderCurrentQuestion();
+            this.updateProgress();
+            this.updateSubmitButton();
+        }
+    }
+
+    /**
+     * Clear explanation elements from the DOM
+     */
+    clearExplanation() {
+        const explanationElements = document.querySelectorAll('.question-explanation');
+        explanationElements.forEach(element => {
+            if (element && element.parentNode) {
+                element.parentNode.removeChild(element);
+            }
+        });
+        
+        const answerResults = document.querySelectorAll('.answer-result');
+        answerResults.forEach(element => {
+            if (element && element.parentNode) {
+                element.parentNode.removeChild(element);
+            }
+        });
+        
+        const explanationContents = document.querySelectorAll('.explanation-content');
+        explanationContents.forEach(element => {
+            if (element && element.parentNode) {
+                element.parentNode.removeChild(element);
+            }
+        });
+    }
+
+    /**
+     * Update progress indicators
+     */
     updateProgress() {
         const answered = this.userAnswers.filter(answer => answer !== null).length;
         const percentage = Math.round((this.currentQuestionIndex + 1) / this.shuffledQuestions.length * 100);
@@ -494,151 +686,28 @@ class QuizSystem {
         // Update circular progress ring
         const progressRingEl = document.getElementById('progress-ring');
         if (progressRingEl) {
-            const circumference = 2 * Math.PI * 16; // radius = 16
+            const circumference = 2 * Math.PI * 16;
             const offset = circumference - (percentage / 100) * circumference;
             progressRingEl.style.strokeDasharray = `${circumference} ${circumference}`;
             progressRingEl.style.strokeDashoffset = offset;
         }
         
-        // Update answered count (if element exists)
+        // Update answered count
         const answeredCountEl = document.getElementById('answered-count');
         if (answeredCountEl) {
             answeredCountEl.textContent = answered;
         }
-    }
-
-    updateControls() {
+        
+        // Update previous button state
         const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const hasSelection = this.selectedOption !== null && this.selectedOption !== undefined;
-        const isSubmitted = this.userAnswers[this.currentQuestionIndex] !== null;
-        const isRevealed = this.isAnswerRevealed(this.currentQuestionIndex);
-        
-        // Previous button state
-        prevBtn.disabled = this.currentQuestionIndex === 0;
-        
-        // Next/Submit button state and text
-        if (!isSubmitted) {
-            // Not yet submitted - show submit button
-            if (hasSelection) {
-                nextBtn.innerHTML = '<i class="fas fa-check"></i> Submit Answer';
-                nextBtn.disabled = false;
-                nextBtn.onclick = () => this.submitAnswer();
-            } else {
-                nextBtn.innerHTML = 'Select an Answer';
-                nextBtn.disabled = true;
-                nextBtn.onclick = null;
-            }
-        } else if (isRevealed) {
-            // Already submitted and revealed - show next/finish button
-            if (this.currentQuestionIndex === this.shuffledQuestions.length - 1) {
-                if (this.explanationAnimating) {
-                    // During explanation animation for last question
-                    nextBtn.innerHTML = '<i class="fas fa-hourglass-half"></i> Reading Explanation...';
-                    nextBtn.disabled = true;
-                    nextBtn.onclick = null;
-                } else {
-                    nextBtn.innerHTML = '<i class="fas fa-flag-checkered"></i> Finish Quiz';
-                    nextBtn.disabled = false;
-                    nextBtn.onclick = () => this.finishQuiz();
-                }
-            } else {
-                if (this.explanationAnimating) {
-                    // During explanation animation
-                    nextBtn.innerHTML = '<i class="fas fa-hourglass-half"></i> Reading Explanation...';
-                    nextBtn.disabled = true;
-                    nextBtn.onclick = null;
-                } else {
-                    // Animation finished, ready to proceed
-                    nextBtn.innerHTML = 'Next Question <i class="fas fa-chevron-right"></i>';
-                    nextBtn.disabled = false;
-                    nextBtn.onclick = () => {
-                        // Force clear explanation before moving to next question
-                        this.clearExplanation();
-                        this.nextQuestion();
-                    };
-                }
-            }
-        } else if (this.explanationAnimating) {
-            // Just submitted but explanation hasn't appeared yet
-            nextBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Answer...';
-            nextBtn.disabled = true;
-            nextBtn.onclick = null;
+        if (prevBtn) {
+            prevBtn.disabled = this.currentQuestionIndex === 0;
         }
     }
 
-    nextQuestion() {
-        if (this.currentQuestionIndex < this.shuffledQuestions.length - 1) {
-            // Reset all animation and submission flags
-            this.justSubmitted = false;
-            this.explanationAnimating = false;
-            
-            // Force clear explanation immediately
-            this.clearExplanation();
-            
-            this.currentQuestionIndex++;
-            
-            // Clear explanation again after incrementing
-            this.clearExplanation();
-            
-            this.renderCurrentQuestion();
-            this.updateProgress();
-            this.updateControls();
-            
-            // Final clear to be absolutely sure
-            setTimeout(() => {
-                this.clearExplanation();
-            }, 100);
-        }
-    }
-
-    previousQuestion() {
-        if (this.currentQuestionIndex > 0) {
-            // Reset all animation and submission flags
-            this.justSubmitted = false;
-            this.explanationAnimating = false;
-            
-            this.currentQuestionIndex--;
-            
-            // Reset selection for the current question if it wasn't submitted
-            if (this.userAnswers[this.currentQuestionIndex] === null) {
-                this.selectedOption = null;
-            }
-            
-            // Clear any existing explanation completely
-            this.clearExplanation();
-            
-            this.renderCurrentQuestion();
-            this.updateProgress();
-            this.updateControls();
-        }
-    }
-
-    clearExplanation() {
-        // Remove all possible explanation elements - be very thorough
-        const explanationElements = document.querySelectorAll('.question-explanation');
-        explanationElements.forEach(element => {
-            if (element && element.parentNode) {
-                element.parentNode.removeChild(element);
-            }
-        });
-        
-        // Also check for any orphaned explanation elements
-        const answerResults = document.querySelectorAll('.answer-result');
-        answerResults.forEach(element => {
-            if (element && element.parentNode) {
-                element.parentNode.removeChild(element);
-            }
-        });
-        
-        const explanationContents = document.querySelectorAll('.explanation-content');
-        explanationContents.forEach(element => {
-            if (element && element.parentNode) {
-                element.parentNode.removeChild(element);
-            }
-        });
-    }
-
+    /**
+     * Finish the quiz and show results
+     */
     finishQuiz() {
         this.endTime = new Date();
         this.isCompleted = true;
@@ -649,18 +718,21 @@ class QuizSystem {
         // Show summary modal
         this.showSummaryModal(results);
         
-        // Save results to localStorage for results page
+        // Save results for results page
         localStorage.setItem('quizResults', JSON.stringify({
             results: results,
             userAnswers: this.userAnswers,
-            questions: this.shuffledQuestions, // Use shuffled questions
-            originalQuestions: this.questions, // Keep original for reference
+            questions: this.shuffledQuestions,
+            originalQuestions: this.questions,
             startTime: this.startTime,
             endTime: this.endTime,
             subject: this.currentSubject
         }));
     }
 
+    /**
+     * Calculate quiz results
+     */
     calculateResults() {
         let correct = 0;
         let incorrect = 0;
@@ -684,6 +756,9 @@ class QuizSystem {
         };
     }
 
+    /**
+     * Show quiz summary modal
+     */
     showSummaryModal(results) {
         const modal = document.getElementById('summary-modal');
         
@@ -700,26 +775,33 @@ class QuizSystem {
         modal.classList.add('show');
     }
 
+    /**
+     * Get score message based on percentage
+     */
     getScoreMessage(percentage) {
         if (percentage >= 90) {
-            return "Excellent! You have mastered Work Immersion concepts!";
+            return "Excellent! You have mastered this subject!";
         } else if (percentage >= 80) {
-            return "Great job! You have a solid understanding of Work Immersion.";
+            return "Great job! You have a solid understanding.";
         } else if (percentage >= 70) {
-            return "Good work! You understand most Work Immersion concepts.";
+            return "Good work! You understand most concepts.";
         } else if (percentage >= 60) {
-            return "Fair performance. Consider reviewing Work Immersion materials.";
+            return "Fair performance. Consider reviewing the materials.";
         } else {
-            return "You may need to study Work Immersion concepts more thoroughly.";
+            return "You may need to study this subject more thoroughly.";
         }
     }
 
+    /**
+     * Navigate to results page
+     */
     showResults() {
-        // Redirect to results page
         window.location.href = 'quiz-results.html';
     }
 
-    // Keyboard navigation
+    /**
+     * Handle keyboard navigation
+     */
     handleKeyPress(event) {
         switch(event.key) {
             case 'ArrowLeft':
@@ -729,7 +811,7 @@ class QuizSystem {
                 break;
             case 'ArrowRight':
                 if (!document.getElementById('next-btn').disabled) {
-                    this.nextQuestion();
+                    this.moveToNextQuestion();
                 }
                 break;
             case '1':
@@ -737,7 +819,7 @@ class QuizSystem {
             case '3':
             case '4':
                 const optionIndex = parseInt(event.key) - 1;
-                if (optionIndex < this.questions[this.currentQuestionIndex].options.length) {
+                if (optionIndex < this.shuffledQuestions[this.currentQuestionIndex].options.length) {
                     this.selectOption(optionIndex);
                 }
                 break;
@@ -760,45 +842,73 @@ class QuizSystem {
         }
     }
 
-    // Auto-save progress
+    /**
+     * Save quiz progress to localStorage
+     */
     saveProgress() {
         const progressData = {
             currentQuestionIndex: this.currentQuestionIndex,
             userAnswers: this.userAnswers,
             selectedOption: this.selectedOption,
-            revealedAnswers: this.revealedAnswers || [],
-            startTime: this.startTime
+            revealedAnswers: this.revealedAnswers,
+            startTime: this.startTime,
+            subject: this.currentSubject
         };
-        localStorage.setItem('workImmersionProgress', JSON.stringify(progressData));
+        localStorage.setItem(`quizProgress_${this.currentSubject}`, JSON.stringify(progressData));
     }
 
-    // Load saved progress
+    /**
+     * Load saved quiz progress
+     */
     loadProgress() {
-        const saved = localStorage.getItem('workImmersionProgress');
+        const saved = localStorage.getItem(`quizProgress_${this.currentSubject}`);
         if (saved) {
-            const progressData = JSON.parse(saved);
-            
-            // Ask user if they want to continue from where they left off
-            const continueQuiz = confirm('You have an incomplete quiz. Would you like to continue from where you left off?');
-            
-            if (continueQuiz) {
-                this.currentQuestionIndex = progressData.currentQuestionIndex;
-                this.userAnswers = progressData.userAnswers;
-                this.selectedOption = progressData.selectedOption || null;
-                this.revealedAnswers = progressData.revealedAnswers || [];
-                this.startTime = new Date(progressData.startTime);
+            try {
+                const progressData = JSON.parse(saved);
                 
-                this.renderCurrentQuestion();
-                this.updateProgress();
-                this.updateControls();
-            } else {
-                // Clear saved progress
-                localStorage.removeItem('workImmersionProgress');
+                const continueQuiz = confirm('You have an incomplete quiz. Would you like to continue from where you left off?');
+                
+                if (continueQuiz) {
+                    this.currentQuestionIndex = progressData.currentQuestionIndex || 0;
+                    this.userAnswers = progressData.userAnswers || new Array(this.shuffledQuestions.length).fill(null);
+                    this.selectedOption = progressData.selectedOption || null;
+                    this.revealedAnswers = progressData.revealedAnswers || new Array(this.shuffledQuestions.length).fill(false);
+                    this.startTime = new Date(progressData.startTime) || new Date();
+                    
+                    if (this.shuffledQuestions && this.currentQuestionIndex < this.shuffledQuestions.length) {
+                        this.renderCurrentQuestion();
+                        this.updateProgress();
+                        this.updateSubmitButton();
+                    } else {
+                        console.warn('Invalid progress data, starting fresh');
+                        this.clearProgress();
+                        this.initializeQuiz();
+                    }
+                } else {
+                    this.clearProgress();
+                }
+            } catch (error) {
+                console.error('Error loading progress:', error);
+                this.clearProgress();
             }
         }
     }
 
-    // Prevent accidental page refresh/close
+    /**
+     * Clear saved progress
+     */
+    clearProgress() {
+        localStorage.removeItem(`quizProgress_${this.currentSubject}`);
+        this.currentQuestionIndex = 0;
+        this.selectedOption = null;
+        this.userAnswers = new Array(this.shuffledQuestions.length).fill(null);
+        this.revealedAnswers = new Array(this.shuffledQuestions.length).fill(false);
+        this.startTime = new Date();
+    }
+
+    /**
+     * Enable page protection to prevent accidental navigation
+     */
     enablePageProtection() {
         window.addEventListener('beforeunload', (event) => {
             if (!this.isCompleted) {
@@ -810,12 +920,15 @@ class QuizSystem {
     }
 }
 
-// Global theme toggle function for quiz pages
+
+/**
+ * Global theme toggle function for quiz pages
+ */
 function toggleTheme() {
     if (typeof quizSystem !== 'undefined' && quizSystem) {
         quizSystem.toggleTheme();
     } else {
-        // Fallback if quizSystem is not ready
+        // Fallback theme toggle
         console.warn('QuizSystem not initialized yet, using fallback theme toggle');
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -824,7 +937,9 @@ function toggleTheme() {
     }
 }
 
-// Initialize quiz system when page loads
+/**
+ * Initialize quiz system when page loads
+ */
 let quizSystem;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -841,8 +956,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
-    // Next button click is handled dynamically in updateControls()
     
     // Load any saved progress
     quizSystem.loadProgress();
@@ -863,7 +976,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 30000);
 });
 
-// Close modal when clicking backdrop
+/**
+ * Close modal when clicking backdrop
+ */
 document.addEventListener('click', (event) => {
     if (event.target.classList.contains('modal-backdrop')) {
         const modal = event.target.closest('.quiz-summary-modal');
