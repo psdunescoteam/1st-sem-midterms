@@ -111,6 +111,9 @@
                     <button class="filter-btn" data-filter="incorrect" onclick="resultsSystem.filterQuestions('incorrect')">
                         <i class="fas fa-times"></i> Incorrect Only
                     </button>
+                    <button class="filter-btn" data-filter="bookmarked" onclick="resultsSystem.filterQuestions('bookmarked')">
+                        <i class="fas fa-bookmark"></i> Bookmarked
+                    </button>
                 </div>
                 <div class="view-options">
                     <button class="view-btn" onclick="resultsSystem.toggleExplanations()">
@@ -118,6 +121,27 @@
                     </button>
                     <button class="view-btn" onclick="resultsSystem.printResults()">
                         <i class="fas fa-print"></i> Print Results
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bookmarked Questions Summary -->
+        <section class="bookmarked-summary" id="bookmarked-summary" style="display: none;">
+            <div class="bookmark-summary-container">
+                <div class="bookmark-summary-header">
+                    <div class="bookmark-title">
+                        <i class="fas fa-bookmark"></i>
+                        <h3>Bookmarked Questions</h3>
+                    </div>
+                    <div class="bookmark-count">
+                        <span id="bookmark-count">0</span> questions bookmarked
+                    </div>
+                </div>
+                <div class="bookmark-summary-content">
+                    <p>You bookmarked <span id="bookmark-count-text">0</span> questions during this quiz. These are questions you may want to review later.</p>
+                    <button class="btn-bookmark-review" onclick="resultsSystem.filterQuestions('bookmarked')">
+                        <i class="fas fa-eye"></i> Review Bookmarked Questions
                     </button>
                 </div>
             </div>

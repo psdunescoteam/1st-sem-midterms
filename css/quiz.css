@@ -650,6 +650,98 @@
     border-radius: 50%;
 }
 
+/* Bookmark Button */
+.bookmark-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(100, 126, 234, 0.1);
+    border: 1px solid rgba(100, 126, 234, 0.2);
+    border-radius: 0.5rem;
+    color: var(--accent-color);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+.bookmark-btn:hover {
+    background: rgba(100, 126, 234, 0.15);
+    border-color: rgba(100, 126, 234, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(100, 126, 234, 0.2);
+}
+
+.bookmark-btn.bookmarked {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-color: #667eea;
+    color: white;
+}
+
+.bookmark-btn.bookmarked:hover {
+    background: linear-gradient(135deg, #5a67d8, #6b46c1);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.bookmark-btn i {
+    font-size: 1rem;
+}
+
+.bookmark-text {
+    font-weight: 600;
+}
+
+/* Dark theme bookmark button */
+[data-theme="dark"] .bookmark-btn {
+    background: rgba(100, 126, 234, 0.15);
+    border-color: rgba(100, 126, 234, 0.25);
+    color: #8b9ffa;
+}
+
+[data-theme="dark"] .bookmark-btn:hover {
+    background: rgba(100, 126, 234, 0.2);
+    border-color: rgba(100, 126, 234, 0.35);
+}
+
+/* Bookmark Feedback Animation */
+.bookmark-feedback {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(20px);
+    background: rgba(102, 126, 234, 0.95);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.bookmark-feedback.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
+.bookmark-feedback.bookmark-removed {
+    background: rgba(239, 68, 68, 0.95);
+    box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+}
+
+.bookmark-feedback i {
+    font-size: 1.25rem;
+}
+
 .question-text h2 {
     margin: 0;
     font-size: 1.375rem;

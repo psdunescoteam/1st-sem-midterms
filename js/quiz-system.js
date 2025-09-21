@@ -11,6 +11,7 @@ class QuizSystem {
         this.currentQuestionIndex = 0;
         this.userAnswers = new Array(this.questions.length).fill(null);
         this.revealedAnswers = new Array(this.questions.length).fill(false);
+        this.bookmarkedQuestions = new Array(this.questions.length).fill(false);
         
         // Selection and submission state
         this.selectedOption = null;
@@ -246,6 +247,9 @@ class QuizSystem {
         document.getElementById('question-text').innerHTML = question.question;
         document.getElementById('current-question').textContent = this.currentQuestionIndex + 1;
         
+        // Add or update bookmark button
+        this.renderBookmarkButton();
+        
         // Render answer options
         this.renderOptions(question);
         
@@ -366,6 +370,86 @@ class QuizSystem {
         } else if (retryCount < maxRetries) {
             setTimeout(() => this.renderMathJax(retryCount + 1), 100);
         }
+    }
+
+    /**
+     * Render bookmark button for current question
+     */
+    renderBookmarkButton() {
+        // Check if bookmark button already exists
+        let bookmarkBtn = document.getElementById('bookmark-btn');
+        
+        if (!bookmarkBtn) {
+            // Create bookmark button if it doesn't exist
+            bookmarkBtn = document.createElement('button');
+            bookmarkBtn.id = 'bookmark-btn';
+            bookmarkBtn.className = 'bookmark-btn';
+            bookmarkBtn.setAttribute('aria-label', 'Bookmark this question');
+            bookmarkBtn.onclick = () => this.toggleBookmark();
+            
+            // Find the question number element and add bookmark button after it
+            const questionNum = document.getElementById('question-num');
+            if (questionNum && questionNum.parentNode) {
+                questionNum.parentNode.insertBefore(bookmarkBtn, questionNum.nextSibling);
+            }
+        }
+        
+        // Update bookmark button state
+        const isBookmarked = this.bookmarkedQuestions[this.currentQuestionIndex];
+        bookmarkBtn.innerHTML = `
+            <i class="fas fa-bookmark${isBookmarked ? '' : '-o'}"></i>
+            <span class="bookmark-text">${isBookmarked ? 'Bookmarked' : 'Bookmark'}</span>
+        `;
+        
+        // Update CSS classes
+        if (isBookmarked) {
+            bookmarkBtn.classList.add('bookmarked');
+        } else {
+            bookmarkBtn.classList.remove('bookmarked');
+        }
+    }
+
+    /**
+     * Toggle bookmark status for current question
+     */
+    toggleBookmark() {
+        const currentIndex = this.currentQuestionIndex;
+        this.bookmarkedQuestions[currentIndex] = !this.bookmarkedQuestions[currentIndex];
+        
+        // Update bookmark button visual state
+        this.renderBookmarkButton();
+        
+        // Show feedback
+        const isBookmarked = this.bookmarkedQuestions[currentIndex];
+        this.showBookmarkFeedback(isBookmarked);
+    }
+
+    /**
+     * Show visual feedback when bookmark is toggled
+     */
+    showBookmarkFeedback(isBookmarked) {
+        // Create feedback element if it doesn't exist
+        let feedback = document.getElementById('bookmark-feedback');
+        
+        if (!feedback) {
+            feedback = document.createElement('div');
+            feedback.id = 'bookmark-feedback';
+            feedback.className = 'bookmark-feedback';
+            document.body.appendChild(feedback);
+        }
+        
+        // Update feedback content and show
+        feedback.innerHTML = `
+            <i class="fas fa-bookmark${isBookmarked ? '' : '-o'}"></i>
+            <span>Question ${isBookmarked ? 'bookmarked' : 'bookmark removed'}</span>
+        `;
+        
+        feedback.className = `bookmark-feedback ${isBookmarked ? 'bookmark-added' : 'bookmark-removed'} show`;
+        
+        // Hide feedback after animation
+        setTimeout(() => {
+            feedback.classList.remove('show');
+        }, 2000);
     }
 
     /**
@@ -724,6 +808,7 @@ class QuizSystem {
             userAnswers: this.userAnswers,
             questions: this.shuffledQuestions,
             originalQuestions: this.questions,
+            bookmarkedQuestions: this.bookmarkedQuestions,
             startTime: this.startTime,
             endTime: this.endTime,
             subject: this.currentSubject

@@ -20,6 +20,7 @@ class ResultsSystem {
         
         this.quizData = JSON.parse(savedResults);
         this.displayResults();
+        this.displayBookmarkedSummary();
         this.renderQuestions();
     }
 
@@ -117,6 +118,27 @@ class ResultsSystem {
         }
     }
 
+    displayBookmarkedSummary() {
+        const bookmarkedQuestions = this.quizData.bookmarkedQuestions || [];
+        const bookmarkedCount = bookmarkedQuestions.filter(Boolean).length;
+        
+        // Update bookmark counts
+        const bookmarkCountElements = document.querySelectorAll('#bookmark-count, #bookmark-count-text');
+        bookmarkCountElements.forEach(element => {
+            element.textContent = bookmarkedCount;
+        });
+        
+        // Show or hide the bookmarked summary section
+        const summarySection = document.getElementById('bookmarked-summary');
+        if (summarySection) {
+            if (bookmarkedCount > 0) {
+                summarySection.style.display = 'block';
+            } else {
+                summarySection.style.display = 'none';
+            }
+        }
+    }
+
     renderQuestions() {
         const container = document.getElementById('questions-container');
         if (!container) return;
@@ -126,8 +148,9 @@ class ResultsSystem {
         this.quizData.questions.forEach((question, index) => {
             const userAnswer = this.quizData.userAnswers[index];
             const isCorrect = userAnswer === question.correct;
+            const isBookmarked = this.quizData.bookmarkedQuestions ? this.quizData.bookmarkedQuestions[index] : false;
             
-            const questionCard = this.createQuestionCard(question, index, userAnswer, isCorrect);
+            const questionCard = this.createQuestionCard(question, index, userAnswer, isCorrect, isBookmarked);
             container.appendChild(questionCard);
         });
         
@@ -156,10 +179,11 @@ class ResultsSystem {
         }
     }
 
-    createQuestionCard(question, index, userAnswer, isCorrect) {
+    createQuestionCard(question, index, userAnswer, isCorrect, isBookmarked) {
         const card = document.createElement('div');
-        card.className = `question-result-card ${isCorrect ? 'correct' : 'incorrect'}`;
+        card.className = `question-result-card ${isCorrect ? 'correct' : 'incorrect'}${isBookmarked ? ' bookmarked' : ''}`;
         card.setAttribute('data-status', isCorrect ? 'correct' : 'incorrect');
+        card.setAttribute('data-bookmarked', isBookmarked);
         
         const statusIcon = isCorrect ? 'fa-check-circle' : 'fa-times-circle';
         const statusText = isCorrect ? 'Correct' : 'Incorrect';
@@ -170,6 +194,7 @@ class ResultsSystem {
                 <div class="question-number">
                     <i class="fas fa-question-circle"></i>
                     Question ${index + 1}
+                    ${isBookmarked ? '<span class="bookmark-indicator"><i class="fas fa-bookmark"></i></span>' : ''}
                 </div>
                 <div class="result-status ${statusClass}">
                     <i class="fas ${statusIcon}"></i>
@@ -235,6 +260,7 @@ class ResultsSystem {
         // Show/hide questions based on filter
         document.querySelectorAll('.question-result-card').forEach(card => {
             const status = card.getAttribute('data-status');
+            const isBookmarked = card.getAttribute('data-bookmarked') === 'true';
             
             switch(filter) {
                 case 'all':
@@ -245,6 +271,9 @@ class ResultsSystem {
                     break;
                 case 'incorrect':
                     card.classList.toggle('hidden', status !== 'incorrect');
+                    break;
+                case 'bookmarked':
+                    card.classList.toggle('hidden', !isBookmarked);
                     break;
             }
         });
