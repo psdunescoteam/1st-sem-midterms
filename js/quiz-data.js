@@ -130,8 +130,8 @@ const workImmersionQuestions = [
       "10 hours.",
       "12 hours."
     ],
-    "correct": 2,
-    "explanation": "The reviewer states that students shall not be exposed for 'more than 10 hours a day'."
+    "correct": 1,
+    "explanation": "The reviewer states that students shall not be exposed for 'more than 8 hours a day'."
   },
   {
     "id": 12,
