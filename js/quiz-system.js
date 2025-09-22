@@ -41,7 +41,8 @@ class QuizSystem {
             'General-Chemistry.html': 'general-chemistry',
             'Contemporary-Arts.html': 'contemporary-arts',
             'Empowerment-Technologies.html': 'empowerment-technologies',
-            'General-Mathematics.html': 'general-mathematics'
+            'General-Mathematics.html': 'general-mathematics',
+            'Physical-Education.html': 'physical-education'
         };
         return subjectMap[currentPage] || 'work-immersion';
     }
@@ -55,7 +56,8 @@ class QuizSystem {
             'general-chemistry': generalChemistryQuestions,
             'contemporary-arts': contemporaryArtsQuestions,
             'empowerment-technologies': empowermentTechnologiesQuestions,
-            'general-mathematics': generalMathematicsQuestions
+            'general-mathematics': generalMathematicsQuestions,
+            'physical-education': physicalEducationQuestions
         };
         return questionMap[subject] || workImmersionQuestions;
     }

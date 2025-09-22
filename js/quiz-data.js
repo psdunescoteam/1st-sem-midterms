@@ -3702,7 +3702,309 @@ const generalMathematicsQuestions = [
   }
 ];
 
+// Physical Education Quiz Data - 25 Questions
+const physicalEducationQuestions = [
+  {
+    "id": 1,
+    "question": "The ability to perform daily tasks with ease without becoming tired and with extra energy for leisure activities is the definition of:",
+    "options": [
+      "Physical Activity",
+      "Physical Fitness",
+      "Competitive Sports",
+      "Exercise and Fitness"
+    ],
+    "correct": 1,
+    "explanation": "Physical Fitness is defined as the ability to perform daily tasks with ease without becoming tired and with extra energy for leisure activities."
+  },
+  {
+    "id": 2,
+    "question": "Which of the following is an example of a \"Home & Occupational\" physical activity?",
+    "options": [
+      "Bowling",
+      "Soccer",
+      "Gardening",
+      "Yoga"
+    ],
+    "correct": 2,
+    "explanation": "Gardening is a home and occupational physical activity as it involves physical work done at home or as part of household maintenance."
+  },
+  {
+    "id": 3,
+    "question": "This health-related component of fitness is the amount of fat mass compared to lean muscle mass, bone, and organs.",
+    "options": [
+      "Muscular Strength",
+      "Body Composition",
+      "Flexibility",
+      "Cardiovascular Endurance"
+    ],
+    "correct": 1,
+    "explanation": "Body Composition refers to the proportion of fat mass compared to lean muscle mass, bone, and organs in the body."
+  },
+  {
+    "id": 4,
+    "question": "The ability of the muscles to perform a long period of repetitive muscle contractions is known as:",
+    "options": [
+      "Muscular Strength",
+      "Muscular Endurance",
+      "Flexibility",
+      "Body Composition"
+    ],
+    "correct": 1,
+    "explanation": "Muscular Endurance is the ability of muscles to perform repetitive contractions over an extended period without fatigue."
+  },
+  {
+    "id": 5,
+    "question": "The ability of the heart, lungs, and blood vessels to supply oxygen to the body during physical activity is called:",
+    "options": [
+      "Flexibility",
+      "Cardiovascular Endurance",
+      "Muscular Strength",
+      "Body Composition"
+    ],
+    "correct": 1,
+    "explanation": "Cardiovascular Endurance (also called cardiorespiratory endurance) is the ability of the heart, lungs, and blood vessels to deliver oxygen to working muscles during sustained physical activity."
+  },
+  {
+    "id": 6,
+    "question": "What specific test measures a person's flexibility?",
+    "options": [
+      "Stork Balance Stand Test",
+      "Sit & Reach Test",
+      "Push-up Test",
+      "Shuttle Run"
+    ],
+    "correct": 1,
+    "explanation": "The Sit & Reach Test is specifically designed to measure flexibility, particularly of the hamstrings and lower back."
+  },
+  {
+    "id": 7,
+    "question": "Which of the following is a health-related component of fitness?",
+    "options": [
+      "Agility",
+      "Power",
+      "Balance",
+      "Flexibility"
+    ],
+    "correct": 3,
+    "explanation": "Flexibility is one of the five health-related components of fitness. The others are cardiovascular endurance, muscular strength, muscular endurance, and body composition."
+  },
+  {
+    "id": 8,
+    "question": "The ability to use the senses with the body parts to perform motor tasks smoothly and accurately is defined as:",
+    "options": [
+      "Balance",
+      "Coordination",
+      "Agility",
+      "Speed"
+    ],
+    "correct": 1,
+    "explanation": "Coordination is the ability to use the senses together with body parts to perform motor tasks smoothly and accurately."
+  },
+  {
+    "id": 9,
+    "question": "A person's ability to respond to changing external motives is known as:",
+    "options": [
+      "Reaction Time",
+      "Power",
+      "Speed",
+      "Agility"
+    ],
+    "correct": 0,
+    "explanation": "Reaction Time is the ability to respond quickly to changing external stimuli or motives."
+  },
+  {
+    "id": 10,
+    "question": "The Standing Long Jump is a test used to measure which skill-related component of fitness?",
+    "options": [
+      "Agility",
+      "Speed",
+      "Power",
+      "Balance"
+    ],
+    "correct": 2,
+    "explanation": "The Standing Long Jump test measures Power, which is the ability to exert maximum force in the shortest time possible."
+  },
+  {
+    "id": 11,
+    "question": "What test is used to assess a person's balance?",
+    "options": [
+      "Sit & Reach Test",
+      "Stick Drop Test",
+      "Stork Balance Stand Test",
+      "40-Meter Sprint"
+    ],
+    "correct": 2,
+    "explanation": "The Stork Balance Stand Test is specifically designed to assess a person's static balance ability."
+  },
+  {
+    "id": 12,
+    "question": "According to the F.I.T.T. Principle, the letter \"T\" stands for:",
+    "options": [
+      "Training",
+      "Time and Type",
+      "Technique",
+      "Tempo"
+    ],
+    "correct": 1,
+    "explanation": "In the F.I.T.T. Principle, the two T's stand for Time (duration of exercise) and Type (kind of exercise performed)."
+  },
+  {
+    "id": 13,
+    "question": "How often you should do an exercise refers to which component of the F.I.T.T. Principle?",
+    "options": [
+      "Frequency",
+      "Intensity",
+      "Time",
+      "Type"
+    ],
+    "correct": 0,
+    "explanation": "Frequency refers to how often you should perform an exercise or how many times per week you exercise."
+  },
+  {
+    "id": 14,
+    "question": "The principle of exercise that states training must be specific to a sport or activity is called:",
+    "options": [
+      "Overload",
+      "Progression",
+      "Specificity",
+      "Reversibility"
+    ],
+    "correct": 2,
+    "explanation": "The Principle of Specificity states that training must be specific to the particular sport or physical activity to improve performance in that area."
+  },
+  {
+    "id": 15,
+    "question": "If a person reduces or stops their exercise intensity, the benefits they have gained may be lost quickly. This refers to the principle of:",
+    "options": [
+      "Adaptation",
+      "Progression",
+      "Individual Differences",
+      "Reversibility"
+    ],
+    "correct": 3,
+    "explanation": "The Principle of Reversibility states that fitness gains are lost when training intensity is reduced or stopped (use it or lose it)."
+  },
+  {
+    "id": 16,
+    "question": "What principle of exercise states that training must be raised to a higher level than normal to create an extra demand on the body?",
+    "options": [
+      "Progression",
+      "Specificity",
+      "Overload",
+      "Adaptation"
+    ],
+    "correct": 2,
+    "explanation": "The Principle of Overload states that to improve fitness, training must be raised to a higher level than normal to create additional stress on the body."
+  },
+  {
+    "id": 17,
+    "question": "With continued practice, your body turning a new sport or movement skill into \"second nature\" is an example of which principle?",
+    "options": [
+      "Progression",
+      "Adaptation",
+      "Specificity",
+      "Reversibility"
+    ],
+    "correct": 1,
+    "explanation": "The Principle of Adaptation explains how the body adjusts to training stress and makes movements become more natural and efficient with practice."
+  },
+  {
+    "id": 18,
+    "question": "What does the \"T\" in the F.I.T.T. principle stand for regarding what exercise you should do?",
+    "options": [
+      "Time",
+      "Tempo",
+      "Type",
+      "Target"
+    ],
+    "correct": 2,
+    "explanation": "Type refers to the kind or mode of exercise you should do (aerobic, resistance training, flexibility, etc.)."
+  },
+  {
+    "id": 19,
+    "question": "Which test is a measure of muscular endurance?",
+    "options": [
+      "Sit-up Test",
+      "Shuttle Run",
+      "Stick Drop Test",
+      "Standing Long Jump"
+    ],
+    "correct": 0,
+    "explanation": "The Sit-up Test measures muscular endurance of the abdominal muscles by counting how many sit-ups can be performed in a given time period."
+  },
+  {
+    "id": 20,
+    "question": "A person's ability to change the direction of their body in a quick and controlled manner is called:",
+    "options": [
+      "Speed",
+      "Reaction Time",
+      "Coordination",
+      "Agility"
+    ],
+    "correct": 3,
+    "explanation": "Agility is the ability to change direction quickly and in a controlled manner while maintaining speed and balance."
+  },
+  {
+    "id": 21,
+    "question": "A person's body mass index (BMI) is a measurement used to assess which component of health-related fitness?",
+    "options": [
+      "Muscular Endurance",
+      "Body Composition",
+      "Flexibility",
+      "Cardiovascular Endurance"
+    ],
+    "correct": 1,
+    "explanation": "BMI (Body Mass Index) is used to assess body composition by calculating the ratio of weight to height to determine if someone is underweight, normal weight, overweight, or obese."
+  },
+  {
+    "id": 22,
+    "question": "The 40-Meter Sprint is a test for which skill-related component?",
+    "options": [
+      "Agility",
+      "Speed",
+      "Power",
+      "Balance"
+    ],
+    "correct": 1,
+    "explanation": "The 40-Meter Sprint test measures Speed, which is the ability to move from one point to another in the shortest time possible."
+  },
+  {
+    "id": 23,
+    "question": "The ability of a muscle to exert maximal force is:",
+    "options": [
+      "Muscular Strength",
+      "Muscular Endurance",
+      "Flexibility",
+      "Power"
+    ],
+    "correct": 0,
+    "explanation": "Muscular Strength is the maximum amount of force that a muscle or muscle group can exert in a single effort."
+  },
+  {
+    "id": 24,
+    "question": "A basketball game is classified under what type of physical activity?",
+    "options": [
+      "Lifetime",
+      "Fun & Leisure",
+      "Competitive Sports",
+      "Home & Occupational"
+    ],
+    "correct": 2,
+    "explanation": "Basketball is classified as a Competitive Sport as it involves organized competition with rules, strategies, and skill development."
+  },
+  {
+    "id": 25,
+    "question": "The Principle of Individual Differences highlights that each person has a different response to exercise and training.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 0,
+    "explanation": "True. The Principle of Individual Differences recognizes that people respond differently to exercise and training due to genetics, fitness level, age, and other factors."
+  }
+];
+
 // Export the questions for use in the quiz system
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions };
+    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions, physicalEducationQuestions };
 }
