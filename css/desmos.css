@@ -1,0 +1,290 @@
+/* Desmos Calculator Integration Styles */
+.desmos-calculator-widget {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 400px;
+    height: 500px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e1e5e9;
+    z-index: 10000;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: none;
+    resize: both;
+    min-width: 300px;
+    min-height: 400px;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.desmos-calculator-widget.show {
+    display: block;
+}
+
+.desmos-calculator-widget.minimized {
+    height: 50px;
+    min-height: 50px;
+    overflow: hidden;
+    resize: none;
+}
+
+.desmos-calculator-widget.maximized {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    width: auto;
+    height: auto;
+    min-width: auto;
+    min-height: auto;
+    max-width: none;
+    max-height: none;
+    resize: none;
+}
+
+/* Calculator Header */
+.desmos-header {
+    background: linear-gradient(135deg, #2F7ED8 0%, #1B4F91 100%);
+    color: white;
+    padding: 12px 16px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    position: relative;
+}
+
+.desmos-title {
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.desmos-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.desmos-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.desmos-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.desmos-btn.close:hover {
+    background: #f56565;
+}
+
+/* Calculator Body */
+.desmos-body {
+    height: calc(100% - 50px);
+    overflow: hidden;
+    position: relative;
+}
+
+.desmos-calculator-widget.minimized .desmos-body {
+    display: none;
+}
+
+/* Calculator Container */
+#desmos-calculator {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Toggle Button for Desmos */
+.desmos-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #2F7ED8 0%, #1B4F91 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(47, 126, 216, 0.4);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.desmos-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(47, 126, 216, 0.5);
+    background: linear-gradient(135deg, #4A90E2 0%, #2F7ED8 100%);
+}
+
+.desmos-toggle.active {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    transform: rotate(45deg);
+}
+
+.desmos-toggle.active:hover {
+    background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+    box-shadow: 0 12px 25px rgba(245, 101, 101, 0.5);
+}
+
+/* Loading State */
+.desmos-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.desmos-loading::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 10px auto;
+    border: 2px solid #ddd;
+    border-top: 2px solid #2F7ED8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Drag Indicator */
+.desmos-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .desmos-calculator-widget {
+        width: 320px;
+        height: 450px;
+        right: 10px;
+        top: 70px;
+    }
+    
+    .desmos-calculator-widget.maximized {
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+    }
+    
+    .desmos-toggle {
+        bottom: 15px;
+        right: 15px;
+        width: 55px;
+        height: 55px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .desmos-calculator-widget {
+        width: 280px;
+        height: 400px;
+    }
+    
+    .desmos-title {
+        font-size: 12px;
+    }
+    
+    .desmos-btn {
+        width: 24px;
+        height: 24px;
+        font-size: 10px;
+    }
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .desmos-calculator-widget {
+    background: #2d3748;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .desmos-loading {
+    color: #e2e8f0;
+}
+
+/* Animation for showing calculator */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.desmos-calculator-widget.show {
+    animation: slideInFromRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Custom scrollbar for webkit browsers */
+.desmos-calculator-widget::-webkit-scrollbar {
+    width: 8px;
+}
+
+.desmos-calculator-widget::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.desmos-calculator-widget::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.desmos-calculator-widget::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Ensure calculator stays above other elements */
+.desmos-calculator-widget,
+.desmos-toggle {
+    z-index: 999999 !important;
+}

@@ -5704,7 +5704,731 @@ const philosophyQuestions = [
   }
 ];
 
+// Basic Calculus Quiz Data - 60 Questions
+const basicCalculusQuestions = [
+  {
+    "id": 1,
+    "question": "What is the value of $\\lim_{x\\to 3} (2x^2 - 5x + 4)$?",
+    "options": [
+      "5",
+      "7",
+      "9",
+      "10"
+    ],
+    "correct": 1,
+    "explanation": "Substitute $x=3$ directly into the function: $2(3)^2 - 5(3) + 4 = 2(9) - 15 + 4 = 18 - 15 + 4 = 7$."
+  },
+  {
+    "id": 2,
+    "question": "Evaluate $\\lim_{x\\to 2} \\frac{x^2 - 4}{x - 2}$.",
+    "options": [
+      "0",
+      "2",
+      "4",
+      "Does not exist"
+    ],
+    "correct": 2,
+    "explanation": "Factoring the numerator gives $\\lim_{x\\to 2} \\frac{(x-2)(x+2)}{x-2}$. Cancel out $(x-2)$ and substitute $x=2$ into the remaining expression: $2+2=4$."
+  },
+  {
+    "id": 3,
+    "question": "For the function $f(x) = \\begin{cases} x+1 & \\text{if } x \\neq 4 \\\\ 5 & \\text{if } x = 4 \\end{cases}$, find $\\lim_{x\\to 4} f(x)$.",
+    "options": [
+      "5",
+      "4",
+      "2",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "The limit as $x$ approaches a value does not depend on the function's value at that point. As $x$ approaches 4, the function behaves like $x+1$, so the limit is $4+1=5$."
+  },
+  {
+    "id": 4,
+    "question": "What is the limit of $\\lim_{x\\to\\infty} \\frac{3x^2 + 2x - 1}{5x^2 - 4x + 7}$?",
+    "options": [
+      "0",
+      "$\\frac{3}{5}$",
+      "$\\infty$",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "The degrees of the numerator and denominator are equal. The limit at infinity is the ratio of the leading coefficients, which is $\\frac{3}{5}$."
+  },
+  {
+    "id": 5,
+    "question": "Find the value of $\\lim_{x\\to 1} \\frac{x - 1}{\\sqrt{x} - 1}$.",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Does not exist"
+    ],
+    "correct": 2,
+    "explanation": "Multiply the numerator and denominator by the conjugate of the denominator, $\\sqrt{x}+1$. This gives $\\lim_{x\\to 1} \\frac{(x-1)(\\sqrt{x}+1)}{x-1}$. Cancel out $(x-1)$ and substitute $x=1$ into the remaining expression: $\\sqrt{1}+1=2$."
+  },
+  {
+    "id": 6,
+    "question": "Evaluate $\\lim_{x\\to -1} (x^3 + 2x^2 - 3x + 1)$.",
+    "options": [
+      "-1",
+      "5",
+      "1",
+      "0"
+    ],
+    "correct": 1,
+    "explanation": "Substitute $x=-1$ directly: $(-1)^3 + 2(-1)^2 - 3(-1) + 1 = -1 + 2(1) + 3 + 1 = -1 + 2 + 3 + 1 = 5$."
+  },
+  {
+    "id": 7,
+    "question": "Find $\\lim_{x\\to 0} \\frac{x^2 - 5x}{x}$.",
+    "options": [
+      "0",
+      "-5",
+      "5",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "Factor $x$ from the numerator: $\\lim_{x\\to 0} \\frac{x(x - 5)}{x}$. Cancel $x$ and substitute $x=0$ into the remaining expression: $0-5=-5$."
+  },
+  {
+    "id": 8,
+    "question": "What is the limit of $\\lim_{x\\to -\\infty} \\frac{x^3 + 5}{x^2 - 2}$?",
+    "options": [
+      "0",
+      "$\\infty$",
+      "Does not exist",
+      "$-2$"
+    ],
+    "correct": 2,
+    "explanation": "The degree of the numerator is greater than the denominator. As $x$ approaches $-\\infty$, the function approaches $-\\infty$. Therefore, the limit does not exist."
+  },
+  {
+    "id": 9,
+    "question": "Evaluate $\\lim_{x\\to 9} \\frac{x-9}{\\sqrt{x}-3}$.",
+    "options": [
+      "3",
+      "6",
+      "9",
+      "$\\frac{1}{6}$"
+    ],
+    "correct": 1,
+    "explanation": "Multiply numerator and denominator by the conjugate of the denominator, $\\sqrt{x}+3$. This gives $\\lim_{x\\to 9} \\frac{(x-9)(\\sqrt{x}+3)}{x-9}$. Cancel $(x-9)$ and substitute $x=9$: $\\sqrt{9}+3=3+3=6$."
+  },
+  {
+    "id": 10,
+    "question": "If $\\lim_{x\\to a} f(x) = L$ and $\\lim_{x\\to a} g(x) = M$, then $\\lim_{x\\to a} [f(x) + g(x)]$ is equal to:",
+    "options": [
+      "$\\frac{L}{M}$",
+      "$LM$",
+      "$L+M$",
+      "$L-M$"
+    ],
+    "correct": 2,
+    "explanation": "This is the Sum Rule for limits. The limit of a sum is the sum of the limits."
+  },
+  {
+    "id": 11,
+    "question": "Find $\\lim_{x\\to 5} \\frac{1}{x-5}$.",
+    "options": [
+      "0",
+      "$\\frac{1}{5}$",
+      "Does not exist",
+      "$\\infty$"
+    ],
+    "correct": 2,
+    "explanation": "As $x$ approaches 5, the denominator approaches 0. From the left, it approaches 0 from the negative side, and from the right, it approaches 0 from the positive side. The one-sided limits are not equal, so the overall limit does not exist."
+  },
+  {
+    "id": 12,
+    "question": "What is the value of $\\lim_{x\\to -2} \\frac{x^2 + 5x + 6}{x+2}$?",
+    "options": [
+      "-1",
+      "1",
+      "0",
+      "3"
+    ],
+    "correct": 1,
+    "explanation": "Factor the numerator: $\\lim_{x\\to -2} \\frac{(x+2)(x+3)}{x+2}$. Cancel out $(x+2)$ and substitute $x=-2$ into the remaining expression: $-2+3=1$."
+  },
+  {
+    "id": 13,
+    "question": "Evaluate $\\lim_{x\\to\\infty} \\frac{2x^3 - x + 1}{x^4 + 3x^2 - 5}$.",
+    "options": [
+      "0",
+      "2",
+      "$\\infty$",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "The degree of the denominator (4) is greater than the degree of the numerator (3). Therefore, the limit at infinity is 0."
+  },
+  {
+    "id": 14,
+    "question": "Find $\\lim_{x\\to 0} \\frac{\\sqrt{4+x} - 2}{x}$.",
+    "options": [
+      "0",
+      "$\\frac{1}{4}$",
+      "1",
+      "2"
+    ],
+    "correct": 1,
+    "explanation": "Multiply by the conjugate of the numerator: $\\lim_{x\\to 0} \\frac{(\\sqrt{4+x}-2)(\\sqrt{4+x}+2)}{x(\\sqrt{4+x}+2)} = \\lim_{x\\to 0} \\frac{4+x-4}{x(\\sqrt{4+x}+2)} = \\lim_{x\\to 0} \\frac{x}{x(\\sqrt{4+x}+2)}$. Cancel $x$ and substitute $x=0$: $\\frac{1}{\\sqrt{4+0}+2} = \\frac{1}{2+2} = \\frac{1}{4}$."
+  },
+  {
+    "id": 15,
+    "question": "For what values of $x$ is the function $f(x) = \\frac{1}{x-3}$ continuous?",
+    "options": [
+      "All real numbers",
+      "All real numbers except 0",
+      "All real numbers except 3",
+      "All real numbers except -3"
+    ],
+    "correct": 2,
+    "explanation": "A rational function is continuous everywhere its denominator is not zero. The denominator $x-3$ is zero when $x=3$."
+  },
+  {
+    "id": 16,
+    "question": "Evaluate $\\lim_{x\\to 2^-} \\frac{x}{x-2}$.",
+    "options": [
+      "$\\infty$",
+      "$-2$",
+      "$-\\infty$",
+      "2"
+    ],
+    "correct": 2,
+    "explanation": "As $x$ approaches 2 from the left (e.g., $x=1.99$), the numerator is positive and the denominator is a small negative number. Therefore, the fraction approaches $-\\infty$."
+  },
+  {
+    "id": 17,
+    "question": "What is $\\lim_{x\\to -4} \\frac{x+4}{x^2+3x-4}$?",
+    "options": [
+      "$\\frac{1}{5}$",
+      "-5",
+      "$-\\frac{1}{5}$",
+      "0"
+    ],
+    "correct": 2,
+    "explanation": "Factor the denominator: $x^2+3x-4 = (x+4)(x-1)$. The expression becomes $\\lim_{x\\to -4} \\frac{x+4}{(x+4)(x-1)}$. Cancel $(x+4)$ and substitute $x=-4$ into the remaining expression: $\\frac{1}{-4-1} = -\\frac{1}{5}$."
+  },
+  {
+    "id": 18,
+    "question": "If a function $f(x)$ is continuous at $x=c$, then $\\lim_{x\\to c} f(x)$ must be equal to:",
+    "options": [
+      "$\\infty$",
+      "Does not exist",
+      "$f(c)$",
+      "0"
+    ],
+    "correct": 2,
+    "explanation": "This is a key part of the definition of continuity. A function $f(x)$ is continuous at $x=c$ if and only if $\\lim_{x\\to c} f(x) = f(c)$."
+  },
+  {
+    "id": 19,
+    "question": "Evaluate $\\lim_{x\\to\\infty} \\frac{x - 3}{x^2 + 5x - 2}$.",
+    "options": [
+      "0",
+      "1",
+      "$\\infty$",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "The degree of the denominator (2) is greater than the degree of the numerator (1). Therefore, the limit at infinity is 0."
+  },
+  {
+    "id": 20,
+    "question": "What is the limit of a constant function, $\\lim_{x\\to c} 7$?",
+    "options": [
+      "7",
+      "0",
+      "c",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "The limit of a constant is the constant itself, as the function's value does not change."
+  },
+  {
+    "id": 21,
+    "question": "Find $\\lim_{x\\to 2} (x^2 + x - 6)$.",
+    "options": [
+      "0",
+      "2",
+      "6",
+      "-6"
+    ],
+    "correct": 0,
+    "explanation": "Substitute $x=2$ directly into the expression: $(2)^2 + 2 - 6 = 4 + 2 - 6 = 0$."
+  },
+  {
+    "id": 22,
+    "question": "Evaluate $\\lim_{x\\to -3} \\frac{x^2 - 9}{x+3}$.",
+    "options": [
+      "0",
+      "$-6$",
+      "$-3$",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "Factor the numerator: $\\lim_{x\\to -3} \\frac{(x-3)(x+3)}{x+3}$. Cancel $(x+3)$ and substitute $x=-3$: $-3-3=-6$."
+  },
+  {
+    "id": 23,
+    "question": "Find $\\lim_{x\\to\\infty} \\frac{x^2 + 1}{x - 1}$.",
+    "options": [
+      "0",
+      "1",
+      "$\\infty$",
+      "Does not exist"
+    ],
+    "correct": 2,
+    "explanation": "The degree of the numerator (2) is greater than the denominator (1). As $x$ approaches $\\infty$, the function approaches $\\infty$."
+  },
+  {
+    "id": 24,
+    "question": "Evaluate $\\lim_{x\\to 2^+} \\frac{1}{x-2}$.",
+    "options": [
+      "$\\infty$",
+      "$-\\infty$",
+      "2",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "As $x$ approaches 2 from the right (e.g., $x=2.01$), the denominator is a small positive number. Therefore, the fraction approaches $\\infty$."
+  },
+  {
+    "id": 25,
+    "question": "What is the value of $\\lim_{x\\to 0} \\frac{x}{\\sqrt{x+1} - 1}$?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Does not exist"
+    ],
+    "correct": 2,
+    "explanation": "Multiply the numerator and denominator by the conjugate of the denominator, $\\sqrt{x+1}+1$. This gives $\\lim_{x\\to 0} \\frac{x(\\sqrt{x+1}+1)}{x+1-1} = \\lim_{x\\to 0} \\frac{x(\\sqrt{x+1}+1)}{x}$. Cancel $x$ and substitute $x=0$: $\\sqrt{0+1}+1=1+1=2$."
+  },
+  {
+    "id": 26,
+    "question": "Evaluate $\\lim_{x\\to 0} (5x^3 - 2x^2 + 4)$.",
+    "options": [
+      "0",
+      "4",
+      "-2",
+      "5"
+    ],
+    "correct": 1,
+    "explanation": "Substitute $x=0$ directly: $5(0)^3 - 2(0)^2 + 4 = 4$."
+  },
+  {
+    "id": 27,
+    "question": "If $\\lim_{x\\to a} f(x) = 4$ and $\\lim_{x\\to a} g(x) = 2$, what is $\\lim_{x\\to a} \\frac{f(x)}{g(x)}$?",
+    "options": [
+      "6",
+      "2",
+      "8",
+      "$\\frac{1}{2}$"
+    ],
+    "correct": 1,
+    "explanation": "Using the Quotient Rule for limits, $\\lim_{x\\to a} \\frac{f(x)}{g(x)} = \\frac{\\lim_{x\\to a} f(x)}{\\lim_{x\\to a} g(x)} = \\frac{4}{2} = 2$."
+  },
+  {
+    "id": 28,
+    "question": "For the function $f(x) = \\begin{cases} 2x+1 & \\text{if } x < 1 \\\\ 3x & \\text{if } x \\geq 1 \\end{cases}$, find $\\lim_{x\\to 1} f(x)$.",
+    "options": [
+      "3",
+      "2",
+      "1",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "Check the one-sided limits. Left-hand limit: $\\lim_{x\\to 1^-} (2x+1) = 2(1)+1 = 3$. Right-hand limit: $\\lim_{x\\to 1^+} (3x) = 3(1) = 3$. Since the left and right limits are equal, the overall limit is 3."
+  },
+  {
+    "id": 29,
+    "question": "Evaluate $\\lim_{x\\to\\infty} (\\sqrt{x^2+x} - x)$.",
+    "options": [
+      "0",
+      "$\\infty$",
+      "$\\frac{1}{2}$",
+      "Does not exist"
+    ],
+    "correct": 2,
+    "explanation": "Multiply by the conjugate: $\\lim_{x\\to\\infty} \\frac{(\\sqrt{x^2+x}-x)(\\sqrt{x^2+x}+x)}{\\sqrt{x^2+x}+x} = \\lim_{x\\to\\infty} \\frac{x^2+x-x^2}{\\sqrt{x^2+x}+x} = \\lim_{x\\to\\infty} \\frac{x}{\\sqrt{x^2+x}+x}$. Divide numerator and denominator by $x$: $\\lim_{x\\to\\infty} \\frac{1}{\\sqrt{1+\\frac{1}{x}}+1} = \\frac{1}{\\sqrt{1+0}+1} = \\frac{1}{2}$."
+  },
+  {
+    "id": 30,
+    "question": "What is the value of $\\lim_{x\\to 0} \\frac{(x+2)^2 - 4}{x}$?",
+    "options": [
+      "0",
+      "2",
+      "4",
+      "Does not exist"
+    ],
+    "correct": 2,
+    "explanation": "Expand the numerator: $\\lim_{x\\to 0} \\frac{x^2+4x+4-4}{x} = \\lim_{x\\to 0} \\frac{x^2+4x}{x}$. Factor $x$: $\\lim_{x\\to 0} \\frac{x(x+4)}{x}$. Cancel $x$ and substitute $x=0$: $0+4=4$."
+  },
+  {
+    "id": 31,
+    "question": "Find $\\lim_{x\\to 1} \\frac{x^3 - 1}{x - 1}$.",
+    "options": [
+      "1",
+      "3",
+      "0",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "Factor the numerator using the difference of cubes formula, $a^3-b^3=(a-b)(a^2+ab+b^2)$: $\\lim_{x\\to 1} \\frac{(x-1)(x^2+x+1)}{x-1}$. Cancel $(x-1)$ and substitute $x=1$: $1^2+1+1=3$."
+  },
+  {
+    "id": 32,
+    "question": "Evaluate $\\lim_{x\\to\\infty} \\frac{5x^3}{2x^3 - 7x}$.",
+    "options": [
+      "0",
+      "$\\frac{5}{2}$",
+      "$\\infty$",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "The degrees of the numerator and denominator are equal. The limit is the ratio of the leading coefficients, which is $\\frac{5}{2}$."
+  },
+  {
+    "id": 33,
+    "question": "What is the limit of $\\lim_{x\\to 4} \\frac{x^2 - 16}{x - 4}$?",
+    "options": [
+      "8",
+      "4",
+      "0",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "Factor the numerator: $\\lim_{x\\to 4} \\frac{(x-4)(x+4)}{x-4}$. Cancel $(x-4)$ and substitute $x=4$: $4+4=8$."
+  },
+  {
+    "id": 34,
+    "question": "Find $\\lim_{x\\to 1} \\frac{x^2 + 2x - 3}{x - 1}$.",
+    "options": [
+      "4",
+      "0",
+      "-3",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "Factor the numerator: $\\lim_{x\\to 1} \\frac{(x-1)(x+3)}{x-1}$. Cancel $(x-1)$ and substitute $x=1$: $1+3=4$."
+  },
+  {
+    "id": 35,
+    "question": "Evaluate $\\lim_{x\\to 0} \\frac{\\sqrt{1-x} - 1}{x}$.",
+    "options": [
+      "$\\frac{1}{2}$",
+      "$-\\frac{1}{2}$",
+      "0",
+      "1"
+    ],
+    "correct": 1,
+    "explanation": "Multiply by the conjugate: $\\lim_{x\\to 0} \\frac{(\\sqrt{1-x}-1)(\\sqrt{1-x}+1)}{x(\\sqrt{1-x}+1)} = \\lim_{x\\to 0} \\frac{1-x-1}{x(\\sqrt{1-x}+1)} = \\lim_{x\\to 0} \\frac{-x}{x(\\sqrt{1-x}+1)}$. Cancel $x$ and substitute $x=0$: $\\frac{-1}{\\sqrt{1-0}+1} = -\\frac{1}{2}$."
+  },
+  {
+    "id": 36,
+    "question": "If $\\lim_{x\\to 5} f(x) = 3$ and $\\lim_{x\\to 5} g(x) = -2$, what is $\\lim_{x\\to 5} [f(x) - g(x)]$?",
+    "options": [
+      "1",
+      "5",
+      "$-5$",
+      "$-1$"
+    ],
+    "correct": 1,
+    "explanation": "Using the Difference Rule for limits, $\\lim_{x\\to 5} [f(x)-g(x)] = \\lim_{x\\to 5} f(x) - \\lim_{x\\to 5} g(x) = 3 - (-2) = 5$."
+  },
+  {
+    "id": 37,
+    "question": "Find $\\lim_{x\\to 0} (x^2 + 2x - 3)$.",
+    "options": [
+      "0",
+      "1",
+      "-3",
+      "2"
+    ],
+    "correct": 2,
+    "explanation": "Substitute $x=0$ directly: $(0)^2 + 2(0) - 3 = -3$."
+  },
+  {
+    "id": 38,
+    "question": "Evaluate $\\lim_{x\\to\\infty} \\frac{2x^2+1}{3x^3 - 4}$.",
+    "options": [
+      "$\\frac{2}{3}$",
+      "0",
+      "$\\infty$",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "The degree of the denominator (3) is greater than the degree of the numerator (2). The limit at infinity is 0."
+  },
+  {
+    "id": 39,
+    "question": "What is the value of $\\lim_{x\\to 1} (x - 1)^2$?",
+    "options": [
+      "1",
+      "0",
+      "2",
+      "$-1$"
+    ],
+    "correct": 1,
+    "explanation": "Substitute $x=1$ directly: $(1-1)^2 = 0^2 = 0$."
+  },
+  {
+    "id": 40,
+    "question": "Find $\\lim_{x\\to 3^+} \\frac{5}{x-3}$.",
+    "options": [
+      "0",
+      "5",
+      "$\\infty$",
+      "$-\\infty$"
+    ],
+    "correct": 2,
+    "explanation": "As $x$ approaches 3 from the right (e.g., $x=3.01$), the numerator is positive and the denominator is a small positive number. The fraction approaches $\\infty$."
+  },
+  {
+    "id": 41,
+    "question": "Evaluate $\\lim_{x\\to 1} \\frac{x^2 - 3x + 2}{x - 1}$.",
+    "options": [
+      "0",
+      "-1",
+      "1",
+      "2"
+    ],
+    "correct": 1,
+    "explanation": "Factor the numerator: $\\lim_{x\\to 1} \\frac{(x-1)(x-2)}{x-1}$. Cancel $(x-1)$ and substitute $x=1$: $1-2=-1$."
+  },
+  {
+    "id": 42,
+    "question": "Find $\\lim_{x\\to 2} \\frac{\\sqrt{x+2}-2}{x-2}$.",
+    "options": [
+      "$\\frac{1}{4}$",
+      "4",
+      "0",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "Multiply by the conjugate of the numerator: $\\lim_{x\\to 2} \\frac{(\\sqrt{x+2}-2)(\\sqrt{x+2}+2)}{(x-2)(\\sqrt{x+2}+2)} = \\lim_{x\\to 2} \\frac{x+2-4}{(x-2)(\\sqrt{x+2}+2)} = \\lim_{x\\to 2} \\frac{x-2}{(x-2)(\\sqrt{x+2}+2)}$. Cancel $(x-2)$ and substitute $x=2$: $\\frac{1}{\\sqrt{2+2}+2} = \\frac{1}{2+2} = \\frac{1}{4}$."
+  },
+  {
+    "id": 43,
+    "question": "What is $\\lim_{x\\to\\infty} (3x^2 - 4x^3)$?",
+    "options": [
+      "$\\infty$",
+      "$-\\infty$",
+      "0",
+      "3"
+    ],
+    "correct": 1,
+    "explanation": "The term with the highest power determines the behavior of a polynomial as $x$ approaches infinity. The term is $-4x^3$. As $x\\to\\infty$, $-4x^3\\to -\\infty$."
+  },
+  {
+    "id": 44,
+    "question": "Evaluate $\\lim_{x\\to -2} \\frac{x^3 + 8}{x + 2}$.",
+    "options": [
+      "12",
+      "0",
+      "4",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "Factor the numerator using the sum of cubes formula, $a^3+b^3=(a+b)(a^2-ab+b^2)$: $\\lim_{x\\to -2} \\frac{(x+2)(x^2-2x+4)}{x+2}$. Cancel $(x+2)$ and substitute $x=-2$: $(-2)^2 - 2(-2) + 4 = 4+4+4=12$."
+  },
+  {
+    "id": 45,
+    "question": "If $\\lim_{x\\to 2} f(x) = 5$, what is $\\lim_{x\\to 2} [f(x)]^2$?",
+    "options": [
+      "5",
+      "25",
+      "10",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "Using the Power Rule for limits, $\\lim_{x\\to 2} [f(x)]^2 = [\\lim_{x\\to 2} f(x)]^2 = 5^2 = 25$."
+  },
+  {
+    "id": 46,
+    "question": "What is the limit of $\\lim_{x\\to 2} \\frac{x^2 - x - 2}{x^2 + x - 6}$?",
+    "options": [
+      "$\\frac{1}{5}$",
+      "0",
+      "1",
+      "$\\frac{3}{5}$"
+    ],
+    "correct": 3,
+    "explanation": "Factor both numerator and denominator: $\\lim_{x\\to 2} \\frac{(x-2)(x+1)}{(x-2)(x+3)}$. Cancel $(x-2)$ and substitute $x=2$: $\\frac{2+1}{2+3} = \\frac{3}{5}$."
+  },
+  {
+    "id": 47,
+    "question": "Evaluate $\\lim_{x\\to 4^-} \\frac{2}{x-4}$.",
+    "options": [
+      "2",
+      "$-2$",
+      "$\\infty$",
+      "$-\\infty$"
+    ],
+    "correct": 3,
+    "explanation": "As $x$ approaches 4 from the left (e.g., $x=3.99$), the numerator is positive and the denominator is a small negative number. The fraction approaches $-\\infty$."
+  },
+  {
+    "id": 48,
+    "question": "Find $\\lim_{x\\to\\infty} \\frac{\\sqrt{4x^2 - 1}}{x + 1}$.",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "0"
+    ],
+    "correct": 1,
+    "explanation": "Divide the numerator and denominator by the highest power of $x$ in the denominator, which is $x$. Inside the square root, $x$ becomes $\\sqrt{x^2}$. The limit becomes $\\lim_{x\\to\\infty} \\frac{\\sqrt{4 - \\frac{1}{x^2}}}{1 + \\frac{1}{x}} = \\frac{\\sqrt{4-0}}{1+0} = 2$."
+  },
+  {
+    "id": 49,
+    "question": "What is the value of $\\lim_{x\\to -1} (x^2 + 2x + 1)$?",
+    "options": [
+      "4",
+      "1",
+      "0",
+      "-1"
+    ],
+    "correct": 2,
+    "explanation": "Substitute $x=-1$ directly: $(-1)^2 + 2(-1) + 1 = 1 - 2 + 1 = 0$."
+  },
+  {
+    "id": 50,
+    "question": "Evaluate $\\lim_{x\\to 0} \\frac{x^2 - 3x}{x}$.",
+    "options": [
+      "0",
+      "3",
+      "-3",
+      "Does not exist"
+    ],
+    "correct": 2,
+    "explanation": "Factor $x$ from the numerator: $\\lim_{x\\to 0} \\frac{x(x-3)}{x}$. Cancel $x$ and substitute $x=0$: $0-3=-3$."
+  },
+  {
+    "id": 51,
+    "question": "Find $\\lim_{x\\to 2} \\frac{x - 2}{x^2 - 5x + 6}$.",
+    "options": [
+      "1",
+      "$-1$",
+      "0",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "Factor the denominator: $\\lim_{x\\to 2} \\frac{x - 2}{(x-2)(x-3)}$. Cancel $(x-2)$ and substitute $x=2$: $\\frac{1}{2-3}=-1$."
+  },
+  {
+    "id": 52,
+    "question": "What is the limit of $\\lim_{x\\to\\infty} (\\frac{2x^2 + 1}{x^2})$?",
+    "options": [
+      "1",
+      "2",
+      "0",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "Divide each term in the numerator by $x^2$: $\\lim_{x\\to\\infty} (2 + \\frac{1}{x^2})$. As $x\\to\\infty$, $\\frac{1}{x^2}\\to 0$. The limit is $2+0=2$."
+  },
+  {
+    "id": 53,
+    "question": "Evaluate $\\lim_{x\\to 0} \\frac{\\sqrt{25+x}-5}{x}$.",
+    "options": [
+      "$\\frac{1}{10}$",
+      "10",
+      "$\\frac{1}{5}$",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "Multiply by the conjugate of the numerator: $\\lim_{x\\to 0} \\frac{(\\sqrt{25+x}-5)(\\sqrt{25+x}+5)}{x(\\sqrt{25+x}+5)} = \\lim_{x\\to 0} \\frac{25+x-25}{x(\\sqrt{25+x}+5)} = \\lim_{x\\to 0} \\frac{x}{x(\\sqrt{25+x}+5)}$. Cancel $x$ and substitute $x=0$: $\\frac{1}{\\sqrt{25+0}+5} = \\frac{1}{5+5} = \\frac{1}{10}$."
+  },
+  {
+    "id": 54,
+    "question": "Find $\\lim_{x\\to 3} \\frac{x^2 - 9}{x - 3}$.",
+    "options": [
+      "6",
+      "3",
+      "0",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "Factor the numerator: $\\lim_{x\\to 3} \\frac{(x-3)(x+3)}{x-3}$. Cancel $(x-3)$ and substitute $x=3$: $3+3=6$."
+  },
+  {
+    "id": 55,
+    "question": "What is the limit of $\\lim_{x\\to\\infty} \\frac{1}{x}$?",
+    "options": [
+      "1",
+      "0",
+      "$\\infty$",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "As the denominator of a fraction grows infinitely large, the value of the fraction approaches 0."
+  },
+  {
+    "id": 56,
+    "question": "Evaluate $\\lim_{x\\to 4} \\frac{\\sqrt{x}-2}{x-4}$.",
+    "options": [
+      "0",
+      "$\\frac{1}{4}$",
+      "4",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "Multiply by the conjugate of the numerator: $\\lim_{x\\to 4} \\frac{(\\sqrt{x}-2)(\\sqrt{x}+2)}{(x-4)(\\sqrt{x}+2)} = \\lim_{x\\to 4} \\frac{x-4}{(x-4)(\\sqrt{x}+2)}$. Cancel $(x-4)$ and substitute $x=4$: $\\frac{1}{\\sqrt{4}+2}=\\frac{1}{2+2}=\\frac{1}{4}$."
+  },
+  {
+    "id": 57,
+    "question": "Find $\\lim_{x\\to 2} \\frac{x^2-4}{x^2-x-2}$.",
+    "options": [
+      "0",
+      "$\\frac{4}{3}$",
+      "2",
+      "Does not exist"
+    ],
+    "correct": 1,
+    "explanation": "Factor both numerator and denominator: $\\lim_{x\\to 2} \\frac{(x-2)(x+2)}{(x-2)(x+1)}$. Cancel $(x-2)$ and substitute $x=2$: $\\frac{2+2}{2+1} = \\frac{4}{3}$."
+  },
+  {
+    "id": 58,
+    "question": "What is the value of $\\lim_{x\\to 5} \\frac{x - 5}{x^2 - 25}$?",
+    "options": [
+      "$\\frac{1}{10}$",
+      "10",
+      "0",
+      "Does not exist"
+    ],
+    "correct": 0,
+    "explanation": "Factor the denominator: $\\lim_{x\\to 5} \\frac{x-5}{(x-5)(x+5)}$. Cancel $(x-5)$ and substitute $x=5$: $\\frac{1}{5+5} = \\frac{1}{10}$."
+  },
+  {
+    "id": 59,
+    "question": "If $\\lim_{x\\to a} f(x) = 0$ and $\\lim_{x\\to a} g(x) = 0$, what can be said about $\\lim_{x\\to a} \\frac{f(x)}{g(x)}$?",
+    "options": [
+      "The limit is 0",
+      "The limit is 1",
+      "The limit is undefined",
+      "The limit is an indeterminate form, requiring further analysis"
+    ],
+    "correct": 3,
+    "explanation": "When the numerator and denominator both approach 0, the limit is of the indeterminate form $\\frac{0}{0}$. This means more work is needed (like factoring, using conjugates, or L'Hopital's rule) to find the limit, which may or may not exist."
+  },
+  {
+    "id": 60,
+    "question": "For a rational function $f(x) = \\frac{p(x)}{q(x)}$, a vertical asymptote exists at $x=c$ if:",
+    "options": [
+      "$\\lim_{x\\to c} f(x) = 0$",
+      "$q(c) = 0$ but $p(c) \\neq 0$",
+      "$\\lim_{x\\to c} f(x) = 1$",
+      "$\\lim_{x\\to c} f(x)$ exists"
+    ],
+    "correct": 1,
+    "explanation": "A vertical asymptote occurs where the denominator is zero and the numerator is non-zero, causing the limit to approach $\\pm\\infty$."
+  }
+];
+
 // Export the questions for use in the quiz system
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions, physicalEducationQuestions, generalPhysicsQuestions, philosophyQuestions };
+    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions, physicalEducationQuestions, generalPhysicsQuestions, philosophyQuestions, basicCalculusQuestions };
 }

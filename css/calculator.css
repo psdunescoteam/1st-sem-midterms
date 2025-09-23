@@ -1,0 +1,346 @@
+/* Floating Calculator Styles */
+.calculator-widget {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 320px;
+    min-height: 450px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 10000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.calculator-widget.show {
+    display: block;
+}
+
+.calculator-widget.minimized {
+    height: 50px;
+    min-height: auto;
+    overflow: hidden;
+}
+
+.calculator-widget.maximized {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    width: auto;
+    height: auto;
+    min-height: auto;
+}
+
+/* Calculator Header */
+.calculator-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 16px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.calculator-title {
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.calculator-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.calculator-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: background 0.2s ease;
+}
+
+.calculator-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.calculator-btn.close:hover {
+    background: #f56565;
+}
+
+/* Calculator Body */
+.calculator-body {
+    padding: 0;
+    height: calc(100% - 50px);
+    overflow: hidden;
+}
+
+.calculator-widget.minimized .calculator-body {
+    display: none;
+}
+
+/* Calculator Display */
+.calculator-display {
+    background: #2d3748;
+    color: #e2e8f0;
+    padding: 20px;
+    text-align: right;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.calculator-expression {
+    font-size: 14px;
+    color: #a0aec0;
+    min-height: 20px;
+    margin-bottom: 8px;
+    word-break: break-all;
+}
+
+.calculator-result {
+    font-size: 24px;
+    font-weight: 600;
+    min-height: 30px;
+    color: #ffffff;
+    word-break: break-all;
+}
+
+/* Calculator Buttons */
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #e2e8f0;
+    padding: 1px;
+}
+
+.calc-btn {
+    background: #ffffff;
+    border: none;
+    padding: 20px 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+}
+
+.calc-btn:hover {
+    background: #f7fafc;
+    transform: translateY(-1px);
+}
+
+.calc-btn:active {
+    transform: translateY(0);
+    background: #edf2f7;
+}
+
+.calc-btn.operator {
+    background: #667eea;
+    color: white;
+}
+
+.calc-btn.operator:hover {
+    background: #5a67d8;
+}
+
+.calc-btn.function {
+    background: #4299e1;
+    color: white;
+    font-size: 14px;
+}
+
+.calc-btn.function:hover {
+    background: #3182ce;
+}
+
+.calc-btn.clear {
+    background: #f56565;
+    color: white;
+}
+
+.calc-btn.clear:hover {
+    background: #e53e3e;
+}
+
+.calc-btn.equals {
+    background: #48bb78;
+    color: white;
+}
+
+.calc-btn.equals:hover {
+    background: #38a169;
+}
+
+.calc-btn.zero {
+    grid-column: span 2;
+}
+
+/* Scientific Functions Panel */
+.scientific-panel {
+    background: #f7fafc;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.sci-btn {
+    background: #e2e8f0;
+    border: none;
+    padding: 8px 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    color: #2d3748;
+}
+
+.sci-btn:hover {
+    background: #cbd5e0;
+    transform: translateY(-1px);
+}
+
+/* Toggle Button for Calculator */
+.calculator-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
+}
+
+.calculator-toggle.active {
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+    transform: rotate(45deg);
+}
+
+/* Drag Indicator */
+.calculator-header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .calculator-widget {
+        width: 280px;
+        right: 10px;
+        top: 80px;
+    }
+    
+    .calculator-widget.maximized {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+    
+    .calculator-toggle {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .calc-btn {
+        padding: 16px 6px;
+        min-height: 50px;
+        font-size: 14px;
+    }
+    
+    .scientific-panel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .calculator-widget {
+    background: rgba(45, 55, 72, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .calc-btn {
+    background: #4a5568;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .calc-btn:hover {
+    background: #2d3748;
+}
+
+[data-theme="dark"] .scientific-panel {
+    background: #2d3748;
+}
+
+[data-theme="dark"] .sci-btn {
+    background: #4a5568;
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .sci-btn:hover {
+    background: #2d3748;
+}
+
+/* Animation for showing calculator */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.calculator-widget.show {
+    animation: slideInRight 0.3s ease-out;
+}

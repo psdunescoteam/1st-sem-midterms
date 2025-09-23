@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Chemistry Quiz - Grade 12 Quiz App</title>
+    <title>Basic Calculus Quiz - Grade 12 Quiz App</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/desmos.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- MathJax Configuration for mathematical expressions -->
+    <!-- Desmos Calculator API v1.11 -->
+    <script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=e063654a0438411dbd57510e5011f433"></script>
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- MathJax Configuration -->
     <script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            processEscapes: true,
-            processEnvironments: true,
-            packages: {'[+]': ['textmacros']}
-        },
-        options: {
-            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-        }
-    };
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
+            },
+            startup: {
+                ready: () => {
+                    console.log('MathJax is loaded and ready for Basic Calculus quiz');
+                    MathJax.startup.defaultReady();
+                }
+            }
+        };
     </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
@@ -49,10 +64,10 @@
                         </button>
                         <div class="quiz-title-section">
                             <div class="quiz-subject-badge">
-                                <i class="fas fa-flask"></i>
-                                <span>Chemistry</span>
+                                <i class="fas fa-infinity"></i>
+                                <span>Basic Calculus</span>
                             </div>
-                            <h1 class="quiz-main-title">General Chemistry Quiz</h1>
+                            <h1 class="quiz-main-title">Basic Calculus Quiz</h1>
                         </div>
                     </div>
                     <div class="quiz-header-right">
@@ -64,7 +79,7 @@
                             <div class="question-indicator">
                                 <span class="current-q" id="current-question">1</span>
                                 <span class="separator">/</span>
-                                <span class="total-q" id="total-questions">54</span>
+                                <span class="total-q" id="total-questions">60</span>
                             </div>
                             <div class="percentage-circle">
                                 <svg class="progress-ring" width="40" height="40">
@@ -92,12 +107,24 @@
                 <div class="question-card">
                     <div class="question-number">
                         <span id="question-num">Question 1</span>
+                        <button class="bookmark-btn" id="bookmark-btn" title="Bookmark this question">
+                            <i class="far fa-bookmark"></i>
+                        </button>
                     </div>
                     <div class="question-text">
                         <h2 id="question-text">Loading question...</h2>
                     </div>
                     <div class="options-container" id="options-container">
                         <!-- Options will be dynamically generated -->
+                    </div>
+                    <div class="explanation-section" id="explanation-section" style="display: none;">
+                        <div class="explanation-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Explanation</h4>
+                        </div>
+                        <div class="explanation-content" id="explanation-content">
+                            <!-- Explanation will be shown here -->
+                        </div>
                     </div>
                 </div>
 
@@ -106,8 +133,13 @@
                     <button class="btn-secondary" id="prev-btn" disabled>
                         <i class="fas fa-chevron-left"></i> Previous
                     </button>
-                    <div class="question-status">
-                        <span id="answered-count">0</span> of <span id="total-count">54</span> answered
+                    <div class="control-center">
+                        <div class="question-status">
+                            <span id="answered-count">0</span> of <span id="total-count">60</span> answered
+                        </div>
+                        <button class="btn-reveal" id="reveal-btn" style="display: none;">
+                            <i class="fas fa-eye"></i> Show Answer
+                        </button>
                     </div>
                     <button class="btn-primary" id="next-btn" disabled>
                         Select an Answer
@@ -137,9 +169,13 @@
                             <div class="stat-number" id="final-score">0%</div>
                             <div class="stat-label">Score</div>
                         </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="bookmarked-count">0</div>
+                            <div class="stat-label">Bookmarked</div>
+                        </div>
                     </div>
                     <div class="score-message" id="score-message">
-                        Great job! You've completed the quiz.
+                        Great job! You've completed the Basic Calculus quiz.
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -156,6 +192,6 @@
 
     <script src="js/quiz-data.js"></script>
     <script src="js/quiz-system.js"></script>
-    <script src="js/calculator.js"></script>
+    <script src="js/desmos-simple.js"></script>
 </body>
 </html>
