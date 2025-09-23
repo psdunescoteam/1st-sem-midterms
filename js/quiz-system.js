@@ -43,7 +43,8 @@ class QuizSystem {
             'Empowerment-Technologies.html': 'empowerment-technologies',
             'General-Mathematics.html': 'general-mathematics',
             'Physical-Education.html': 'physical-education',
-            'General-Physics.html': 'general-physics'
+            'General-Physics.html': 'general-physics',
+            'Philosophy.html': 'philosophy'
         };
         return subjectMap[currentPage] || 'work-immersion';
     }
@@ -59,7 +60,8 @@ class QuizSystem {
             'empowerment-technologies': empowermentTechnologiesQuestions,
             'general-mathematics': generalMathematicsQuestions,
             'physical-education': physicalEducationQuestions,
-            'general-physics': generalPhysicsQuestions
+            'general-physics': generalPhysicsQuestions,
+            'philosophy': philosophyQuestions
         };
         return questionMap[subject] || workImmersionQuestions;
     }
@@ -414,7 +416,6 @@ class QuizSystem {
             bookmarkBtn.id = 'bookmark-btn';
             bookmarkBtn.className = 'bookmark-btn';
             bookmarkBtn.setAttribute('aria-label', 'Bookmark this question');
-            bookmarkBtn.onclick = () => this.toggleBookmark();
             
             // Find the question number element and add bookmark button after it
             const questionNum = document.getElementById('question-num');
@@ -423,12 +424,15 @@ class QuizSystem {
             }
         }
         
+        // Always attach/reattach the click event (for both new and existing buttons)
+        bookmarkBtn.onclick = () => this.toggleBookmark();
+        
         // Update bookmark button state
         const isBookmarked = this.bookmarkedQuestions[this.currentQuestionIndex];
         bookmarkBtn.innerHTML = `
-            <i class="fas fa-bookmark${isBookmarked ? '' : '-o'}"></i>
-            <span class="bookmark-text">${isBookmarked ? 'Bookmarked' : 'Bookmark'}</span>
+            <i class="fa${isBookmarked ? 's' : 'r'} fa-bookmark"></i>
         `;
+        bookmarkBtn.setAttribute('title', isBookmarked ? 'Remove bookmark' : 'Bookmark this question');
         
         // Update CSS classes
         if (isBookmarked) {
@@ -447,6 +451,9 @@ class QuizSystem {
         
         // Update bookmark button visual state
         this.renderBookmarkButton();
+        
+        // Save progress with updated bookmarks
+        this.saveProgress();
         
         // Show feedback
         const isBookmarked = this.bookmarkedQuestions[currentIndex];
@@ -469,7 +476,7 @@ class QuizSystem {
         
         // Update feedback content and show
         feedback.innerHTML = `
-            <i class="fas fa-bookmark${isBookmarked ? '' : '-o'}"></i>
+            <i class="fa${isBookmarked ? 's' : 'r'} fa-bookmark"></i>
             <span>Question ${isBookmarked ? 'bookmarked' : 'bookmark removed'}</span>
         `;
         
@@ -986,6 +993,7 @@ class QuizSystem {
             userAnswers: this.userAnswers,
             selectedOption: this.selectedOption,
             revealedAnswers: this.revealedAnswers,
+            bookmarkedQuestions: this.bookmarkedQuestions,
             startTime: this.startTime,
             subject: this.currentSubject
         };
@@ -1010,14 +1018,23 @@ class QuizSystem {
                     const expectedLength = this.shuffledQuestions.length;
                     const userAnswersValid = progressData.userAnswers && progressData.userAnswers.length === expectedLength;
                     const revealedAnswersValid = progressData.revealedAnswers && progressData.revealedAnswers.length === expectedLength;
+                    const bookmarksValid = progressData.bookmarkedQuestions && progressData.bookmarkedQuestions.length === expectedLength;
                     
                     if (userAnswersValid && revealedAnswersValid) {
                         this.userAnswers = progressData.userAnswers;
                         this.revealedAnswers = progressData.revealedAnswers;
+                        
+                        // Load bookmarks if valid
+                        if (bookmarksValid) {
+                            this.bookmarkedQuestions = progressData.bookmarkedQuestions;
+                        } else {
+                            this.bookmarkedQuestions = new Array(expectedLength).fill(false);
+                        }
                     } else {
                         console.warn('Progress data array length mismatch, initializing fresh arrays');
                         this.userAnswers = new Array(expectedLength).fill(null);
                         this.revealedAnswers = new Array(expectedLength).fill(false);
+                        this.bookmarkedQuestions = new Array(expectedLength).fill(false);
                     }
                     
                     this.selectedOption = progressData.selectedOption || null;

@@ -4980,7 +4980,731 @@ const generalPhysicsQuestions = [
   }
 ];
 
+// Philosophy Quiz Data - 60 Questions
+const philosophyQuestions = [
+  {
+    "id": 1,
+    "question": "According to the reviewer, what is the core idea of 'Reality'?",
+    "options": [
+      "It is a social construct.",
+      "It is what truly exists, independent of perception.",
+      "It is an illusion created by our minds.",
+      "It is the subjective feelings of an individual."
+    ],
+    "correct": 1,
+    "explanation": "Reality refers to what truly exists—independent of illusion, imagination, or subjective perception."
+  },
+  {
+    "id": 2,
+    "question": "Which philosophical school believes that reality exists independently of our perceptions?",
+    "options": [
+      "Anti-realists",
+      "Empiricists",
+      "Realists",
+      "Structuralists"
+    ],
+    "correct": 2,
+    "explanation": "Realists believe that reality exists independently of our perceptions and beliefs."
+  },
+  {
+    "id": 3,
+    "question": "Which of the following philosophers is an example of an Anti-realist?",
+    "options": [
+      "John Locke",
+      "René Descartes",
+      "Immanuel Kant",
+      "Plato"
+    ],
+    "correct": 2,
+    "explanation": "The reviewer lists Kant and Nietzsche as examples of Anti-realists who argue that reality is shaped by our minds."
+  },
+  {
+    "id": 4,
+    "question": "According to the document, which philosophical school says reality is known through sensory experience?",
+    "options": [
+      "Empiricists",
+      "Rationalists",
+      "Existentialists",
+      "Structuralists"
+    ],
+    "correct": 0,
+    "explanation": "Empiricists say reality is known through sensory experience, with Locke and Hume as examples."
+  },
+  {
+    "id": 5,
+    "question": "Which of the following philosophers is an example of a Rationalist?",
+    "options": [
+      "Jean-Paul Sartre",
+      "John Locke",
+      "Michel Foucault",
+      "Gottfried Leibniz"
+    ],
+    "correct": 3,
+    "explanation": "The reviewer lists Descartes and Leibniz as examples of Rationalists."
+  },
+  {
+    "id": 6,
+    "question": "What kind of reality is described as 'existence that is independent of any consciousness, thoughts, feelings, or perceptions'?",
+    "options": [
+      "Subjective reality",
+      "Intersubjective reality",
+      "Objective reality",
+      "Transcendental reality"
+    ],
+    "correct": 2,
+    "explanation": "Objective reality is defined as existence that is independent of any consciousness, thoughts, feelings, or perceptions."
+  },
+  {
+    "id": 7,
+    "question": "Which branch of philosophy deals with the study of knowledge and justified belief?",
+    "options": [
+      "Metaphysics",
+      "Epistemology",
+      "Ethics",
+      "Aesthetics"
+    ],
+    "correct": 1,
+    "explanation": "Epistemology is the branch of philosophy that deals with the study of knowledge."
+  },
+  {
+    "id": 8,
+    "question": "Which branch of philosophy is concerned with the nature of reality and being?",
+    "options": [
+      "Logic",
+      "Epistemology",
+      "Metaphysics",
+      "Political Philosophy"
+    ],
+    "correct": 2,
+    "explanation": "Metaphysics is the branch of philosophy concerned with the nature of reality and being."
+  },
+  {
+    "id": 9,
+    "question": "The study of moral principles and what is 'good' and 'bad' falls under which branch of philosophy?",
+    "options": [
+      "Ethics",
+      "Aesthetics",
+      "Philosophy of Mind",
+      "Logic"
+    ],
+    "correct": 0,
+    "explanation": "Ethics is the branch of philosophy that studies moral principles."
+  },
+  {
+    "id": 10,
+    "question": "Which branch of philosophy is the study of valid reasoning and argumentation?",
+    "options": [
+      "Aesthetics",
+      "Political Philosophy",
+      "Logic",
+      "Ethics"
+    ],
+    "correct": 2,
+    "explanation": "Logic is the branch of philosophy that is the study of valid reasoning and argumentation."
+  },
+  {
+    "id": 11,
+    "question": "Which of the following is the study of the nature of art, beauty, and taste?",
+    "options": [
+      "Epistemology",
+      "Aesthetics",
+      "Ethics",
+      "Metaphysics"
+    ],
+    "correct": 1,
+    "explanation": "Aesthetics is the study of the nature of art, beauty, and taste."
+  },
+  {
+    "id": 12,
+    "question": "Which branch of philosophy studies the nature of the mind, consciousness, and their relationship to the body?",
+    "options": [
+      "Philosophy of Mind",
+      "Political Philosophy",
+      "Epistemology",
+      "Logic"
+    ],
+    "correct": 0,
+    "explanation": "Philosophy of Mind studies the nature of the mind, consciousness, and their relationship to the body."
+  },
+  {
+    "id": 13,
+    "question": "In which era was the human person understood in reference to God?",
+    "options": [
+      "Cosmocentric Era",
+      "Anthropocentric Era",
+      "Theocentric Era",
+      "Scientific Era"
+    ],
+    "correct": 2,
+    "explanation": "The Theocentric Era is where the human person is being studied or understood in reference to God."
+  },
+  {
+    "id": 14,
+    "question": "Thales, Heraclitus, and Parmenides are philosophers from which era?",
+    "options": [
+      "The Theocentric Era",
+      "The Cosmocentric Era",
+      "The Anthropocentric Era",
+      "The Modern Period"
+    ],
+    "correct": 1,
+    "explanation": "These philosophers are listed under the Cosmocentric Era, which is the Pre-Socratic era."
+  },
+  {
+    "id": 15,
+    "question": "Who is known for the famous phrase, 'I think, therefore I am'?",
+    "options": [
+      "John Locke",
+      "Immanuel Kant",
+      "René Descartes",
+      "Jean-Paul Sartre"
+    ],
+    "correct": 2,
+    "explanation": "René Descartes is known for this famous phrase, which reveals the human person's existence in his philosophy."
+  },
+  {
+    "id": 16,
+    "question": "Which philosopher believed that the fundamental substance of all things is water?",
+    "options": [
+      "Heraclitus",
+      "Thales",
+      "Parmenides",
+      "Socrates"
+    ],
+    "correct": 1,
+    "explanation": "Thales is a philosopher from the Cosmocentric Era who believed water was the fundamental substance."
+  },
+  {
+    "id": 17,
+    "question": "Heraclitus is known for his philosophy that the world is in a constant state of ______.",
+    "options": [
+      "unchanging being",
+      "harmony",
+      "perpetual change",
+      "stasis"
+    ],
+    "correct": 2,
+    "explanation": "Heraclitus believed that everything in the world is in a constant state of flux and perpetual change."
+  },
+  {
+    "id": 18,
+    "question": "Parmenides is credited with the concept of 'being' and the idea that reality is ______.",
+    "options": [
+      "constantly changing",
+      "an illusion",
+      "unchanging and eternal",
+      "perceived through the senses"
+    ],
+    "correct": 2,
+    "explanation": "Parmenides focused on the concept of 'being' and argued that reality is unchanging and eternal."
+  },
+  {
+    "id": 19,
+    "question": "Who is known for the phrase 'An unexamined life is not worth living'?",
+    "options": [
+      "Socrates",
+      "Plato",
+      "Aristotle",
+      "Thales"
+    ],
+    "correct": 0,
+    "explanation": "Socrates is known for this phrase, emphasizing the importance of self-knowledge."
+  },
+  {
+    "id": 20,
+    "question": "Which of the following is not a part of Plato's tripartite theory of the soul?",
+    "options": [
+      "Reason",
+      "Spirit",
+      "Appetite",
+      "Consciousness"
+    ],
+    "correct": 3,
+    "explanation": "Plato's theory of the soul consists of Reason, Spirit, and Appetite."
+  },
+  {
+    "id": 21,
+    "question": "Who is the philosopher associated with the 'Allegory of the Cave'?",
+    "options": [
+      "Aristotle",
+      "Plato",
+      "Socrates",
+      "Parmenides"
+    ],
+    "correct": 1,
+    "explanation": "Plato is the philosopher associated with the 'Allegory of the Cave'."
+  },
+  {
+    "id": 22,
+    "question": "Aristotle's philosophy is known as _______, which states that a substance is a composite of form and matter.",
+    "options": [
+      "hylomorphism",
+      "idealism",
+      "dualism",
+      "atomism"
+    ],
+    "correct": 0,
+    "explanation": "Aristotle's philosophy is called hylomorphism, which states that a substance is a composite of form and matter."
+  },
+  {
+    "id": 23,
+    "question": "The concept of the 'Golden Mean' is central to the ethical philosophy of which philosopher?",
+    "options": [
+      "Plato",
+      "Socrates",
+      "Aristotle",
+      "Heraclitus"
+    ],
+    "correct": 2,
+    "explanation": "The 'Golden Mean' is a central concept in Aristotle's virtue ethics."
+  },
+  {
+    "id": 24,
+    "question": "St. Augustine derived the study of the human person from which two philosophers?",
+    "options": [
+      "Socrates and Plato",
+      "Plato and Plotinus",
+      "Aristotle and Avicenna",
+      "Descartes and Locke"
+    ],
+    "correct": 1,
+    "explanation": "Augustine derived the study of a human person from Plato and Plotinus."
+  },
+  {
+    "id": 25,
+    "question": "Which of the following works was written by St. Thomas Aquinas?",
+    "options": [
+      "The Republic",
+      "Meditations on First Philosophy",
+      "Summa Theologica",
+      "The Confessions"
+    ],
+    "correct": 2,
+    "explanation": "St. Thomas Aquinas wrote Summa Theologica, a comprehensive work of Christian theology."
+  },
+  {
+    "id": 26,
+    "question": "According to the reviewer, what is St. Thomas Aquinas's view on the human person?",
+    "options": [
+      "A human person is composed of body and soul.",
+      "A human person is a soul trapped in a body.",
+      "A human person is a collection of memories.",
+      "A human person is pure spirit."
+    ],
+    "correct": 0,
+    "explanation": "St. Thomas Aquinas believed a human person is composed of body and soul."
+  },
+  {
+    "id": 27,
+    "question": "Avicenna, also known as Ibn Sīnā, believed that the starting point of the entire chain of existence is:",
+    "options": [
+      "Matter",
+      "Human Reason",
+      "God",
+      "Consciousness"
+    ],
+    "correct": 2,
+    "explanation": "Avicenna believed that the existence of being could be traced to another being responsible for their existence, and that being is God."
+  },
+  {
+    "id": 28,
+    "question": "What is the primary focus of the Anthropocentric Era (Modern Period)?",
+    "options": [
+      "The relationship between humans and God.",
+      "The existence of the human person.",
+      "The nature of the cosmos.",
+      "The search for absolute truth."
+    ],
+    "correct": 1,
+    "explanation": "The Anthropocentric Era focuses on the existence of the human person."
+  },
+  {
+    "id": 29,
+    "question": "John Locke's concept of 'tabula rasa' means the mind is a/an:",
+    "options": [
+      "blank slate",
+      "computer",
+      "ever-changing river",
+      "prison"
+    ],
+    "correct": 0,
+    "explanation": "John Locke introduced the concept of 'tabula rasa,' which means the mind is a blank slate at birth, and all knowledge comes from experience."
+  },
+  {
+    "id": 30,
+    "question": "Immanuel Kant's philosophical idea that reality is shaped by our minds is called:",
+    "options": [
+      "Transcendental idealism",
+      "Rationalism",
+      "Existentialism",
+      "Empiricism"
+    ],
+    "correct": 0,
+    "explanation": "The reviewer states that Kant's idea of reality shaped by our minds is called transcendental idealism."
+  },
+  {
+    "id": 31,
+    "question": "Jean-Paul Sartre's famous saying, 'Existence precedes essence,' is a key tenet of which philosophical school?",
+    "options": [
+      "Realism",
+      "Structuralism",
+      "Existentialism",
+      "Rationalism"
+    ],
+    "correct": 2,
+    "explanation": "Sartre is listed as an Existentialist, and his idea that existence precedes essence is a core tenet of this philosophy."
+  },
+  {
+    "id": 32,
+    "question": "In the context of philosophy, what does 'intersubjective reality' refer to?",
+    "options": [
+      "Reality that is independent of any consciousness.",
+      "Reality that is shared and agreed upon by multiple subjects.",
+      "Reality that is unique to an individual's perception.",
+      "Reality based on logical deduction alone."
+    ],
+    "correct": 1,
+    "explanation": "Intersubjective reality is described as a 'reality that is shared and agreed upon by multiple subjects.'"
+  },
+  {
+    "id": 33,
+    "question": "According to the reviewer, what is one reason for philosophical disagreement?",
+    "options": [
+      "Lack of intelligence.",
+      "Reliance on scientific data.",
+      "Varying starting assumptions.",
+      "Strict adherence to tradition."
+    ],
+    "correct": 2,
+    "explanation": "The document lists 'Starting assumptions' as one of the reasons for so much disagreement in philosophy."
+  },
+  {
+    "id": 34,
+    "question": "What does a 'human person' refer to in philosophy, according to the reviewer?",
+    "options": [
+      "A purely biological entity.",
+      "A creature with a soul.",
+      "An individual human being.",
+      "A being with a body and a soul."
+    ],
+    "correct": 2,
+    "explanation": "The reviewer defines the human person as an individual human being."
+  },
+  {
+    "id": 35,
+    "question": "In the Theocentric Era, a human person was considered to be a created being in the image and likeness of whom?",
+    "options": [
+      "Plato",
+      "Socrates",
+      "God",
+      "St. Augustine"
+    ],
+    "correct": 2,
+    "explanation": "In the Christian Era, a human person was considered a created being in the image and likeness of God."
+  },
+  {
+    "id": 36,
+    "question": "According to the document, what did St. Augustine believe a human person needs to do to reach their final destiny of salvation?",
+    "options": [
+      "Perform good deeds.",
+      "Obey God's law.",
+      "Study philosophy.",
+      "Engage in logical reasoning."
+    ],
+    "correct": 1,
+    "explanation": "St. Augustine believed a human person needs to obey or follow God's law to reach his final destiny which is salvation."
+  },
+  {
+    "id": 37,
+    "question": "The second part of St. Thomas Aquinas's 'Summa Theologica' deals with which topic?",
+    "options": [
+      "God",
+      "Man",
+      "Jesus Christ",
+      "Logic"
+    ],
+    "correct": 1,
+    "explanation": "The second part of the 'Summa Theologica' deals with man."
+  },
+  {
+    "id": 38,
+    "question": "Who is considered the 'father of modern philosophy'?",
+    "options": [
+      "John Locke",
+      "Immanuel Kant",
+      "René Descartes",
+      "Jean-Paul Sartre"
+    ],
+    "correct": 2,
+    "explanation": "René Descartes is a central figure in the Anthropocentric Era and is often considered the 'father of modern philosophy'."
+  },
+  {
+    "id": 39,
+    "question": "The reviewer states that the Sophists were known for being _____.",
+    "options": [
+      "lovers of wisdom",
+      "teachers of virtue",
+      "professional teachers of rhetoric",
+      "seekers of the truth"
+    ],
+    "correct": 2,
+    "explanation": "The Sophists are described as professional teachers of rhetoric and debate, not necessarily seeking objective truth."
+  },
+  {
+    "id": 40,
+    "question": "The Socratic Method is a form of cooperative argumentative dialogue that involves:",
+    "options": [
+      "lecturing",
+      "questioning and answering",
+      "reciting poetry",
+      "writing essays"
+    ],
+    "correct": 1,
+    "explanation": "The Socratic Method is a form of cooperative argumentative dialogue between individuals, based on asking and answering questions to stimulate critical thinking."
+  },
+  {
+    "id": 41,
+    "question": "Who was the founder of the Academy in Athens?",
+    "options": [
+      "Socrates",
+      "Aristotle",
+      "Plato",
+      "Thales"
+    ],
+    "correct": 2,
+    "explanation": "Plato was the founder of the Academy in Athens, the first institution of higher learning in the Western world."
+  },
+  {
+    "id": 42,
+    "question": "Aristotle was a student of which philosopher?",
+    "options": [
+      "Socrates",
+      "Thales",
+      "Plato",
+      "Heraclitus"
+    ],
+    "correct": 2,
+    "explanation": "Aristotle was a student of Plato at the Academy."
+  },
+  {
+    "id": 43,
+    "question": "What did Aristotle believe was the ultimate goal of human life?",
+    "options": [
+      "Pleasure",
+      "Knowledge",
+      "Happiness or Eudaimonia",
+      "Wealth"
+    ],
+    "correct": 2,
+    "explanation": "Aristotle believed that the ultimate goal of human life is happiness, or Eudaimonia."
+  },
+  {
+    "id": 44,
+    "question": "The Christian Era is a part of which larger philosophical era?",
+    "options": [
+      "Cosmocentric Era",
+      "Theocentric Era",
+      "Anthropocentric Era",
+      "Post-Modern Era"
+    ],
+    "correct": 1,
+    "explanation": "The Christian Era is a subdivision of the Theocentric Era."
+  },
+  {
+    "id": 45,
+    "question": "Which of the following is NOT a part of the 'Summa Theologica'?",
+    "options": [
+      "The first part addresses God.",
+      "The second part deals with man.",
+      "The third part discusses Jesus Christ.",
+      "The fourth part deals with the nature of angels."
+    ],
+    "correct": 3,
+    "explanation": "The 'Summa Theologica' only has three parts: God, Man, and Jesus Christ."
+  },
+  {
+    "id": 46,
+    "question": "What is the primary concern of 'political philosophy' according to the document?",
+    "options": [
+      "The study of human behavior.",
+      "The study of governance and power.",
+      "The study of the mind.",
+      "The study of reality."
+    ],
+    "correct": 1,
+    "explanation": "Political philosophy is described as the study of governance, power, and justice."
+  },
+  {
+    "id": 47,
+    "question": "Which branch of philosophy is defined as 'the study of the human person'?",
+    "options": [
+      "Aesthetics",
+      "Anthropology",
+      "Philosophy of Man",
+      "Ethics"
+    ],
+    "correct": 2,
+    "explanation": "The Philosophy of Man is defined as the study of the human person."
+  },
+  {
+    "id": 48,
+    "question": "According to the reviewer, who believed that the mind and body are distinct substances?",
+    "options": [
+      "John Locke",
+      "René Descartes",
+      "Aristotle",
+      "St. Thomas Aquinas"
+    ],
+    "correct": 1,
+    "explanation": "The reviewer mentions Descartes's mind-body dualism."
+  },
+  {
+    "id": 49,
+    "question": "Which philosophical school emphasizes systems, language, and power structures that shape what we call 'real'?",
+    "options": [
+      "Existentialists",
+      "Structuralists",
+      "Realists",
+      "Empiricists"
+    ],
+    "correct": 1,
+    "explanation": "Structuralists emphasize systems, language, and power structures that shape what we call 'real'."
+  },
+  {
+    "id": 50,
+    "question": "Which of the following is NOT listed as a core concept of reality in the document?",
+    "options": [
+      "Objective reality",
+      "Subjective reality",
+      "Interdependent reality",
+      "Intersubjective reality"
+    ],
+    "correct": 2,
+    "explanation": "The document lists objective, subjective, and intersubjective reality, but not 'interdependent reality'."
+  },
+  {
+    "id": 51,
+    "question": "According to the reviewer, the Theocentric Era is the era of:",
+    "options": [
+      "Ancient Greek philosophy",
+      "Islamic philosophy",
+      "Medieval Christian philosophy",
+      "Modern philosophy"
+    ],
+    "correct": 2,
+    "explanation": "The Theocentric Era is also referred to as the Christian Era in the document, which falls under Medieval philosophy."
+  },
+  {
+    "id": 52,
+    "question": "Which philosopher is known for the idea that 'knowledge is the recollection of what the soul has already learned'?",
+    "options": [
+      "Socrates",
+      "Aristotle",
+      "Plato",
+      "St. Augustine"
+    ],
+    "correct": 2,
+    "explanation": "This idea is part of Plato's Theory of Forms, where a human person is a soul in search of knowledge and wisdom."
+  },
+  {
+    "id": 53,
+    "question": "What is the main goal of the Socratic Method?",
+    "options": [
+      "To win an argument.",
+      "To expose the opponent's flaws.",
+      "To stimulate critical thinking and elicit ideas.",
+      "To prove a single truth."
+    ],
+    "correct": 2,
+    "explanation": "The Socratic Method is used to stimulate critical thinking and elicit ideas by asking and answering questions."
+  },
+  {
+    "id": 54,
+    "question": "Who is known as the teacher of Plato?",
+    "options": [
+      "Aristotle",
+      "Parmenides",
+      "Socrates",
+      "Heraclitus"
+    ],
+    "correct": 2,
+    "explanation": "Socrates was the teacher of Plato."
+  },
+  {
+    "id": 55,
+    "question": "What is the core belief of Existentialism, as per the reviewer?",
+    "options": [
+      "The mind is a blank slate.",
+      "Individual experience and freedom are the basis of reality.",
+      "Reality is unchanging.",
+      "Reason is the primary tool for knowledge."
+    ],
+    "correct": 1,
+    "explanation": "Existentialists focus on individual experience and freedom as the basis of reality."
+  },
+  {
+    "id": 56,
+    "question": "The review states that philosophy is built on reason, but reason depends on personal intuitions and ____.",
+    "options": [
+      "scientific data",
+      "historical context",
+      "political agendas",
+      "religious beliefs"
+    ],
+    "correct": 1,
+    "explanation": "The document mentions that reason depends on cultural and historical context, among other things."
+  },
+  {
+    "id": 57,
+    "question": "What is the meaning of 'Philos' and 'Sophia' in the word 'Philosophy'?",
+    "options": [
+      "Love of wisdom",
+      "Study of knowledge",
+      "Search for truth",
+      "Human existence"
+    ],
+    "correct": 0,
+    "explanation": "Philosophy is derived from the Greek words 'philos' (love) and 'sophia' (wisdom), meaning 'love of wisdom'."
+  },
+  {
+    "id": 58,
+    "question": "What is the philosophical view of a person who is called a 'Dualist'?",
+    "options": [
+      "The mind is all that exists.",
+      "The body is all that exists.",
+      "Mind and body are distinct substances.",
+      "The mind is a product of the body."
+    ],
+    "correct": 2,
+    "explanation": "The document mentions that Descartes's philosophy is known as dualism, which separates the mind and the body."
+  },
+  {
+    "id": 59,
+    "question": "According to the document, the 'Sophists' were known for their expertise in:",
+    "options": [
+      "Logic",
+      "Ethics",
+      "Rhetoric",
+      "Mathematics"
+    ],
+    "correct": 2,
+    "explanation": "The reviewer describes the Sophists as 'professional teachers of rhetoric'."
+  },
+  {
+    "id": 60,
+    "question": "Who wrote 'The Republic'?",
+    "options": [
+      "Socrates",
+      "Aristotle",
+      "Plato",
+      "St. Augustine"
+    ],
+    "correct": 2,
+    "explanation": "Plato wrote 'The Republic', which explores his Theory of Forms and justice."
+  }
+];
+
 // Export the questions for use in the quiz system
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions, physicalEducationQuestions, generalPhysicsQuestions };
+    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions, physicalEducationQuestions, generalPhysicsQuestions, philosophyQuestions };
 }
