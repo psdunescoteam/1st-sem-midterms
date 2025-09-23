@@ -42,7 +42,8 @@ class QuizSystem {
             'Contemporary-Arts.html': 'contemporary-arts',
             'Empowerment-Technologies.html': 'empowerment-technologies',
             'General-Mathematics.html': 'general-mathematics',
-            'Physical-Education.html': 'physical-education'
+            'Physical-Education.html': 'physical-education',
+            'General-Physics.html': 'general-physics'
         };
         return subjectMap[currentPage] || 'work-immersion';
     }
@@ -57,7 +58,8 @@ class QuizSystem {
             'contemporary-arts': contemporaryArtsQuestions,
             'empowerment-technologies': empowermentTechnologiesQuestions,
             'general-mathematics': generalMathematicsQuestions,
-            'physical-education': physicalEducationQuestions
+            'physical-education': physicalEducationQuestions,
+            'general-physics': generalPhysicsQuestions
         };
         return questionMap[subject] || workImmersionQuestions;
     }
@@ -258,8 +260,10 @@ class QuizSystem {
         // Setup question state based on previous answers
         this.setupQuestionState();
         
-        // Render mathematical expressions
-        this.renderMathJax();
+        // Render mathematical expressions with a slight delay to ensure DOM is ready
+        setTimeout(() => {
+            this.renderMathJax();
+        }, 50);
     }
 
     /**
@@ -341,36 +345,59 @@ class QuizSystem {
     renderMathJax(retryCount = 0) {
         const maxRetries = 10;
         
-        if (typeof MathJax !== 'undefined') {
-            if (MathJax.typesetPromise) {
-                // MathJax v3
-                const elementsToRender = [
-                    document.getElementById('question-text'),
-                    document.getElementById('options-container')
-                ];
+        console.log('Attempting to render MathJax, retry count:', retryCount);
+        
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+            console.log('MathJax v3 detected, processing elements...');
+            
+            // Use a timeout to ensure DOM is fully updated
+            setTimeout(() => {
+                const elementsToRender = [];
                 
-                const explanationDiv = document.querySelector('.question-explanation');
-                if (explanationDiv) {
-                    elementsToRender.push(explanationDiv);
+                const questionElement = document.getElementById('question-text');
+                const optionsElement = document.getElementById('options-container');
+                const explanationElement = document.querySelector('.explanation-content');
+                
+                if (questionElement) elementsToRender.push(questionElement);
+                if (optionsElement) elementsToRender.push(optionsElement);
+                if (explanationElement) elementsToRender.push(explanationElement);
+                
+                console.log('Elements to render:', elementsToRender.length);
+                
+                if (elementsToRender.length > 0) {
+                    MathJax.typesetPromise(elementsToRender).then(() => {
+                        console.log('MathJax rendering completed successfully');
+                    }).catch((err) => {
+                        console.error('MathJax v3 rendering error:', err);
+                        if (retryCount < maxRetries) {
+                            setTimeout(() => this.renderMathJax(retryCount + 1), 200);
+                        }
+                    });
+                } else {
+                    console.log('No elements found to render');
+                    if (retryCount < maxRetries) {
+                        setTimeout(() => this.renderMathJax(retryCount + 1), 100);
+                    }
                 }
-                
-                MathJax.typesetPromise(elementsToRender).catch(function (err) {
-                    console.log('MathJax v3 rendering error:', err.message);
-                });
-            } else if (MathJax.Hub) {
-                // MathJax v2 fallback
-                MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.getElementById('question-text')]);
-                MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.getElementById('options-container')]);
-                
-                const explanationDiv = document.querySelector('.question-explanation');
-                if (explanationDiv) {
-                    MathJax.Hub.Queue(['Typeset', MathJax.Hub, explanationDiv]);
-                }
-            } else if (retryCount < maxRetries) {
-                setTimeout(() => this.renderMathJax(retryCount + 1), 100);
+            }, 50);
+            
+        } else if (typeof MathJax !== 'undefined' && MathJax.Hub) {
+            console.log('MathJax v2 detected, using Hub...');
+            // MathJax v2 fallback
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.getElementById('question-text')]);
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.getElementById('options-container')]);
+            
+            const explanationDiv = document.querySelector('.explanation-content');
+            if (explanationDiv) {
+                MathJax.Hub.Queue(['Typeset', MathJax.Hub, explanationDiv]);
             }
-        } else if (retryCount < maxRetries) {
-            setTimeout(() => this.renderMathJax(retryCount + 1), 100);
+        } else {
+            console.log('MathJax not ready, retrying...', retryCount);
+            if (retryCount < maxRetries) {
+                setTimeout(() => this.renderMathJax(retryCount + 1), 200);
+            } else {
+                console.error('MathJax failed to load after maximum retries');
+            }
         }
     }
 
@@ -473,20 +500,35 @@ class QuizSystem {
             
             container.appendChild(optionButton);
         });
+        
+        // Trigger MathJax rendering specifically for options
+        setTimeout(() => {
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise([container]).catch(err => {
+                    console.error('MathJax options rendering error:', err);
+                });
+            }
+        }, 10);
     }
 
     /**
      * Handle user selection of an answer option
      */
     selectOption(optionIndex) {
+        console.log('selectOption called with index:', optionIndex);
+        console.log('Current question index:', this.currentQuestionIndex);
+        console.log('Question ID:', this.shuffledQuestions[this.currentQuestionIndex]?.id);
+        
         // Prevent selection if question already answered and revealed
         if (this.userAnswers[this.currentQuestionIndex] !== null && 
             this.revealedAnswers[this.currentQuestionIndex]) {
+            console.log('Selection prevented - question already answered and revealed');
             return;
         }
         
         // Store selection
         this.selectedOption = optionIndex;
+        console.log('Selected option set to:', this.selectedOption);
         
         // Update visual selection
         const optionButtons = document.querySelectorAll('.option-button');
@@ -510,6 +552,12 @@ class QuizSystem {
         const isAnswered = this.userAnswers[this.currentQuestionIndex] !== null;
         const isRevealed = this.revealedAnswers[this.currentQuestionIndex];
         const hasSelection = this.selectedOption !== null && this.selectedOption !== undefined;
+        
+        console.log('updateSubmitButton - Question:', this.currentQuestionIndex + 1);
+        console.log('isAnswered:', isAnswered, 'isRevealed:', isRevealed, 'hasSelection:', hasSelection);
+        console.log('selectedOption:', this.selectedOption);
+        console.log('userAnswers[' + this.currentQuestionIndex + ']:', this.userAnswers[this.currentQuestionIndex]);
+        console.log('revealedAnswers[' + this.currentQuestionIndex + ']:', this.revealedAnswers[this.currentQuestionIndex]);
         
         if (isAnswered && isRevealed) {
             // Question completed
@@ -957,9 +1005,22 @@ class QuizSystem {
                 
                 if (continueQuiz) {
                     this.currentQuestionIndex = progressData.currentQuestionIndex || 0;
-                    this.userAnswers = progressData.userAnswers || new Array(this.shuffledQuestions.length).fill(null);
+                    
+                    // Validate array lengths match current question count
+                    const expectedLength = this.shuffledQuestions.length;
+                    const userAnswersValid = progressData.userAnswers && progressData.userAnswers.length === expectedLength;
+                    const revealedAnswersValid = progressData.revealedAnswers && progressData.revealedAnswers.length === expectedLength;
+                    
+                    if (userAnswersValid && revealedAnswersValid) {
+                        this.userAnswers = progressData.userAnswers;
+                        this.revealedAnswers = progressData.revealedAnswers;
+                    } else {
+                        console.warn('Progress data array length mismatch, initializing fresh arrays');
+                        this.userAnswers = new Array(expectedLength).fill(null);
+                        this.revealedAnswers = new Array(expectedLength).fill(false);
+                    }
+                    
                     this.selectedOption = progressData.selectedOption || null;
-                    this.revealedAnswers = progressData.revealedAnswers || new Array(this.shuffledQuestions.length).fill(false);
                     this.startTime = new Date(progressData.startTime) || new Date();
                     
                     if (this.shuffledQuestions && this.currentQuestionIndex < this.shuffledQuestions.length) {
@@ -1030,37 +1091,66 @@ function toggleTheme() {
 let quizSystem;
 
 document.addEventListener('DOMContentLoaded', () => {
-    quizSystem = new QuizSystem();
-    
-    // Add event listeners for navigation buttons
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            if (!prevBtn.disabled) {
-                quizSystem.previousQuestion();
-            }
-        });
-    }
-    
-    // Load any saved progress
-    quizSystem.loadProgress();
-    
-    // Enable keyboard navigation
-    document.addEventListener('keydown', (event) => {
-        quizSystem.handleKeyPress(event);
-    });
-    
-    // Enable page protection
-    quizSystem.enablePageProtection();
-    
-    // Auto-save progress every 30 seconds
-    setInterval(() => {
-        if (!quizSystem.isCompleted) {
-            quizSystem.saveProgress();
+    // Function to initialize the quiz system
+    const initializeQuizSystem = () => {
+        console.log('Initializing QuizSystem...');
+        quizSystem = new QuizSystem();
+        
+        // Add event listeners for navigation buttons
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (!prevBtn.disabled) {
+                    quizSystem.previousQuestion();
+                }
+            });
         }
-    }, 30000);
+        
+        // Load any saved progress
+        quizSystem.loadProgress();
+        
+        // Enable keyboard navigation
+        document.addEventListener('keydown', (event) => {
+            quizSystem.handleKeyPress(event);
+        });
+        
+        // Enable page protection
+        quizSystem.enablePageProtection();
+        
+        // Auto-save progress every 30 seconds
+        setInterval(() => {
+            if (!quizSystem.isCompleted) {
+                quizSystem.saveProgress();
+            }
+        }, 30000);
+        
+        // Initial MathJax render
+        setTimeout(() => {
+            if (quizSystem.renderMathJax) {
+                quizSystem.renderMathJax();
+            }
+        }, 100);
+    };
+    
+    // Check if MathJax is ready, if not wait for it
+    if (typeof MathJax !== 'undefined' && MathJax.startup && MathJax.startup.document) {
+        console.log('MathJax already ready, initializing quiz...');
+        initializeQuizSystem();
+    } else {
+        console.log('Waiting for MathJax to be ready...');
+        // Wait for MathJax to be ready
+        const checkMathJax = () => {
+            if (typeof MathJax !== 'undefined' && MathJax.startup && MathJax.startup.document) {
+                console.log('MathJax is now ready, initializing quiz...');
+                initializeQuizSystem();
+            } else {
+                setTimeout(checkMathJax, 100);
+            }
+        };
+        checkMathJax();
+    }
 });
 
 /**

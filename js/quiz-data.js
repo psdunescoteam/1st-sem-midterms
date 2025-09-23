@@ -4004,7 +4004,983 @@ const physicalEducationQuestions = [
   }
 ];
 
+// General Physics Quiz Data - 81 Questions
+const generalPhysicsQuestions = [
+  {
+    "id": 1,
+    "question": "Which of the following is a fundamental quantity?",
+    "options": [
+      "Force",
+      "Velocity",
+      "Mass",
+      "Pressure"
+    ],
+    "correct": 2,
+    "explanation": "Mass is one of the seven fundamental quantities, while the others are derived quantities."
+  },
+  {
+    "id": 2,
+    "question": "What is the symbol for the fundamental quantity 'Time'?",
+    "options": [
+      "$T$",
+      "$t$",
+      "$T_s$",
+      "$Tm$"
+    ],
+    "correct": 1,
+    "explanation": "The symbol for Time is '$t$'."
+  },
+  {
+    "id": 3,
+    "question": "The symbol for Luminous Intensity is:",
+    "options": [
+      "$I$",
+      "$L$",
+      "$I_v$",
+      "$L_i$"
+    ],
+    "correct": 2,
+    "explanation": "The symbol for Luminous Intensity is '$I_v$'."
+  },
+  {
+    "id": 4,
+    "question": "A quantity that is a combination of fundamental quantities is called a:",
+    "options": [
+      "Scalar quantity",
+      "Vector quantity",
+      "Base quantity",
+      "Derived quantity"
+    ],
+    "correct": 3,
+    "explanation": "A derived quantity is any quantity that is a combination of fundamental quantities."
+  },
+  {
+    "id": 5,
+    "question": "Which of the following is a derived quantity?",
+    "options": [
+      "Length",
+      "Amount of Substance",
+      "Current",
+      "Volume"
+    ],
+    "correct": 3,
+    "explanation": "Volume is a derived quantity, calculated from length, which is a fundamental quantity."
+  },
+  {
+    "id": 6,
+    "question": "What is the unit for the derived quantity 'Density'?",
+    "options": [
+      "$kg/m^2$",
+      "$N/m^3$",
+      "$g/ml$ or $g/cm^3$",
+      "$kg/s$"
+    ],
+    "correct": 2,
+    "explanation": "The unit for Density is $g/ml$ or $g/cm^3$."
+  },
+  {
+    "id": 7,
+    "question": "If $P=\\frac{w}{t}$, what is the formula to solve for time $(t)$?",
+    "options": [
+      "$t = P \\cdot w$",
+      "$t = w - P$",
+      "$t = \\frac{P}{w}$",
+      "$t = \\frac{w}{P}$"
+    ],
+    "correct": 3,
+    "explanation": "To derive for time, you must multiply both sides by $t$ and then divide by $P$, which gives $t = \\frac{w}{P}$."
+  },
+  {
+    "id": 8,
+    "question": "The formula for the volume of a cylinder is $V = \\pi r^2h$. Which of the following is the correct formula to solve for the radius $(r)$?",
+    "options": [
+      "$r = \\sqrt{\\frac{V}{\\pi h}}$",
+      "$r = \\frac{V}{\\pi h}$",
+      "$r = \\frac{\\sqrt{V}}{\\pi h}$",
+      "$r = \\sqrt{V \\cdot \\pi h}$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $r$, you first divide by $\\pi h$ to get $\\frac{V}{\\pi h} = r^2$, then take the square root of both sides, resulting in $r = \\sqrt{\\frac{V}{\\pi h}}$."
+  },
+  {
+    "id": 9,
+    "question": "From the formula for Power, $P = \\frac{w}{t}$, what is the formula to solve for work $(w)$?",
+    "options": [
+      "$w = P + t$",
+      "$w = \\frac{t}{P}$",
+      "$w = P \\cdot t$",
+      "$w = P - t$"
+    ],
+    "correct": 2,
+    "explanation": "To solve for $w$, you must multiply both sides by $t$, which gives $w = P \\cdot t$."
+  },
+  {
+    "id": 10,
+    "question": "Derive the formula for mass $(m)$ from the Potential Energy formula, $PE = mgh$.",
+    "options": [
+      "$m = PE - gh$",
+      "$m = \\frac{PE}{gh}$",
+      "$m = \\frac{gh}{PE}$",
+      "$m = PE + gh$"
+    ],
+    "correct": 1,
+    "explanation": "To derive for mass, you must divide both sides of the equation by $gh$, resulting in $m = \\frac{PE}{gh}$."
+  },
+  {
+    "id": 11,
+    "question": "From Ohm's Law, $I = \\frac{V}{R}$, derive the formula for Resistance $(R)$.",
+    "options": [
+      "$R = I \\cdot V$",
+      "$R = \\frac{I}{V}$",
+      "$R = \\frac{V}{I}$",
+      "$R = V - I$"
+    ],
+    "correct": 2,
+    "explanation": "To solve for $R$, you can rearrange the formula to $R = \\frac{V}{I}$."
+  },
+  {
+    "id": 12,
+    "question": "From the formula for Centripetal Force, $F_r = \\frac{mv^2}{r}$, what is the formula to solve for velocity $(v)$?",
+    "options": [
+      "$v = \\sqrt{\\frac{F_r \\cdot r}{m}}$",
+      "$v = \\frac{F_r \\cdot r}{m}$",
+      "$v = \\frac{m}{F_r \\cdot r}$",
+      "$v = \\sqrt{F_r \\cdot r \\cdot m}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $v$, you first rearrange to $v^2 = \\frac{F_r \\cdot r}{m}$, then take the square root to get $v = \\sqrt{\\frac{F_r \\cdot r}{m}}$."
+  },
+  {
+    "id": 13,
+    "question": "What is the formula to solve for the final velocity $(v)$ from the acceleration formula $\\overline{a} = \\frac{v - v_0}{\\Delta t}$?",
+    "options": [
+      "$v = \\overline{a} \\cdot \\Delta t - v_0$",
+      "$v = \\overline{a} \\cdot \\Delta t + v_0$",
+      "$v = \\frac{\\overline{a}}{\\Delta t} + v_0$",
+      "$v = v_0 - \\overline{a} \\cdot \\Delta t$"
+    ],
+    "correct": 1,
+    "explanation": "To isolate $v$, you first multiply by $\\Delta t$ and then add $v_0$ to both sides, which gives $v = \\overline{a} \\cdot \\Delta t + v_0$."
+  },
+  {
+    "id": 14,
+    "question": "If you have the formula for the Volume of a Cylinder, $V = \\pi r^2h$, how would you derive the formula for height $(h)$?",
+    "options": [
+      "$h = V - \\pi r^2$",
+      "$h = \\frac{V}{\\pi r^2}$",
+      "$h = V \\cdot \\pi r^2$",
+      "$h = \\frac{\\pi r^2}{V}$"
+    ],
+    "correct": 1,
+    "explanation": "To solve for height, you simply divide both sides of the equation by $\\pi r^2$."
+  },
+  {
+    "id": 15,
+    "question": "Which of the following is the correct formula to solve for the gravitational constant $(G)$ from the Law of Universal Gravitation, $F=G\\frac{m_{1}m_{2}}{d^{2}}$?",
+    "options": [
+      "$G = F \\cdot m_1m_2d^2$",
+      "$G = \\frac{F \\cdot d^2}{m_1m_2}$",
+      "$G = \\frac{m_1m_2}{F \\cdot d^2}$",
+      "$G = \\frac{F}{m_1m_2d^2}$"
+    ],
+    "correct": 1,
+    "explanation": "To isolate $G$, you must multiply both sides by $d^2$ and then divide by $m_1m_2$."
+  },
+  {
+    "id": 16,
+    "question": "Convert $5$ kilometers to meters.",
+    "options": [
+      "$50$ m",
+      "$500$ m",
+      "$5,000$ m",
+      "$0.005$ m"
+    ],
+    "correct": 2,
+    "explanation": "There are 1000 meters in 1 kilometer. So, $5$ km * 1000 m/km = $5000$ m."
+  },
+  {
+    "id": 17,
+    "question": "How many centimeters are in $2.5$ meters?",
+    "options": [
+      "$25$ cm",
+      "$250$ cm",
+      "$0.025$ cm",
+      "$2,500$ cm"
+    ],
+    "correct": 1,
+    "explanation": "There are 100 centimeters in 1 meter. So, $2.5$ m * 100 cm/m = $250$ cm."
+  },
+  {
+    "id": 18,
+    "question": "The base unit for mass in the metric system is the gram. How many grams are in $1$ kilogram?",
+    "options": [
+      "$10$ g",
+      "$100$ g",
+      "$1,000$ g",
+      "$10,000$ g"
+    ],
+    "correct": 2,
+    "explanation": "The prefix 'kilo' means 1000, so there are 1000 grams in a kilogram."
+  },
+  {
+    "id": 19,
+    "question": "Convert $750$ milliliters to liters.",
+    "options": [
+      "$7.5$ L",
+      "$75$ L",
+      "$0.75$ L",
+      "$0.075$ L"
+    ],
+    "correct": 2,
+    "explanation": "There are 1000 milliliters in 1 liter. So, $750$ mL / 1000 mL/L = $0.75$ L."
+  },
+  {
+    "id": 20,
+    "question": "What is $15$ millimeters converted to centimeters?",
+    "options": [
+      "$1.5$ cm",
+      "$150$ cm",
+      "$0.15$ cm",
+      "$1500$ cm"
+    ],
+    "correct": 0,
+    "explanation": "There are 10 millimeters in 1 centimeter. So, $15$ mm / 10 mm/cm = $1.5$ cm."
+  },
+  {
+    "id": 21,
+    "question": "From the formula for Ohm's Law, $I = \\frac{V}{R}$, derive the formula for Voltage $(V)$.",
+    "options": [
+      "$V = I \\cdot R$",
+      "$V = \\frac{R}{I}$",
+      "$V = I - R$",
+      "$V = \\frac{I}{R}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $V$, you must multiply both sides by $R$, which gives $V = I \\cdot R$."
+  },
+  {
+    "id": 22,
+    "question": "In the Combined Gas Law, $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$, what is the formula to solve for $V_1$?",
+    "options": [
+      "$V_1 = \\frac{P_2V_2T_1}{P_1T_2}$",
+      "$V_1 = \\frac{P_1T_1}{P_2V_2T_2}$",
+      "$V_1 = \\frac{P_2T_2}{P_1V_2T_1}$",
+      "$V_1 = P_1T_1 - P_2V_2T_2$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $V_1$, you multiply both sides by $T_1$ and divide by $P_1$."
+  },
+  {
+    "id": 23,
+    "question": "From the formula for Centripetal Force, $F_r = \\frac{mv^2}{r}$, derive the formula for mass $(m)$.",
+    "options": [
+      "$m = \\frac{F_r \\cdot r}{v^2}$",
+      "$m = F_r \\cdot r \\cdot v^2$",
+      "$m = \\frac{v^2}{F_r \\cdot r}$",
+      "$m = F_r \\cdot r - v^2$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $m$, you multiply both sides by $r$ and then divide by $v^2$."
+  },
+  {
+    "id": 24,
+    "question": "What is the formula to solve for displacement $(d)$ from the Law of Universal Gravitation, $F=G\\frac{m_{1}m_{2}}{d^{2}}$?",
+    "options": [
+      "$d = \\sqrt{\\frac{G m_1m_2}{F}}$",
+      "$d = \\frac{G m_1m_2}{F}$",
+      "$d = F \\frac{m_1m_2}{G}$",
+      "$d = \\frac{F}{G m_1m_2}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $d$, you must first rearrange to $d^2 = \\frac{G m_1m_2}{F}$, then take the square root of both sides."
+  },
+  {
+    "id": 25,
+    "question": "What are the two components of a triangle that meet at a vertex, forming an angle?",
+    "options": [
+      "Sides",
+      "Vertices",
+      "Diagonals",
+      "Altitude"
+    ],
+    "correct": 0,
+    "explanation": "The sides of a triangle meet at a vertex."
+  },
+  {
+    "id": 26,
+    "question": "In a right triangle, the longest side opposite the right angle is called the:",
+    "options": [
+      "Hypotenuse",
+      "Opposite",
+      "Adjacent",
+      "Leg"
+    ],
+    "correct": 0,
+    "explanation": "The hypotenuse is the side opposite the right angle in a right triangle."
+  },
+  {
+    "id": 27,
+    "question": "How many degrees do the angles in a triangle sum to?",
+    "options": [
+      "$90^\\circ$",
+      "$180^\\circ$",
+      "$270^\\circ$",
+      "$360^\\circ$"
+    ],
+    "correct": 1,
+    "explanation": "The sum of the angles in any triangle is always 180 degrees."
+  },
+  {
+    "id": 28,
+    "question": "What is the formula to solve for the final temperature $(T_2)$ from the Combined Gas Law, $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$?",
+    "options": [
+      "$T_2 = \\frac{P_2V_2T_1}{P_1V_1}$",
+      "$T_2 = \\frac{P_1V_1}{P_2V_2T_1}$",
+      "$T_2 = \\frac{T_1}{P_1V_1P_2V_2}$",
+      "$T_2 = P_1V_1T_1P_2V_2$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $T_2$, you can cross-multiply and then rearrange the terms."
+  },
+  {
+    "id": 29,
+    "question": "What operation is the opposite of multiplication in the context of formula derivation?",
+    "options": [
+      "Addition",
+      "Subtraction",
+      "Division",
+      "Square Root"
+    ],
+    "correct": 2,
+    "explanation": "The opposite of multiplication is division."
+  },
+  {
+    "id": 30,
+    "question": "From the formula for Coulomb's Law, $F=\\frac{kq_{1}q_{2}}{r^{2}}$, what is the formula to solve for the radius $(r)$?",
+    "options": [
+      "$r = \\sqrt{\\frac{kq_1q_2}{F}}$",
+      "$r = \\frac{kq_1q_2}{F}$",
+      "$r = F \\cdot kq_1q_2$",
+      "$r = \\frac{F}{kq_1q_2}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $r$, you rearrange the formula to $r^2 = \\frac{kq_1q_2}{F}$ and then take the square root."
+  },
+  {
+    "id": 31,
+    "question": "What is the unit of Force in the SI system, which is a derived quantity?",
+    "options": [
+      "Joule",
+      "Pascal",
+      "Newton",
+      "Watt"
+    ],
+    "correct": 2,
+    "explanation": "The unit for Force is the Newton."
+  },
+  {
+    "id": 32,
+    "question": "Convert $800$ grams to kilograms.",
+    "options": [
+      "$80$ kg",
+      "$8$ kg",
+      "$0.8$ kg",
+      "$0.08$ kg"
+    ],
+    "correct": 2,
+    "explanation": "To convert grams to kilograms, you divide by 1000. So, $800$ g $\\div$ $1000$ = $0.8$ kg."
+  },
+  {
+    "id": 33,
+    "question": "A Tangram is a Chinese geometrical puzzle that consists of a square cut into how many pieces?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "correct": 2,
+    "explanation": "A Tangram is a puzzle with 7 pieces."
+  },
+  {
+    "id": 34,
+    "question": "The formula for Acceleration is $\\overline{a}=\\frac{v-v_{0}}{\\Delta t}$. Derive the formula for the initial velocity $(v_0)$.",
+    "options": [
+      "$v_0 = v - \\overline{a} \\cdot \\Delta t$",
+      "$v_0 = v + \\overline{a} \\cdot \\Delta t$",
+      "$v_0 = \\overline{a} \\cdot \\Delta t - v$",
+      "$v_0 = \\frac{v}{\\overline{a} \\cdot \\Delta t}$"
+    ],
+    "correct": 0,
+    "explanation": "Rearrange the equation to isolate $v_0$. First, multiply both sides by $\\Delta t$, then subtract $v$ from both sides."
+  },
+  {
+    "id": 35,
+    "question": "In the formula for Centripetal Force, $F_r = \\frac{mv^2}{r}$, what does the variable 'r' represent?",
+    "options": [
+      "Radius of curvature",
+      "Mass of the object",
+      "Velocity of the object",
+      "Force"
+    ],
+    "correct": 0,
+    "explanation": "In this formula, 'r' represents the radius of the circular path."
+  },
+  {
+    "id": 36,
+    "question": "What is the formula to solve for the second charge $(q_2)$ from Coulomb's Law, $F=\\frac{kq_{1}q_{2}}{r^{2}}$?",
+    "options": [
+      "$q_2 = \\frac{F \\cdot r^2}{k q_1}$",
+      "$q_2 = \\frac{F}{k q_1 r^2}$",
+      "$q_2 = F k q_1 r^2$",
+      "$q_2 = \\frac{k q_1}{F r^2}$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $q_2$, multiply by $r^2$ and then divide by $k q_1$."
+  },
+  {
+    "id": 37,
+    "question": "In the Law of Universal Gravitation, $F=G\\frac{m_{1}m_{2}}{d^{2}}$, what does the variable 'd' represent?",
+    "options": [
+      "Density",
+      "Displacement",
+      "Distance",
+      "Diameter"
+    ],
+    "correct": 2,
+    "explanation": "The variable 'd' in the Law of Universal Gravitation stands for the distance between the two masses."
+  },
+  {
+    "id": 38,
+    "question": "A formula is defined as a set of algebraic symbols representing what?",
+    "options": [
+      "A rule or principle",
+      "A variable",
+      "An experiment",
+      "A prediction"
+    ],
+    "correct": 0,
+    "explanation": "A formula is a set of algebraic symbols that represents a mathematical fact, rule, or principle."
+  },
+  {
+    "id": 39,
+    "question": "The opposite of 'Square Root' in the context of formula derivation is 'Squared'. What is the opposite of 'Addition'?",
+    "options": [
+      "Division",
+      "Multiplication",
+      "Subtraction",
+      "Exponentiation"
+    ],
+    "correct": 2,
+    "explanation": "The opposite of addition is subtraction."
+  },
+  {
+    "id": 40,
+    "question": "Convert $1000$ meters to kilometers.",
+    "options": [
+      "$1$ km",
+      "$10$ km",
+      "$100$ km",
+      "$0.1$ km"
+    ],
+    "correct": 0,
+    "explanation": "Since $1$ km = $1000$ m, then $1000$ m is equal to $1$ km."
+  },
+  {
+    "id": 41,
+    "question": "How many centimeters are in $10$ millimeters?",
+    "options": [
+      "$0.1$ cm",
+      "$1$ cm",
+      "$10$ cm",
+      "$100$ cm"
+    ],
+    "correct": 1,
+    "explanation": "$1$ cm = $10$ mm, so $10$ mm is equal to $1$ cm."
+  },
+  {
+    "id": 42,
+    "question": "What is the symbol for the fundamental quantity 'Luminous Intensity'?",
+    "options": [
+      "$L$",
+      "$I$",
+      "$I_v$",
+      "$Iv$"
+    ],
+    "correct": 2,
+    "explanation": "The symbol for Luminous Intensity is $I_v$."
+  },
+  {
+    "id": 43,
+    "question": "The unit 'Pascal' is used for which derived quantity?",
+    "options": [
+      "Force",
+      "Pressure",
+      "Power",
+      "Energy"
+    ],
+    "correct": 1,
+    "explanation": "The Pascal (Pa) is the unit for Pressure."
+  },
+  {
+    "id": 44,
+    "question": "What is the formula to solve for the second mass ($m_2$) from the Law of Universal Gravitation, $F=G\\frac{m_{1}m_{2}}{d^{2}}$?",
+    "options": [
+      "$m_2 = \\frac{F d^2}{G m_1}$",
+      "$m_2 = G F d^2 m_1$",
+      "$m_2 = \\frac{G m_1}{F d^2}$",
+      "$m_2 = \\frac{F}{G m_1 d^2}$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $m_2$, you multiply by $d^2$ and divide by $G m_1$."
+  },
+  {
+    "id": 45,
+    "question": "What is the formula to solve for the final velocity ($v$) from the Law of Conservation of Momentum, $m_1v_1 + m_2v_2 = m_1{v_1}' + m_2{v_2}'$?",
+    "options": [
+      "$v_2' = \\frac{m_1v_1 + m_2v_2 - m_1v_1'}{m_2}$",
+      "$v_2' = m_1v_1 + m_2v_2 - m_1v_1' - m_2$",
+      "$v_2' = \\frac{m_1v_1 + m_2v_2 + m_1v_1'}{m_2}$",
+      "$v_2' = \\frac{m_2}{m_1v_1 + m_2v_2 - m_1v_1'}$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate the final velocity of the second mass, you subtract $m_1v_1'$ from both sides and then divide the entire expression by $m_2$."
+  },
+  {
+    "id": 46,
+    "question": "In the Combined Gas Law, $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$, what is the formula to solve for $T_1$?",
+    "options": [
+      "$T_1 = \\frac{P_1V_1 T_2}{P_2V_2}$",
+      "$T_1 = \\frac{P_2V_2}{P_1V_1 T_2}$",
+      "$T_1 = \\frac{P_1V_1P_2V_2}{T_2}$",
+      "$T_1 = P_1V_1 - P_2V_2 + T_2$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $T_1$, you rearrange the equation to $T_1 = \\frac{P_1V_1 T_2}{P_2V_2}$."
+  },
+  {
+    "id": 47,
+    "question": "What is the unit for the derived quantity 'Velocity'?",
+    "options": [
+      "$m/s$",
+      "$m/s^2$",
+      "$km/h$",
+      "Both A and C are correct"
+    ],
+    "correct": 3,
+    "explanation": "The SI unit for velocity is meters per second ($m/s$), but kilometers per hour ($km/h$) is also a valid unit of velocity."
+  },
+  {
+    "id": 48,
+    "question": "What is the formula for Potential Energy ($PE$)?",
+    "options": [
+      "$PE = \\frac{1}{2}mv^2$",
+      "$PE = mgh$",
+      "$PE = Fd$",
+      "$PE = \\frac{1}{2}kx^2$"
+    ],
+    "correct": 1,
+    "explanation": "The formula for gravitational potential energy is $PE = mgh$, where m is mass, g is acceleration due to gravity, and h is height."
+  },
+  {
+    "id": 49,
+    "question": "How do you derive the formula for Force ($F$) from the formula for Pressure, $P=\\frac{F}{A}$?",
+    "options": [
+      "$F = P/A$",
+      "$F = P-A$",
+      "$F = P \\cdot A$",
+      "$F = P+A$"
+    ],
+    "correct": 2,
+    "explanation": "To solve for F, you must multiply both sides by A."
+  },
+  {
+    "id": 50,
+    "question": "Convert $5$ meters to centimeters.",
+    "options": [
+      "$50$ cm",
+      "$500$ cm",
+      "$0.05$ cm",
+      "$5,000$ cm"
+    ],
+    "correct": 1,
+    "explanation": "$1$ meter = $100$ centimeters, so $5$ meters is $5 \\times 100 = 500$ cm."
+  },
+  {
+    "id": 51,
+    "question": "In the formula for Centripetal Force, $F_r = \\frac{mv^2}{r}$, what is the formula to solve for the radius $(r)$?",
+    "options": [
+      "$r = \\frac{mv^2}{F_r}$",
+      "$r = \\frac{F_r}{mv^2}$",
+      "$r = \\sqrt{F_r \\cdot mv^2}$",
+      "$r = F_r - mv^2$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate r, you must multiply both sides by r and then divide by $F_r$."
+  },
+  {
+    "id": 52,
+    "question": "The Law of Conservation of Momentum states that the total momentum of a system remains constant if no external forces act on it. What is its formula?",
+    "options": [
+      "$m_1v_1 + m_2v_2 = m_1{v_1}' + m_2{v_2}'$",
+      "$PE = mgh$",
+      "$F = ma$",
+      "$F = \\frac{G m_1 m_2}{d^2}$"
+    ],
+    "correct": 0,
+    "explanation": "The formula for the Law of Conservation of Momentum is $m_1v_1 + m_2v_2 = m_1{v_1}' + m_2{v_2}'$."
+  },
+  {
+    "id": 53,
+    "question": "From the formula for Acceleration, $\\overline{a}=\\frac{v-v_{0}}{\\Delta t}$, what is the formula to solve for the change in time $(\\Delta t)$?",
+    "options": [
+      "$\\Delta t = \\frac{v-v_0}{\\overline{a}}$",
+      "$\\Delta t = \\overline{a}(v-v_0)$",
+      "$\\Delta t = v-v_0-\\overline{a}$",
+      "$\\Delta t = \\frac{\\overline{a}}{v-v_0}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $\\Delta t$, you must multiply both sides by $\\Delta t$ and then divide by $\\overline{a}$."
+  },
+  {
+    "id": 54,
+    "question": "The formula for a parallel circuit is $\\frac{1}{R_{eq}}=\\frac{1}{R_{1}}+\\frac{1}{R_{2}}+...$. Which of the following is an example of algebraic thinking used for derivation?",
+    "options": [
+      "Applying the square root to an equation.",
+      "Adding a constant to both sides of an equation.",
+      "Subtracting from one side of an equation.",
+      "All of the above."
+    ],
+    "correct": 3,
+    "explanation": "All of these are examples of algebraic manipulation used to derive formulas."
+  },
+  {
+    "id": 55,
+    "question": "What is the term for the longest side of a right-angled triangle?",
+    "options": [
+      "Hypotenuse",
+      "Opposite",
+      "Adjacent",
+      "Leg"
+    ],
+    "correct": 0,
+    "explanation": "The hypotenuse is the side opposite the right angle."
+  },
+  {
+    "id": 56,
+    "question": "How many millimeters are in $2$ centimeters?",
+    "options": [
+      "$2$ mm",
+      "$20$ mm",
+      "$0.2$ mm",
+      "$200$ mm"
+    ],
+    "correct": 1,
+    "explanation": "1 centimeter = 10 millimeters, so $2$ cm $\\times$ $10$ mm/cm = $20$ mm."
+  },
+  {
+    "id": 57,
+    "question": "Which of the following is a fundamental quantity?",
+    "options": [
+      "Area",
+      "Temperature",
+      "Density",
+      "Velocity"
+    ],
+    "correct": 1,
+    "explanation": "Temperature is one of the seven fundamental quantities."
+  },
+  {
+    "id": 58,
+    "question": "What is the unit of 'Power'?",
+    "options": [
+      "Joule",
+      "Newton",
+      "Watt",
+      "Pascal"
+    ],
+    "correct": 2,
+    "explanation": "The unit for Power is the Watt (W)."
+  },
+  {
+    "id": 59,
+    "question": "Convert $100$ grams to kilograms.",
+    "options": [
+      "$0.1$ kg",
+      "$1$ kg",
+      "$10$ kg",
+      "$1000$ kg"
+    ],
+    "correct": 0,
+    "explanation": "$1$ kg = $1000$ g, so $100$ g $\\div 1000 = 0.1$ kg."
+  },
+  {
+    "id": 60,
+    "question": "The Law of Universal Gravitation is $F=G\\frac{m_{1}m_{2}}{d^{2}}$. What is the formula to solve for the first mass ($m_1$)?",
+    "options": [
+      "$m_1 = \\frac{F d^2}{G m_2}$",
+      "$m_1 = \\frac{F G m_2}{d^2}$",
+      "$m_1 = \\frac{F}{G m_2 d^2}$",
+      "$m_1 = \\frac{G d^2}{F m_2}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $m_1$, you multiply by $d^2$ and divide by $G m_2$."
+  },
+  {
+    "id": 61,
+    "question": "What is the formula to solve for the second volume ($V_2$) from the Combined Gas Law, $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$?",
+    "options": [
+      "$V_2 = \\frac{P_1V_1T_2}{P_2T_1}$",
+      "$V_2 = \\frac{P_2T_1}{P_1V_1T_2}$",
+      "$V_2 = P_1V_1T_2 P_2T_1$",
+      "$V_2 = \\frac{T_1P_2}{P_1V_1T_2}$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $V_2$, you multiply both sides by $T_2$ and divide by $P_2$."
+  },
+  {
+    "id": 62,
+    "question": "How many centimeters are in $10$ meters?",
+    "options": [
+      "$1$ cm",
+      "$10$ cm",
+      "$100$ cm",
+      "$1000$ cm"
+    ],
+    "correct": 3,
+    "explanation": "$1$ meter = $100$ centimeters, so $10$ meters is $10 \\times 100 = 1000$ cm."
+  },
+  {
+    "id": 63,
+    "question": "The Law of Conservation of Momentum applies when what condition is met?",
+    "options": [
+      "Temperature is constant",
+      "No external forces act on the system",
+      "Velocity is constant",
+      "The objects are at rest"
+    ],
+    "correct": 1,
+    "explanation": "The law holds true when there are no external forces acting on the system."
+  },
+  {
+    "id": 64,
+    "question": "In the formula for Ohm's Law, $I = \\frac{V}{R}$, what does the variable 'I' represent?",
+    "options": [
+      "Voltage",
+      "Resistance",
+      "Current",
+      "Power"
+    ],
+    "correct": 2,
+    "explanation": "I represents the current in the circuit."
+  },
+  {
+    "id": 65,
+    "question": "Convert $5$ liters to milliliters.",
+    "options": [
+      "$50$ ml",
+      "$500$ ml",
+      "$5,000$ ml",
+      "$0.005$ ml"
+    ],
+    "correct": 2,
+    "explanation": "$1$ liter = $1000$ milliliters, so $5$ L $\\times 1000$ ml/L = $5000$ ml."
+  },
+  {
+    "id": 66,
+    "question": "From the formula for Power, $P=\\frac{w}{t}$, derive the formula for work ($w$).",
+    "options": [
+      "$w = P \\cdot t$",
+      "$w = \\frac{P}{t}$",
+      "$w = t - P$",
+      "$w = P+t$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for work, you must multiply both sides by time."
+  },
+  {
+    "id": 67,
+    "question": "What is the formula to solve for the second pressure ($P_2$) from the Combined Gas Law, $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$?",
+    "options": [
+      "$P_2 = \\frac{P_1V_1T_2}{V_2T_1}$",
+      "$P_2 = \\frac{V_2T_1}{P_1V_1T_2}$",
+      "$P_2 = P_1V_1T_2V_2T_1$",
+      "$P_2 = \\frac{T_1V_2}{P_1V_1T_2}$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $P_2$, you must multiply both sides by $T_2$ and divide by $V_2$."
+  },
+  {
+    "id": 68,
+    "question": "A quantity that has both magnitude and direction is called a:",
+    "options": [
+      "Scalar quantity",
+      "Vector quantity",
+      "Fundamental quantity",
+      "Derived quantity"
+    ],
+    "correct": 1,
+    "explanation": "A vector quantity is defined by both its magnitude and its direction."
+  },
+  {
+    "id": 69,
+    "question": "From the formula for Acceleration, $\\overline{a}=\\frac{v-v_{0}}{\\Delta t}$, what is the formula to solve for the final velocity ($v$)?",
+    "options": [
+      "$v = \\overline{a}\\Delta t + v_0$",
+      "$v = \\overline{a}\\Delta t - v_0$",
+      "$v = \\frac{\\overline{a}}{\\Delta t} + v_0$",
+      "$v = \\frac{v_0}{\\overline{a}\\Delta t}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $v$, you must multiply both sides by $\\Delta t$ and then add $v_0$."
+  },
+  {
+    "id": 70,
+    "question": "What is the formula to solve for the radius ($r$) from the formula for Centripetal Force, $F_r = \\frac{mv^2}{r}$?",
+    "options": [
+      "$r = \\frac{F_r}{mv^2}$",
+      "$r = \\frac{mv^2}{F_r}$",
+      "$r = F_r \\cdot mv^2$",
+      "$r = F_r + mv^2$"
+    ],
+    "correct": 1,
+    "explanation": "To solve for $r$, you can rearrange the formula to $r = \\frac{mv^2}{F_r}$."
+  },
+  {
+    "id": 71,
+    "question": "The Law of Universal Gravitation is $F=G\\frac{m_{1}m_{2}}{d^{2}}$. What is the formula to solve for the distance ($d$)?",
+    "options": [
+      "$d = \\sqrt{\\frac{G m_1 m_2}{F}}$",
+      "$d = \\frac{G m_1 m_2}{F}$",
+      "$d = \\frac{F}{G m_1 m_2}$",
+      "$d = \\frac{G m_1 m_2}{\\sqrt{F}}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $d$, you rearrange to $d^2 = \\frac{G m_1 m_2}{F}$ and then take the square root."
+  },
+  {
+    "id": 72,
+    "question": "Which of the following is a derived quantity?",
+    "options": [
+      "Length",
+      "Time",
+      "Velocity",
+      "Mass"
+    ],
+    "correct": 2,
+    "explanation": "Velocity is a derived quantity, calculated from length and time."
+  },
+  {
+    "id": 73,
+    "question": "The unit for Force is 'Newton'. What is its expression in terms of fundamental quantities?",
+    "options": [
+      "$kg \\cdot m/s$",
+      "$kg \\cdot m/s^2$",
+      "$kg/m \\cdot s$",
+      "$kg/m \\cdot s^2$"
+    ],
+    "correct": 1,
+    "explanation": "Newton is a derived unit of force, which can be expressed as $kg \\cdot m/s^2$."
+  },
+  {
+    "id": 74,
+    "question": "What is the unit of 'Potential Energy'?",
+    "options": [
+      "Newton",
+      "Watt",
+      "Joule",
+      "Pascal"
+    ],
+    "correct": 2,
+    "explanation": "The unit for energy (including potential energy) is the Joule (J)."
+  },
+  {
+    "id": 75,
+    "question": "The formula for the Area of a rectangle is 'Length x Width'. How is 'Area' classified?",
+    "options": [
+      "Fundamental Quantity",
+      "Derived Quantity",
+      "Scalar Quantity",
+      "Vector Quantity"
+    ],
+    "correct": 1,
+    "explanation": "Area is a derived quantity, as it is a combination of two fundamental quantities (length and width)."
+  },
+  {
+    "id": 76,
+    "question": "What is the formula to solve for the first charge ($q_1$) from Coulomb's Law, $F=\\frac{kq_{1}q_{2}}{r^{2}}$?",
+    "options": [
+      "$q_1 = \\frac{F r^2}{k q_2}$",
+      "$q_1 = F k q_2 r^2$",
+      "$q_1 = \\frac{k q_2}{F r^2}$",
+      "$q_1 = F-k q_2-r^2$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $q_1$, multiply by $r^2$ and divide by $k q_2$."
+  },
+  {
+    "id": 77,
+    "question": "How many meters are in a centimeter?",
+    "options": [
+      "$100$ m",
+      "$10$ m",
+      "$0.1$ m",
+      "$0.01$ m"
+    ],
+    "correct": 3,
+    "explanation": "1 meter = 100 centimeters, so 1 centimeter = 0.01 meters."
+  },
+  {
+    "id": 78,
+    "question": "In the Combined Gas Law, $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$, what is the formula to solve for the initial pressure ($P_1$)?",
+    "options": [
+      "$P_1 = \\frac{P_2V_2T_1}{V_1T_2}$",
+      "$P_1 = \\frac{V_1T_2}{P_2V_2T_1}$",
+      "$P_1 = P_2V_2T_1V_1T_2$",
+      "$P_1 = \\frac{V_1}{T_1P_2V_2T_2}$"
+    ],
+    "correct": 0,
+    "explanation": "To solve for $P_1$, you must multiply both sides by $T_1$ and divide by $V_1$."
+  },
+  {
+    "id": 79,
+    "question": "Which of the following describes the process of formula derivation?",
+    "options": [
+      "It involves guesswork to rearrange variables.",
+      "It requires a computer to solve equations.",
+      "It involves considering opposite operations to isolate a variable.",
+      "It is a complex process with no clear rules."
+    ],
+    "correct": 2,
+    "explanation": "Formula derivation involves using opposite algebraic operations to isolate the desired variable."
+  },
+  {
+    "id": 80,
+    "question": "What is the formula to solve for the second volume ($V_2$) from the Combined Gas Law, $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$?",
+    "options": [
+      "$V_2 = \\frac{P_1V_1T_2}{P_2T_1}$",
+      "$V_2 = \\frac{P_2T_1}{P_1V_1T_2}$",
+      "$V_2 = P_1V_1T_2 P_2T_1$",
+      "$V_2 = \\frac{T_1P_2}{P_1V_1T_2}$"
+    ],
+    "correct": 0,
+    "explanation": "To isolate $V_2$, you multiply both sides by $T_2$ and divide by $P_2$."
+  },
+  {
+    "id": 81,
+    "question": "The unit for 'Acceleration' is '$m/s^2$'. How is 'Acceleration' classified?",
+    "options": [
+      "Fundamental Quantity",
+      "Derived Quantity",
+      "Scalar Quantity",
+      "Vector Quantity"
+    ],
+    "correct": 1,
+    "explanation": "Acceleration is a derived quantity, as it is a combination of length and time."
+  }
+];
+
 // Export the questions for use in the quiz system
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions, physicalEducationQuestions };
+    module.exports = { workImmersionQuestions, generalChemistryQuestions, contemporaryArtsQuestions, empowermentTechnologiesQuestions, generalMathematicsQuestions, physicalEducationQuestions, generalPhysicsQuestions };
 }
